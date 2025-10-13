@@ -42,7 +42,7 @@
 
 @media (min-width: 1024px) { /* lg */
   :root {
-    --hero-title-size: 3.5rem; /* 56px */
+    --hero-title-size: 6rem; /* 56px */
     --hero-name-size: 3.75rem; /* 60px */
     --hero-role-size: 2.25rem; /* 36px */
   }
@@ -60,7 +60,7 @@ body {
   color: var(--hero-title-color);
   font-size: var(--hero-title-size);
   line-height: 1.02;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 

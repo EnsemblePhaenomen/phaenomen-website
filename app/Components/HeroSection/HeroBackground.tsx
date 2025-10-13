@@ -26,13 +26,13 @@ export default function HeroBackground({
 
       {/* Content overlay */}
       <div className="absolute inset-0 grid grid-cols-12 grid-rows-12 h-full pointer-events-none">
-        {/* Texte "ensemble" — occupe une seule cellule au-dessus du logo */}
-            <div className="bg-blue-200 col-start-5 col-span-5 row-start-5 flex justify-end items-end">
-              <h2 className="hero-title mb-4">ensemble</h2>
+        {/* Texte "ensemble"  */}
+        <div className=" col-start-8 col-span-2 row-start-5 flex justify-start items-end">
+          <h2 className="hero-title  mb-4">ensemble</h2>
         </div>
 
         {/* Logo — occupe 2 cellules en largeur, juste en dessous */}
-        <div className="bg-red-200 col-start-5 col-span-5 row-start-6 flex justify-end items-start">
+        <div className="col-start-5 col-span-5 row-start-6 flex justify-end items-start">
           <Image
             src={logo}
             alt="Logo"
@@ -42,17 +42,15 @@ export default function HeroBackground({
             style={{ objectFit: "contain" }}
           />
         </div>
-        <div className="bg-green-200 col-start-5 col-span-5 row-start-9 flex justify-end items-center">
-          <p className="text-white text-4xl mb-4">Noé CHAPOLARD</p>
-        </div>
-        <div className="bg-violet-200 col-start-8 col-span-2 row-start-10 flex justify-end items-center">
-          <p className="text-white text-4xl mb-4">Direction</p>
+        <div className="w-fit col-start-8 col-span-2 row-start-9 text-start flex justify-start items-center flex-col">
+          <p className="w-100  text-white text-4xl mb-4">Noé CHAPOLARD</p>
+          <p className="w-100 text-white text-4xl mb-4">Direction</p>
         </div>
 
         {/* Optional children */}
         {children && (
-            <div className="col-span-5 row-start-5 flex justify-center items-center pointer-events-auto hero-name">
-              {children}
+          <div className="col-span-5 row-start-5 flex justify-center items-center pointer-events-auto hero-name">
+            {children}
           </div>
         )}
       </div>
