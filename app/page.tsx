@@ -1,9 +1,14 @@
 import Image from "next/image";
+import HeroBackground from "./Components/HeroSection/HeroBackground";
+import hero2 from "@/public/heroGallery/hero2.jpeg";
+import logoBlanc from "@/public/LOGONOM_BLANC_SVG.svg";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <h1 className="text-4xl font-bold text-center">Hello, World!</h1>
-    </div>
+    <>
+      <HeroBackground src={hero2} logo={logoBlanc}>
+        {/* {children} */}
+      </HeroBackground>
+    </>
   );
 }
