@@ -28,7 +28,7 @@
   :root {
     --hero-title-size: 1.5rem; /* 24px */
     --hero-name-size: 2rem; /* 32px */
-    --hero-role-size: 1.5rem; /* 24px */
+    --hero-role-size: 1rem; /* 24px */
   }
 }
 
@@ -78,3 +78,9 @@ body {
   font-weight: 600;
 }
 
+.hero-info {
+  color: var(--hero-role-color);
+  font-size: var(--hero-role-size);
+  line-height: 1;
+  font-weight: 400;
+}
