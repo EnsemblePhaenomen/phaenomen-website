@@ -1,17 +1,29 @@
 import Image, { StaticImageData } from "next/image";
-import ArrowIcon from "../(ui)/Arrows/ArrowIcon";
-// import Link from "next/link"; // si le CTA doit naviguer
+import HeroCTA from "./HeroCTA";
+import DirectorInfo from "./DirectorInfo";
 
 type HeroBackgroundProps = {
   src: StaticImageData;
   logo: StaticImageData;
-  children?: React.ReactNode;
+  title?: string;
+  directorName?: string;
+  directorRole?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaTargetId?: string;
+  ctaAriaLabel?: string;
 };
 
 export default function HeroBackground({
-  children,
   src,
   logo,
+  title = "ensemble",
+  directorName = "Noé Chapolard",
+  directorRole = "Direction",
+  ctaLabel = "Plus d'informations",
+  ctaHref = "#about",
+  ctaTargetId = "#about",
+  ctaAriaLabel = "Plus d'informations - Naviguer vers la section À propos"
 }: HeroBackgroundProps) {
   return (
     <section
@@ -37,81 +49,76 @@ export default function HeroBackground({
       {/* Grille : mobile (base) → sm → md: 12×12 */}
       <div
         className="
-          absolute inset-0 grid h-full gap-3 
+          bg-yellow-200/20
+          absolute inset-0 grid h-full gap-0
           grid-cols-2 grid-rows-[repeat(12,minmax(0,1fr))]
           place-content-center          
           sm:grid-cols-6 sm:grid-rows-[repeat(8,minmax(0,1fr))] sm:place-content-start sm:p-6
           md:grid-cols-12 md:grid-rows-12 md:p-8
           
+          
         "
       >
         {/* Titre "ensemble" */}
         <div
-          className="place-self-center col-span-2 row-start-4 flex items-end justify-start
+          className="place-self-center col-span-2 row-start-5 flex items-end justify-end
             sm:col-span-2 sm:col-start-4 sm:row-start-4
-            md:col-start-7 md:col-span-3 md:row-start-4 md:row-span-2"
+            md:col-start-7 md:col-span-3 md:row-start-4 md:row-span-2
+            lg:bg-blue-200 lg:row-span-auto lg:col-span-auto lg:col-start-7 lg:w-full"
         >
           <h2
             id="hero-title"
             className="hero-title pb-2 md:pb-5 md:mb-10 text-white"
           >
-            ensemble
+            {title}
           </h2>
         </div>
 
         {/* Logo */}
         <div
           className="
-            col-span-2 row-start-5 flex items-start justify-center
+            col-span-2 row-start-6 flex items-end justify-center
             sm:col-span-4 sm:col-start-2 sm:row-start-4
-            md:col-start-5 md:col-span-5 md:row-start-5 md:row-span-4 md:justify-end"
+            md:col-start-5 md:col-span-5 md:row-start-5 md:row-span-4 md:justify-end
+            lg:bg-blue-500 lg:h-fit
+            xl-bg-pink-500"
         >
           <Image
             src={logo}
-            alt="Logo de l’ensemble"
+            alt="Logo de l'ensemble"
             width={800}
             height={400}
-            sizes="(max-width: 639px) 75vw, (max-width: 1023px) 55vw, 40vw"
-            className="w-auto h-auto max-w-[90vw] sm:max-w-[55vw] md:max-w-[40vw]"
+            sizes="(max-width: 639px) 75vw, (max-width: 1080px) 55vw, 40vw"
+            className="block w-auto h-auto max-w-[90vw] sm:max-w-[55vw] md:max-w-[40vw]"
             style={{ objectFit: "contain" }}
             priority
           />
         </div>
 
-        {/* Sous-titre */}
-        <div
-          className="
-           place-self-center
-            col-span-2 row-start-8 flex justify-start
-            sm:col-span-3 sm:col-start-3 sm:row-start-6
-            md:col-start-7 md:col-span-3 md:row-start-8 md:row-span-2
-          "
-        >
-          <div className="flex flex-col items-end leading-none">
-            <p className="hero-name leading-none">
-              <span>Noé</span>&thinsp;<span>Chapolard</span>
-            </p>
-            <p className="hero-role mb-3 md:mb-4 leading-none mt-2 self-start">
-              Direction
-            </p>
+        {/* Container Sous-titre + CTA */}
+        <div className="col-span-2 row-start-8 row-span-3 flex flex-col h-fit w-fit place-self-center
+            sm:col-span-3 sm:col-start-3 sm:row-start-6 sm:row-span-2 sm:flex-row sm:items-start sm:justify-between
+            md:col-start-7 md:col-span-3 md:row-start-8 md:row-span-2 md:flex-row md:items-start md:justify-between
+            lg:col-start-7 lg:row-start-8 lg:col-span-3 lg:bg-red-500 lg:flex-col lg:w-full lg:items-start">
+
+          {/* Sous-titre */}
+          <DirectorInfo
+            name={directorName}
+            role={directorRole}
+          />
+
+          {/* CTA bouton si c’est une action, sinon Link*/}
+          <div className="flex justify-start">
+            <HeroCTA
+              href={ctaHref}
+              label={ctaLabel}
+              targetId={ctaTargetId}
+              ariaLabel={ctaAriaLabel}
+            />
           </div>
         </div>
 
-        {/* CTA bouton si c’est une action, sinon Link) */}
-        <button
-          type="button"
-          className="
-           place-self-center
-            col-span-2 row-start-9 flex items-center justify-start text-white group
-            sm:col-span-3 sm:col-start-3 sm:row-start-7
-            md:col-start-7 md:col-span-3 md:row-start-9 md:row-span-1
-            focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 rounded-md
-          "
-          aria-label="Plus d'informations"
-        >
-          <ArrowIcon className="w-10 h-16 md:w-12 md:h-20 pr-4 md:pr-5 mt-2 transition-transform group-hover:translate-x-1 motion-reduce:transition-none" />
-          <p className="hero-info">Plus d'informations</p>
-        </button>
+
 
         {/* Si navigation : 
         <Link href="#plus" className="...">...</Link>
@@ -120,24 +127,15 @@ export default function HeroBackground({
         {/* Bande supérieure du bas de page */}
         <div
           className={`
-            col-span-2 row-start-11 self-end
-            sm:col-span-6 sm:row-start-8
-            md:col-span-12 md:row-start-12
+            col-span-2 row-start-12
+            sm:col-span-6 sm:row-start-9
+            md:col-span-12 md:row-start-12 
             border-t border-white/70
           `}
           aria-hidden
         />
 
-        {/* Slot enfants (toujours présent, jamais masqué) */}
-        <div
-          className={`
-            col-span-2 row-start-3 flex items-center justify-center pointer-events-auto hero-name text-white
-            sm:col-span-6 sm:row-start-5
-            md:col-span-5 md:row-start-5 md:justify-center
-          `}
-        >
-          {children}
-        </div>
+
       </div>
     </section>
   );

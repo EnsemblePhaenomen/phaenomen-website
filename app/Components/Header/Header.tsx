@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,10 +11,10 @@ interface NavItem {
 
 // Constants - Single Responsibility Principle
 const NAVIGATION_ITEMS: NavItem[] = [
-  { href: "/about", label: "À propos" },
-  { href: "/contact", label: "Contact" },
-  { href: "/agenda", label: "Agenda" },
-  { href: "/media", label: "Médias" },
+  { href: "#about", label: "À propos" },
+  { href: "#contact", label: "Contact" },
+  { href: "#agenda", label: "Agenda" },
+  { href: "#media", label: "Médias" },
 ];
 
 const LOGO_CONFIG = {
@@ -24,8 +26,23 @@ const LOGO_CONFIG = {
 
 // Components - Single Responsibility Principle
 function Logo() {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const targetElement = document.querySelector('#hero-section');
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
-    <Link href="#home" className="hover:opacity-80 transition-opacity duration-200">
+    <Link
+      href="#home"
+      onClick={handleClick}
+      className="hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+    >
       <Image
         src={LOGO_CONFIG.src}
         alt={LOGO_CONFIG.alt}
@@ -39,10 +56,22 @@ function Logo() {
 }
 
 function NavigationLink({ href, label }: NavItem) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <Link
       href={href}
-      className="hover:underline transition-all duration-200 hover:text-gray-200"
+      onClick={handleClick}
+      className="hover:underline transition-all duration-200 hover:text-gray-200 cursor-pointer"
     >
       {label}
     </Link>
