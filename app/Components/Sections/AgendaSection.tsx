@@ -18,7 +18,7 @@ export default function AgendaSection() {
                 <h3 className="text-2xl font-semibold">Concert inaugural</h3>
                 <span className="text-purple-200 font-medium">À venir</span>
               </div>
-              <p className="opacity-80">Première représentation de l'ensemble Phaenomen</p>
+              <p className="opacity-80">Première représentation de l&apos;ensemble Phaenomen</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left">
               <div className="flex justify-between items-start mb-4">

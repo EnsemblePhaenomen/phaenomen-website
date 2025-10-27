@@ -6,7 +6,7 @@ interface DirectorInfoProps {
 export default function DirectorInfo({ name, role }: DirectorInfoProps) {
   return (
     <div className="flex justify-start">
-      <div className="flex flex-col items-end leading-none bg-blue-500/30 h-fit">
+      <div className="flex flex-col items-end leading-none  h-fit">
         <p className="hero-name leading-none">
           <span>{name}</span>
         </p>

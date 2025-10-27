@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface HeaderLogoProps {
-  isDark: boolean;
   src: string;
   alt: string;
   width: number;
@@ -13,7 +12,6 @@ interface HeaderLogoProps {
 }
 
 export default function HeaderLogo({ 
-  isDark, 
   src, 
   alt, 
   width, 

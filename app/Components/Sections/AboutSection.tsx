@@ -10,8 +10,7 @@ export default function AboutSection() {
             À propos
           </h2>
           <p className="text-xl md:text-2xl leading-relaxed opacity-90">
-            Découvrez l'univers de Phaenomen, un ensemble musical qui repousse les limites 
-            de la création artistique contemporaine.
+            Découvrez l&apos;univers de Phaenomen, un ensemble musical consacré à la musique de Stöltzel.
           </p>
         </div>
       </div>
