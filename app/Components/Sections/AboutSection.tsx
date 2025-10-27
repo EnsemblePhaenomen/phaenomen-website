@@ -2,10 +2,10 @@ export default function AboutSection() {
   return (
     <section 
       id="about" 
-      className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-700 flex items-center justify-center"
+      className="min-h-screen bg-white flex items-center justify-center"
     >
       <div className="container mx-auto px-6 py-20">
-        <div className="max-w-4xl mx-auto text-center text-white">
+        <div className="max-w-4xl mx-auto text-center text-black">
           <h2 className="text-4xl md:text-6xl font-bold mb-8">
             À propos
           </h2>

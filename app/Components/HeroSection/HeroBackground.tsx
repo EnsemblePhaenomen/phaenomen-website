@@ -49,7 +49,6 @@ export default function HeroBackground({
       {/* Grille : mobile (base) → sm → md: 12×12 */}
       <div
         className="
-          bg-yellow-200/20
           absolute inset-0 grid h-full gap-0
           grid-cols-2 grid-rows-[repeat(12,minmax(0,1fr))]
           place-content-center          
@@ -64,7 +63,7 @@ export default function HeroBackground({
           className="place-self-center col-span-2 row-start-5 flex items-end justify-end
             sm:col-span-2 sm:col-start-4 sm:row-start-4
             md:col-start-7 md:col-span-3 md:row-start-4 md:row-span-2
-            lg:bg-blue-200 lg:row-span-auto lg:col-span-auto lg:col-start-7 lg:w-full"
+             lg:row-span-auto lg:col-span-auto lg:col-start-7 lg:w-full"
         >
           <h2
             id="hero-title"
@@ -80,12 +79,12 @@ export default function HeroBackground({
             col-span-2 row-start-6 flex items-end justify-center
             sm:col-span-4 sm:col-start-2 sm:row-start-4
             md:col-start-5 md:col-span-5 md:row-start-5 md:row-span-4 md:justify-end
-            lg:bg-blue-500 lg:h-fit
-            xl-bg-pink-500"
+             lg:h-fit"
+
         >
           <Image
             src={logo}
-            alt="Logo de l'ensemble"
+            alt="Logo de Phaenomen"
             width={800}
             height={400}
             sizes="(max-width: 639px) 75vw, (max-width: 1080px) 55vw, 40vw"
@@ -99,7 +98,7 @@ export default function HeroBackground({
         <div className="col-span-2 row-start-8 row-span-3 flex flex-col h-fit w-fit place-self-center
             sm:col-span-3 sm:col-start-3 sm:row-start-6 sm:row-span-2 sm:flex-row sm:items-start sm:justify-between
             md:col-start-7 md:col-span-3 md:row-start-8 md:row-span-2 md:flex-row md:items-start md:justify-between
-            lg:col-start-7 lg:row-start-8 lg:col-span-3 lg:bg-red-500 lg:flex-col lg:w-full lg:items-start">
+            lg:col-start-7 lg:row-start-8 lg:col-span-3 lg:flex-col lg:w-full lg:items-start">
 
           {/* Sous-titre */}
           <DirectorInfo
@@ -107,7 +106,7 @@ export default function HeroBackground({
             role={directorRole}
           />
 
-          {/* CTA bouton si c’est une action, sinon Link*/}
+          {/* CTA bouton */}
           <div className="flex justify-start">
             <HeroCTA
               href={ctaHref}
@@ -120,9 +119,6 @@ export default function HeroBackground({
 
 
 
-        {/* Si navigation : 
-        <Link href="#plus" className="...">...</Link>
-        */}
 
         {/* Bande supérieure du bas de page */}
         <div
@@ -134,7 +130,6 @@ export default function HeroBackground({
           `}
           aria-hidden
         />
-
 
       </div>
     </section>
