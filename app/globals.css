@@ -23,8 +23,18 @@
   }
 } */
 
-/* Breakpoint-driven scaling (rules of the art: variables override at breakpoints) */
-@media (min-width: 640px) { /* sm */
+/* Media Queries */
+@media (max-width: 639px) {
+  /* base */
+  :root {
+    --hero-title-size: 2.5rem; /* ~18px */
+    --hero-name-size: 1.5rem; /* ~24px */
+    --hero-role-size: 1.25rem; /* ~20px */
+  }
+}
+
+@media (min-width: 640px) {
+  /* sm */
   :root {
     --hero-title-size: 1.5rem; /* 24px */
     --hero-name-size: 2rem; /* 32px */
@@ -32,7 +42,8 @@
   }
 }
 
-@media (min-width: 768px) { /* md */
+@media (min-width: 768px) {
+  /* md */
   :root {
     --hero-title-size: 2.5rem; /* 40px */
     --hero-name-size: 3rem; /* 48px */
@@ -40,7 +51,8 @@
   }
 }
 
-@media (min-width: 1024px) { /* lg */
+@media (min-width: 1024px) {
+  /* lg */
   :root {
     --hero-title-size: 6rem; /* 56px */
     --hero-name-size: 3.75rem; /* 60px */
@@ -52,7 +64,8 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
 }
 
 /* Utility classes for hero elements  */
