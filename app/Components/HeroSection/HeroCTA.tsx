@@ -28,7 +28,7 @@ export default function HeroCTA({
   };
 
   return (
-    <div className="relative z-50 flex justify-start pointer-events-auto bg-red-500/20 border border-red-500">
+    <div className="relative z-50 flex justify-start pointer-events-auto">
       <Link
         href={href}
         onClick={handleClick}
