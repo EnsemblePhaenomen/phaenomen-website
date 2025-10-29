@@ -156,6 +156,8 @@ export default function HeroCarouselIsland({
           key={slide.id}
           slide={slide}
           isActive={index === currentIndex}
+          slideIndex={index}
+          currentIndex={currentIndex}
           transitionMs={hasReducedMotion ? 0 : config.transitionMs || 600}
         />
       ))}

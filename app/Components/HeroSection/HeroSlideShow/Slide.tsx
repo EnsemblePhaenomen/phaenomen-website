@@ -6,19 +6,34 @@ type SlideProps = {
   slide: HeroSlide;
   isActive: boolean;
   transitionMs: number;
+  slideIndex: number;
+  currentIndex: number;
 };
 
-export default function Slide({ slide, isActive, transitionMs }: SlideProps) {
+export default function Slide({
+  slide,
+  isActive,
+  transitionMs,
+  slideIndex,
+  currentIndex,
+}: SlideProps) {
+  // Détermine la position du slide
+  const getSlidePosition = () => {
+    if (isActive) {
+      return "translate-x-0"; // Slide actif au centre
+    } else if (slideIndex > currentIndex) {
+      return "translate-x-full"; // Slides suivants à droite
+    } else {
+      return "-translate-x-full"; // Slides précédents à gauche
+    }
+  };
 
   return (
     <div
       className={`
-        absolute inset-0 transition-opacity ease-in-out
-        ${
-          isActive
-            ? "opacity-100 z-10 pointer-events-auto"
-            : "opacity-0 z-0 pointer-events-none"
-        }
+        absolute inset-0 transition-transform ease-in-out
+        ${getSlidePosition()} 
+        ${isActive ? "z-10 pointer-events-auto" : "z-0 pointer-events-none"}
       `}
       style={{
         pointerEvents: isActive ? "auto" : "none",
