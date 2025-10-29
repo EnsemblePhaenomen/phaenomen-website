@@ -9,7 +9,6 @@ type SlideProps = {
 };
 
 export default function Slide({ slide, isActive, transitionMs }: SlideProps) {
-  console.log("Slide rendering:", slide.id, "isActive:", isActive);
 
   return (
     <div

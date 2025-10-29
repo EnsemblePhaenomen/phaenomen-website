@@ -42,7 +42,7 @@ export const heroSlides: HeroSlide[] = [
       "Spécialistes de la pratique musicale et du répertoire baroque",
     cta: {
       label: "En savoir plus",
-      href: "/about",
+      href: "/#about",
     },
   },
 ];
@@ -58,6 +58,6 @@ heroSlides.push({
     "Parcourir l'intégrale des cantates de Gottfried Heinrich Stölzel",
   cta: {
     label: "Découvrez nos projets",
-    href: "/Projet",
+    href: "/#about",
   },
 });

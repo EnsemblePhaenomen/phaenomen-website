@@ -24,7 +24,7 @@ export default function Controls({
       {/* Boutons Prev/Next */}
       <div
         className="absolute inset-y-0 left-0 right-0 flex items-center justify-between 
- z-20"
+ z-20 pointer-events-none"
       >
         {/* Bouton Précédent */}
         <button
@@ -84,11 +84,11 @@ export default function Controls({
       </div>
 
       {/* Contrôles du bas */}
-      <div className="absolute bottom-8 left-0 right-0 flex items-center justify-center z-20">
+      <div className="absolute bottom-8 left-0 right-0 flex items-center justify-center z-20 pointer-events-none">
         {/* Dots de navigation */}
         {showDots && (
           <div
-            className="flex space-x-2"
+            className="flex space-x-2 pointer-events-auto"
             role="tablist"
             aria-label="Navigation des slides"
           >

@@ -8,7 +8,6 @@ type OverlayProps = {
 };
 
 export default function Overlay({ slide }: OverlayProps) {
-  console.log("Overlay rendering for slide:", slide.id);
 
   // Layout spécial pour le premier slide avec logo
   if (slide.layout === "hero-with-logo") {
