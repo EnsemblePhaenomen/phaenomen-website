@@ -15,10 +15,10 @@ export default function AgendaSection() {
           <div className="space-y-6">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-semibold">Concert inaugural</h3>
+                <h3 className="text-2xl font-semibold">Concerts</h3>
                 <span className="text-purple-200 font-medium">À venir</span>
               </div>
-              <p className="opacity-80">Première représentation de l&apos;ensemble Phaenomen</p>
+              <p className="opacity-80">Représentations de l&apos;ensemble Phaenomen</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left">
               <div className="flex justify-between items-start mb-4">

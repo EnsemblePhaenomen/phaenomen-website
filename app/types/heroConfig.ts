@@ -11,8 +11,21 @@ export type HeroSlide = {
     label: string;
     href: string;
     external?: boolean;
+    targetId?: string;
+    ariaLabel?: string;
   };
   priority?: boolean;
+  layout?: "default" | "hero-with-logo";
+  logo?: {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+  };
+  director?: {
+    name: string;
+    role: string;
+  };
 };
 
 export type HeroConfig = {
