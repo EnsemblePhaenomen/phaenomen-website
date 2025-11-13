@@ -32,16 +32,16 @@
 //       aria-labelledby="hero-title"
 //     >
 //       {/* Background image — décoratif */}
-//       <Image
-//         src={src}
-//         alt="illustration décorative de la section héro"
-//         aria-hidden
-//         fill
-//         placeholder="blur"
-//         sizes="100vw"
-//         className="object-cover object-center -z-10"
-//         priority
-//       />
+    //   <Image
+    //     src={src}
+    //     alt="illustration décorative de la section héro"
+    //     aria-hidden
+    //     fill
+    //     placeholder="blur"
+    //     sizes="100vw"
+    //     className="object-cover object-center -z-10"
+    //     priority
+    //   />
 
 //       {/* Overlay lisibilité au-dessus de l'image */}
 //       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent z-0" />
