@@ -18,6 +18,7 @@ export default function Lensemble() {
     };
     return (
         <main className="w-full bg-red-200 text-black">
+
             <section className=" mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 {/* Top title */}
                 <div className="w-full bg-orange-200 flex flex-col">
