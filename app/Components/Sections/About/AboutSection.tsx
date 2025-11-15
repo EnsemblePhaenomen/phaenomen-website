@@ -1,9 +1,10 @@
 import Lensemble from "./Lensemble";
-import musiciens from "@/app/data"
+import data from "@/app/data";
+
 export default function AboutSection() {
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       className="min-h-screen flex items-center justify-center"
     >
       {/* <div className="container mx-auto px-6 py-20">
@@ -14,8 +15,8 @@ export default function AboutSection() {
           <p className="text-xl md:text-2xl leading-relaxed opacity-90">
             Découvrez l&apos;univers de Phaenomen, un ensemble musical consacré à la musique de Stöltzel.
           </p> */}
-        <Lensemble data={musiciens}/>
-        {/* </div>
+      <Lensemble data={data.musiciens} />
+      {/* </div>
       </div> */}
     </section>
   );
