@@ -1,4 +1,6 @@
-const musiciens = [
+import type { Musicien, Credit } from "./types/dataConfig";
+
+const musiciens:Musicien[] = [
   {
     nom: "Rignol",
     prénom: "Gabriel",
@@ -106,44 +108,44 @@ Maëlys travaille avec des ensembles internationaux tels que la Capella Nacional
   },
 ];
 
-const crédit = [
+const crédit:Credit[] = [
   {
-    nom: "",
-    prénom: "",
+    nom: "Canals",
+    prénom: "Elisanda",
     role: "Photographe",
   },
   {
-    nom: "",
-    prénom: "",
+    nom: "Grilc",
+    prénom: "Andrej",
     role: "Photographe",
   },
   {
-    nom: "",
-    prénom: "",
+    nom: "Montezuma",
+    prénom: "Ana-lucia",
     role: "Photographe",
   },
   {
-    nom: "",
-    prénom: "",
+    nom: "Bermudez",
+    prénom: "Sergio",
     role: "Photographe",
   },
   {
-    nom: "",
-    prénom: "",
+    nom: "Lepeltier-Kovacs",
+    prénom: "Dorine",
     role: "Photographe",
   },
   {
-    nom: "",
-    prénom: "",
+    nom: "Muller",
+    prénom: "Matthias",
     role: "Photographe",
   },
   {
-    nom: "",
-    prénom: "",
+    nom: "Guignard",
+    prénom: "Elise",
     role: "Photographe",
 },{
-    nom: "",
-    prénom: "",
+    nom: "Cherki",
+    prénom: "Julie",
     role: "Photographe",
 },{
     nom: "",
@@ -155,3 +157,5 @@ const crédit = [
     role: "Photographe",
 },
 ];
+
+export default {musiciens, crédit}

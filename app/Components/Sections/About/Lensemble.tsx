@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
+import type { Musicien } from "@/app/types/dataConfig";
 
-export default function Lensemble() {
+type EnfantProps= {
+    data: Musicien[];
+}
+
+export default function Lensemble({data}):EnfantProps {
     const [openSections, setOpenSections] = useState({
         presentation: true,
         ensemble: true,

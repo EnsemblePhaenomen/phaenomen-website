@@ -1,4 +1,5 @@
 import Lensemble from "./Lensemble";
+import musiciens from "@/app/data"
 export default function AboutSection() {
   return (
     <section 
@@ -13,7 +14,7 @@ export default function AboutSection() {
           <p className="text-xl md:text-2xl leading-relaxed opacity-90">
             Découvrez l&apos;univers de Phaenomen, un ensemble musical consacré à la musique de Stöltzel.
           </p> */}
-        <Lensemble/>
+        <Lensemble data={musiciens}/>
         {/* </div>
       </div> */}
     </section>
