@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
+import EnsembleCarousel from "./EnsembleCarousel";
 import type { Musicien } from "@/app/types/dataConfig";
 
 type EnfantProps = {
@@ -34,8 +35,9 @@ export default function Lensemble({ data }: EnfantProps) {
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 bg-blue-200 pt-4 md:pt-16">
           {/* Left image column */}
           <div className="md:w-1/4">
-            <div className="hidden lg:block lg:h-full lg:aspect-auto w-full aspect-[1/3] border border-neutral-400" />
-            {/* <Image src={group12} alt="" width={330} height={200} className="object-cover h-full w-full" /> */}
+            <div className="hidden w-full border border-neutral-400 lg:block">
+              <div className="aspect-[1/3] w-full bg-rose-200" aria-hidden />
+            </div>
           </div>
 
           {/* Right content column */}
@@ -166,6 +168,14 @@ export default function Lensemble({ data }: EnfantProps) {
                   </div>
                 </div>
               </div>
+            </section>
+
+            {/* Carousel galerie */}
+            <section className="border-t border-black pt-8">
+              <h3 className="mb-6 text-2xl font-semibold tracking-tight">
+                Galerie de l&apos;ensemble
+              </h3>
+              <EnsembleCarousel />
             </section>
           </div>
         </div>

@@ -3,6 +3,10 @@ export interface Musicien {
   prénom: string;
   instrument: string;
   bio: string[];
+  portrait?: {
+    src: string;
+    alt: string;
+  };
 }
 
 export interface Credit {
