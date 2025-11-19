@@ -9,7 +9,7 @@ type EnfantProps = {
   data: Musicien[];
 };
 
-export default function Lensemble({ data }: EnfantProps) {
+export default function Lensemble({ data: _data }: EnfantProps) {
   const [openSections, setOpenSections] = useState({
     presentation: true,
     ensemble: true,

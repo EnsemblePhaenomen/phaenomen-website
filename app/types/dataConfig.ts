@@ -2,7 +2,7 @@ export interface Musicien {
   nom: string;
   prénom: string;
   instrument: string;
-  bio: string[];
+  bio: string;
   portrait?: {
     src: string;
     alt: string;
