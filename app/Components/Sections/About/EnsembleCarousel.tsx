@@ -1,8 +1,8 @@
 "use client";
 
+import { useRef, useState } from "react";
 import data from "@/app/data";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
 
 type CarouselPhoto = {
   name: string;
@@ -17,144 +17,174 @@ const musicianPhotos: CarouselPhoto[] = data.musiciens
     src: musicien.portrait!.src,
     alt: musicien.portrait!.alt,
   }));
-  console.log(musicianPhotos)
 
-export default function EnsembleCarousel() {
-  const [startIndex, setStartIndex] = useState(0);
-  const [slidesPerView, setSlidesPerView] = useState(1);
-  const [selectedArtist, setSelectedArtist] = useState<CarouselPhoto | null>(
-    null
-  );
-
-  useEffect(() => {
-    const updateSlidesPerView = () => {
-      const width = window.innerWidth;
-      if (width >= 1536) {
-        setSlidesPerView(5);
-      } else if (width >= 1280) {
-        setSlidesPerView(4);
-      } else if (width >= 1024) {
-        setSlidesPerView(3);
-      } else if (width >= 768) {
-        setSlidesPerView(2.5);
-      } else if (width >= 640) {
-        setSlidesPerView(2);
-      } else {
-        setSlidesPerView(1.5);
-      }
-    };
-
-    updateSlidesPerView();
-    window.addEventListener("resize", updateSlidesPerView);
-    return () => window.removeEventListener("resize", updateSlidesPerView);
-  }, []);
-
-  useEffect(() => {
-    setStartIndex((prev) =>
-      Math.min(prev, Math.max(musicianPhotos.length - slidesPerView, 0))
-    );
-  }, [slidesPerView]);
-
-  const totalImages = musicianPhotos.length;
-  const maxIndex = Math.max(totalImages - Math.ceil(slidesPerView), 0);
-  const canSlide = totalImages > slidesPerView;
-
-  const goToPrevious = () => {
-    if (!canSlide) return;
-    setStartIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
-  };
-
-  const goToNext = () => {
-    if (!canSlide) return;
-    setStartIndex((prev) => {
-      if (prev >= maxIndex) {
-        return 0;
-      }
-      return prev + 1;
-    });
-  };
-
-  const trackOffset = (100 / slidesPerView) * startIndex;
-  const cardBasis = `${100 / slidesPerView}%`;
+function isElementFullyInViewport(
+  viewport: HTMLElement,
+  element: HTMLElement,
+  tolerance = 1
+) {
+  const viewportRect = viewport.getBoundingClientRect();
+  const elementRect = element.getBoundingClientRect();
 
   return (
-    <div className="relative flex w-full flex-col gap-6">
-      <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-500 ease-out"
-          style={{
-            transform: `translateX(-${trackOffset}%)`,
-            width: `${(totalImages / slidesPerView) * 100}%`,
-          }}
-        >
-          {musicianPhotos.map((photo) => (
-            <div
-              key={photo.src}
-              className="px-1 sm:px-2"
-              style={{ flex: `0 0 ${cardBasis}` }}
-            >
-              <button
-                type="button"
-                className="group relative block aspect-[2/3] w-full overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 shadow-sm focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-neutral-900/30"
-                onClick={() => setSelectedArtist(photo)}
-                aria-label={`Voir la fiche de ${photo.name}`}
+    elementRect.left >= viewportRect.left - tolerance &&
+    elementRect.right <= viewportRect.right + tolerance
+  );
+}
+
+export default function EnsembleCarousel() {
+  if (!musicianPhotos.length) return null;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedPhoto, setSelectedPhoto] = useState<CarouselPhoto | null>(null);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
+
+  const goNext = () => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    const track = viewport.firstElementChild as HTMLElement | null;
+    if (!track) return;
+
+    const lastCard = track.lastElementChild as HTMLElement | null;
+    const firstCard = track.firstElementChild as HTMLElement | null;
+    if (!lastCard || !firstCard) return;
+
+    // 1️⃣ Si la dernière carte est ENTIEREMENT visible → retour au début
+    if (isElementFullyInViewport(viewport, lastCard)) {
+      viewport.scrollTo({ left: 0, behavior: "smooth" });
+      setCurrentIndex(0);
+      return;
+    }
+
+    // 2️⃣ Sinon, on avance d’une carte (largeur carte + gap)
+    const style = window.getComputedStyle(track);
+    const gap =
+      parseFloat(style.columnGap || "0") ||
+      parseFloat(style.gap || "0") ||
+      0;
+
+    const step = firstCard.offsetWidth + gap;
+    const target = viewport.scrollLeft + step;
+
+    viewport.scrollTo({ left: target, behavior: "smooth" });
+    setCurrentIndex((prev) => prev + 1);
+  };
+
+  const goPrev = () => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    const track = viewport.firstElementChild as HTMLElement | null;
+    if (!track) return;
+
+    const firstCard = track.firstElementChild as HTMLElement | null;
+    if (!firstCard) return;
+
+    const style = window.getComputedStyle(track);
+    const gap =
+      parseFloat(style.columnGap || "0") ||
+      parseFloat(style.gap || "0") ||
+      0;
+
+    const step = firstCard.offsetWidth + gap;
+    const target = viewport.scrollLeft - step;
+
+    // Si on dépasse le début → on saute à la fin
+    if (target < 0) {
+      const maxScroll = track.scrollWidth - viewport.clientWidth;
+      viewport.scrollTo({ left: maxScroll, behavior: "smooth" });
+      setCurrentIndex(musicianPhotos.length - 1);
+      return;
+    }
+
+    viewport.scrollTo({ left: target, behavior: "smooth" });
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
+  };
+
+  const closeModal = () => setSelectedPhoto(null);
+
+  return (
+    <>
+      <div className="relative w-full py-6">
+        {/* Viewport */}
+        <div ref={viewportRef} className="overflow-hidden">
+          {/* Track */}
+          <div className="flex w-max gap-4" aria-live="off">
+            {musicianPhotos.map((photo, index) => (
+              <figure
+                key={`${photo.src}-${index}`}
+                className="relative aspect-[2/3] w-40 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 shadow-sm sm:w-48 md:w-56 cursor-pointer"
+                onClick={() => setSelectedPhoto(photo)}
               >
                 <Image
                   src={photo.src}
                   alt={photo.alt}
                   fill
-                  sizes="(max-width: 640px) 220px, (max-width: 1024px) 260px, 300px"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, 224px"
+                  className="h-full w-full object-cover"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100" />
-                <p className="pointer-events-none absolute inset-x-0 bottom-2 px-2 text-left text-sm font-semibold tracking-tight text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent px-3 pb-3 pt-12 text-sm font-semibold tracking-tight text-white">
                   {photo.name}
-                </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+
+        {/* Controls */}
+        <button
+          type="button"
+          onClick={goPrev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 px-2 py-1 text-xs shadow hover:bg-white"
+          aria-label="Previous musician"
+        >
+          ◀
+        </button>
+
+        <button
+          type="button"
+          onClick={goNext}
+          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 px-2 py-1 text-xs shadow hover:bg-white"
+          aria-label="Next musician"
+        >
+          ▶
+        </button>
+      </div>
+
+      {/* Modal */}
+      {selectedPhoto && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+          role="dialog"
+          aria-modal="true"
+          onClick={closeModal} // clic sur le fond → close
+        >
+          <div
+            className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl"
+            onClick={(e) => e.stopPropagation()} // empêche la fermeture si on clique dans la modale
+          >
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="text-lg font-semibold tracking-tight">
+                {selectedPhoto.name}
+              </h2>
+              <button
+                type="button"
+                onClick={closeModal}
+                className="rounded-full px-2 py-1 text-sm text-neutral-600 hover:bg-neutral-100"
+                aria-label="Close"
+              >
+                ✕
               </button>
             </div>
-          ))}
-        </div>
-      </div>
 
-      <div className="flex flex-col gap-3 text-xs uppercase tracking-wide sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
-        <button
-          type="button"
-          onClick={goToPrevious}
-          disabled={!canSlide}
-          className="w-full rounded-full border border-neutral-400 px-4 py-3 font-semibold transition-colors hover:bg-neutral-900 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 sm:flex-1"
-          aria-label="Photos précédentes"
-        >
-          ← Précédent
-        </button>
-
-        <button
-          type="button"
-          onClick={goToNext}
-          disabled={!canSlide}
-          className="w-full rounded-full border border-neutral-400 px-4 py-3 font-semibold transition-colors hover:bg-neutral-900 hover:text-white disabled:cursor-not-allowed disabled:opacity-40 sm:flex-1"
-          aria-label="Photos suivantes"
-        >
-          Suivant →
-        </button>
-      </div>
-
-      {selectedArtist && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/70 p-4 sm:p-6">
-          <div className="relative w-full max-w-sm rounded-3xl bg-white p-6 text-center shadow-2xl sm:max-w-md sm:p-8">
-            <button
-              type="button"
-              className="absolute right-4 top-4 rounded-full border border-neutral-200 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-neutral-600 transition hover:bg-neutral-900 hover:text-white sm:px-4 sm:py-1.5 sm:text-sm"
-              onClick={() => setSelectedArtist(null)}
-              aria-label="Fermer la modale"
-            >
-              X
-            </button>
-            <h4 className="text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl">
-              {selectedArtist.name}
-            </h4>
+            {/* Contenu de la modale (pour l’instant : juste le nom) */}
+            <p className="text-sm text-neutral-700">
+              {selectedPhoto.name}
+            </p>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
