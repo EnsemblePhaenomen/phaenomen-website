@@ -10,6 +10,8 @@ type CarouselPhoto = {
   alt: string;
   bio?: string;
   instrument?: string;
+  modalSrc?: string;
+  modalAlt?: string;
 };
 
 const musicianPhotos: CarouselPhoto[] = data.musiciens
@@ -20,6 +22,8 @@ const musicianPhotos: CarouselPhoto[] = data.musiciens
     alt: musicien.portrait!.alt,
     instrument: musicien.instrument ?? "",
     bio: musicien.bio ?? "",
+    modalSrc: musicien.modal?.src,
+    modalAlt: musicien.modal?.alt,
   }));
 
 function isElementFullyInViewport(
@@ -172,52 +176,68 @@ export default function EnsembleCarousel() {
         >
           {/* Modale avec background-image */}
           <div
-            className="relative w-full max-w-md min-h-[50vh] overflow-hidden rounded-2xl p-6 text-white shadow-xl"
+            className="relative w-full max-w-4xl h-[70vh] overflow-hidden rounded-2xl text-white shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Background image */}
             <Image
-              src={selectedPhoto.src}
-              alt={selectedPhoto.alt}
+              src={selectedPhoto.modalSrc || selectedPhoto.src}
+              alt={selectedPhoto.modalAlt || selectedPhoto.alt}
               fill
               className="absolute inset-0 h-full w-full object-cover blur-md"
-              sizes="(max-width: 768px) 90vw, 50vw"
+              sizes="(max-width: 768px) 90vw, 80vw"
               priority
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/80" />
 
+            {/* Bouton fermer */}
+            <button
+              type="button"
+              onClick={closeModal}
+              className="absolute right-4 top-4 z-20 rounded-full px-3 py-1 text-sm text-neutral-200 hover:bg-white/10 hover:cursor-pointer"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+
             {/* Contenu */}
-            <div className="relative z-10">
-              <div className="mb-4 flex items-center justify-between">
-                <h2 className="text-lg font-semibold tracking-tight">
-                  {selectedPhoto.name}
-                </h2>
-                <button
-                  type="button"
-                  onClick={closeModal}
-                  className="rounded-full px-2 py-1 text-sm text-neutral-200 hover:bg-white/10 hover:cursor-pointer"
-                  aria-label="Close"
-                >
-                  ✕
-                </button>
+            <div className="relative z-10 flex h-full flex-col items-center justify-center gap-6 p-8 md:flex-row md:gap-8">
+              {/* Photo du musicien */}
+              <div className="relative aspect-[2/3] w-48 flex-shrink-0 overflow-hidden rounded-xl border-2 border-white/20 shadow-lg md:w-64">
+                <Image
+                  src={selectedPhoto.src}
+                  alt={selectedPhoto.alt}
+                  fill
+                  className="h-full w-full object-cover"
+                  sizes="(max-width: 768px) 192px, 256px"
+                />
               </div>
 
-              {/* Instrument */}
-              {selectedPhoto.instrument && (
-                <p className="mb-3 text-sm text-neutral-200 italic">
-                  {selectedPhoto.instrument}
-                </p>
-              )}
+              {/* Texte */}
+              <div className="flex flex-1 flex-col gap-4 overflow-y-auto">
+                {/* Titre */}
+                <div>
+                  <h2 className="text-2xl font-semibold tracking-tight">
+                    {selectedPhoto.name}
+                  </h2>
+                  {selectedPhoto.instrument && (
+                    <p className="mt-1 text-base text-neutral-200 italic">
+                      {selectedPhoto.instrument}
+                    </p>
+                  )}
+                </div>
 
-              {/* Bio */}
-              {selectedPhoto.bio ? (
-                <p className="text-sm leading-relaxed whitespace-pre-line text-neutral-100">
-                  {selectedPhoto.bio}
-                </p>
-              ) : (
-                <p className="text-sm text-neutral-300 italic">
-                  Biographie à venir.
-                </p>
-              )}
+                {/* Bio */}
+                {selectedPhoto.bio ? (
+                  <p className="text-sm leading-relaxed whitespace-pre-line text-neutral-100">
+                    {selectedPhoto.bio}
+                  </p>
+                ) : (
+                  <p className="text-sm text-neutral-300 italic">
+                    Biographie à venir.
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -11,9 +11,9 @@ type EnfantProps = {
 
 export default function Lensemble({ data: _data }: EnfantProps) {
   const [openSections, setOpenSections] = useState({
-    presentation: true,
-    ensemble: true,
-    interpretes: true,
+    presentation: false,
+    ensemble: false,
+    interpretes: false,
   });
 
   const toggleSection = (section: keyof typeof openSections) => {
@@ -23,16 +23,16 @@ export default function Lensemble({ data: _data }: EnfantProps) {
     }));
   };
   return (
-    <main className="w-full bg-red-200 text-black">
+    <main className="w-full text-black">
       <section className=" mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Top title */}
-        <div className="w-full bg-orange-200 flex flex-col">
+        <div className="w-full flex flex-col">
           <h2 className="section-title">L&apos;ensemble</h2>
           <div className="mt-4 h-px w-full bg-black" />
         </div>
 
         {/* Main layout */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 bg-blue-200 pt-4 md:pt-16">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12  pt-4 md:pt-16">
           {/* Left image column */}
           <div className="md:w-1/4">
             <div className="hidden w-full border border-neutral-400 lg:block">
@@ -45,7 +45,7 @@ export default function Lensemble({ data: _data }: EnfantProps) {
             {/* Présentation */}
             <section className="pt-4">
               <div
-                className="flex items-center gap-2 mb-3 bg-orange-200 group cursor-pointer"
+                className="flex items-center gap-2 mb-3 group cursor-pointer"
                 onClick={() => toggleSection("presentation")}
               >
                 <div
@@ -80,7 +80,7 @@ export default function Lensemble({ data: _data }: EnfantProps) {
             {/* Notre ensemble */}
             <section className="border-t border-black pt-4">
               <div
-                className="flex items-center gap-2 mb-3 bg-blue-200 group cursor-pointer"
+                className="flex items-center gap-2 mb-3 group cursor-pointer"
                 onClick={() => toggleSection("ensemble")}
               >
                 <div
@@ -128,7 +128,7 @@ export default function Lensemble({ data: _data }: EnfantProps) {
             {/* Nos interprètes */}
             <section className="border-t border-black pt-4">
               <div
-                className="flex items-center gap-2 mb-3 bg-orange-200 group cursor-pointer"
+                className="flex items-center gap-2 mb-3 group cursor-pointer"
                 onClick={() => toggleSection("interpretes")}
               >
                 <div

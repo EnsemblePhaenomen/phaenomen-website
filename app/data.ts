@@ -33,7 +33,7 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       alt: "Portrait du ténor Alberto Palacio",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Palacio_full.jpg",
+      src :"/ensembleGallery/photosFullModal/Palacio_full.jpeg",
       alt: "Portrait background Alberto Palacio"
     }
   },
@@ -166,7 +166,7 @@ Maëlys travaille avec des ensembles internationaux tels que la Capella Nacional
       alt: "Portrait du violoniste Christophe Mourault",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Mourault_full.jpg",
+      src :"/ensembleGallery/photosFullModal/Mourault_full.png",
       alt: "Portrait background Christophe Mourault"
     }
   },
