@@ -10,6 +10,10 @@ const musiciens: Musicien[] = [
       src: "/ensembleGallery/photos des musiciens/Morger Lara.jpg",
       alt: "Portrait de la mezzo-soprano Lara Morger",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Morger_full.jpg",
+      alt: "Portrait background Lara Morger"
+    }
   },
   {
     nom: "Palacios",
@@ -28,6 +32,10 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       src: "/ensembleGallery/photos des musiciens/Alberto Palacio.jpg",
       alt: "Portrait du ténor Alberto Palacio",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Palacio_full.jpg",
+      alt: "Portrait background Alberto Palacio"
+    }
   },
   {
     nom: "Rignol",
@@ -38,6 +46,10 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       src: "/ensembleGallery/photos des musiciens/Gabriel Rignol.jpg",
       alt: "Portrait du théorbiste Gabriel Rignol",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Rignol_full.jpg",
+      alt: "Portrait background Gabriel Rignol"
+    }
   },
 
   {
@@ -53,6 +65,10 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       src: "/ensembleGallery/photos des musiciens/Thierry Cartier.jpg",
       alt: "Portrait du baryton Thierry Cartier",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Cartier_full.jpg",
+      alt: "Portrait background Thierry Cartier"
+    }
   },
 
   {
@@ -65,6 +81,11 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       src: "/ensembleGallery/photos des musiciens/Lisa Cardonnet.jpg",
       alt: "Portrait de l'altiste Lisa Cardonnet",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Cardonnet_full.jpg",
+      alt: "Portrait background Lisa Cardonnet"
+    }
+    
   },
   {
     nom: "Bouilloux",
@@ -76,6 +97,10 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       src: "/ensembleGallery/photos des musiciens/Veronique Bouilloux.jpg",
       alt: "Portrait de la violoniste Véronique Bouilloux",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Bouilloux_full.jpg",
+      alt: "Portrait background Véronique Bouilloux"
+    }
   },
   {
     nom: "Erzberger",
@@ -89,6 +114,10 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       src: "/ensembleGallery/photos des musiciens/David Erzberger.jpg",
       alt: "Portrait du claveciniste David Erzberger",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Erzberger_full.jpg",
+      alt: "Portrait background David Erzberger"
+    }
   },
   {
     nom: "Papasergio",
@@ -103,6 +132,10 @@ Cet enseignement est enrichi de rencontres musicales et humaines qui la poussent
       src: "/ensembleGallery/photos des musiciens/Manon Papasergio.jpg",
       alt: "Portrait de la gambiste Manon Papasergio",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Papasergio_full.jpg",
+      alt: "Portrait background Manon Papasergio"
+    }
   },
   {
     nom: "Robinne",
@@ -116,6 +149,10 @@ Maëlys travaille avec des ensembles internationaux tels que la Capella Nacional
       src: "/ensembleGallery/photos des musiciens/Maëlys Robinne.jpg",
       alt: "Portrait de la chanteuse Maëlys Robinne",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Robinne_full.jpg",
+      alt: "Portrait background Maëlys Robinne"
+    }
   },
   {
     nom: "Mourault",
@@ -124,11 +161,14 @@ Maëlys travaille avec des ensembles internationaux tels que la Capella Nacional
     bio: `Violoniste, Christophe Mourault se forme auprès de François-Marie Drieux, Marie Rouquié (pôle Aliénor, Poitiers), Enrico Gatti (Conservatorio di Bologna), et Odile Édouard (CNSMD de Lyon). Particulièrement intéressé par les premiers répertoires violonistiques, il rédige un mémoire de recherche sur la diminution et l’ornementation chez les violonistes, au début du 17ème siècle, en Italie.
         Il se produit régulièrement en concert au sein de diverses formations telles que le quatuor à cordes I Folletti, le trio contr’Arco, et les ensembles Correspondances, Il Caravaggio, Les Surprises, Acanthus baroque, Saint Honoré et Aurea Antiqua.
 `,
-
     portrait: {
       src: "/ensembleGallery/photos des musiciens/Christophe Mourault.jpg",
       alt: "Portrait du violoniste Christophe Mourault",
     },
+    modal: {
+      src :"/ensembleGallery/photosFullModal/Mourault_full.jpg",
+      alt: "Portrait background Christophe Mourault"
+    }
   },
   {
     nom: "Chapolard",

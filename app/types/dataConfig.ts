@@ -7,6 +7,10 @@ export interface Musicien {
     src: string;
     alt: string;
   };
+  modal?: {
+    src: string;
+    alt: string;
+  }
 }
 
 export interface Credit {
