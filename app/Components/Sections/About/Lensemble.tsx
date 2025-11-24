@@ -35,7 +35,7 @@ export default function Lensemble({ data: _data }: EnfantProps) {
         <div className="flex flex-col md:flex-row gap-8 md:gap-12  pt-4 md:pt-16">
           {/* Left image column */}
           <div className="md:w-1/4">
-            <div className="hidden w-full border border-neutral-400 lg:block">
+            <div className="hidden w-[50%] border border-neutral-400 lg:block">
               <div className="aspect-[1/3] w-full bg-rose-200" aria-hidden />
             </div>
           </div>
