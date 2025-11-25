@@ -146,7 +146,7 @@ Maëlys travaille avec des ensembles internationaux tels que la Capella Nacional
 `,
 
     portrait: {
-      src: "/ensembleGallery/photos des musiciens/Maëlys Robinne.jpg",
+      src: "/ensembleGallery/photosFullModal/Robinne_full.jpg",
       alt: "Portrait de la chanteuse Maëlys Robinne",
     },
     modal: {
@@ -162,7 +162,7 @@ Maëlys travaille avec des ensembles internationaux tels que la Capella Nacional
         Il se produit régulièrement en concert au sein de diverses formations telles que le quatuor à cordes I Folletti, le trio contr’Arco, et les ensembles Correspondances, Il Caravaggio, Les Surprises, Acanthus baroque, Saint Honoré et Aurea Antiqua.
 `,
     portrait: {
-      src: "/ensembleGallery/photos des musiciens/Christophe Mourault.jpg",
+      src: "/ensembleGallery/photos des musiciens/Christophe Mourault.png",
       alt: "Portrait du violoniste Christophe Mourault",
     },
     modal: {
