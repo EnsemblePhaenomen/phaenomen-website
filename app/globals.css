@@ -87,6 +87,17 @@ body {
     Arial;
 }
 
+/* Couleur de sélection du texte */
+::selection {
+  background-color: #E42B54;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #E42B54;
+  color: #ffffff;
+}
+
 .section-title {
   color: black;
   font-size: var(--hero-title-size);

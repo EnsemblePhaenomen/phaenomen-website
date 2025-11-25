@@ -1,28 +1,26 @@
 import Lensemble from "./Lensemble";
 import ProjetStoltzel from "./ProjetStoltzel";
 import data from "@/app/data";
-import Image from "next/image";
+import AnimatedEntete from "./AnimatedEntete";
 
 export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col items-center justify-center"
+      className="min-h-screen flex flex-col items-center justify-center w-full overflow-hidden"
     >
-      <Lensemble data={data.musiciens} />
-      
-      {/* Séparateur image */}
-      {/* <div className="w-full relative h-52">
-        <Image
-          src="/entete.jpg"
-          alt="Séparateur"
-          fill
-          className="object-cover "
-          sizes="200vw"
-        />
-      </div> */}
+      <div className="flex w-full max-w-full">
+        {/* Left image column - partagée entre les deux sections */}
+        <div className="hidden md:block md:w-40 lg:w-52 flex-shrink-0 border-r border-black/10">
+          <AnimatedEntete className="w-full h-auto sticky top-0" />
+        </div>
 
-      <ProjetStoltzel />
+        {/* Right content column */}
+        <div className="flex-1 min-w-0">
+          <Lensemble data={data.musiciens} />
+          <ProjetStoltzel />
+        </div>
+      </div>
     </section>
   );
 }

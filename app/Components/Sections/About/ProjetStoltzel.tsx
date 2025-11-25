@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
-import Entete from "./Entete";
 export default function ProjetStoltzel() {
   const [openSections, setOpenSections] = useState({
     sonore: false,
@@ -18,8 +17,8 @@ export default function ProjetStoltzel() {
   };
 
   return (
-    <main className="w-full text-black">
-      <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main className="w-full max-w-full text-black">
+      <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         {/* Top title */}
         <div className="w-full flex flex-col">
           <h2 className="section-title">Projet Stöltzel</h2>
@@ -27,16 +26,9 @@ export default function ProjetStoltzel() {
         </div>
 
         {/* Main layout */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12 pt-4 md:pt-16">
-          {/* Left image column */}
-          <div className="hidden md:block md:w-40 lg:w-52 flex-shrink-0 border-r border-black/10">
-            <div className="h-screen w-full ">
-              <Entete className="w-full h-full" />
-            </div>
-          </div>
-
-          {/* Right content column */}
-          <div className="md:w-3/4 flex flex-col gap-8 text-sm leading-relaxed">
+        <div className="flex flex-col gap-8 pt-4 md:pt-16">
+          {/* Content column */}
+          <div className="flex flex-col gap-8 text-sm leading-relaxed">
             {/* Projet sonore */}
             <section className="pt-4">
               <div
