@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
-
+import Entete from "./Entete";
 export default function ProjetStoltzel() {
   const [openSections, setOpenSections] = useState({
     sonore: false,
@@ -29,11 +29,11 @@ export default function ProjetStoltzel() {
         {/* Main layout */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 pt-4 md:pt-16">
           {/* Left image column */}
-          {/* <div className="md:w-1/4">
-            <div className="hidden w-full border border-neutral-400 lg:block">
-              <div className="aspect-[1/3] w-full bg-rose-200" aria-hidden />
+          <div className="hidden md:block md:w-40 lg:w-52 flex-shrink-0 border-r border-black/10">
+            <div className="h-screen w-full ">
+              <Entete className="w-full h-full" />
             </div>
-          </div> */}
+          </div>
 
           {/* Right content column */}
           <div className="md:w-3/4 flex flex-col gap-8 text-sm leading-relaxed">

@@ -12,7 +12,7 @@ export default function AboutSection() {
       <Lensemble data={data.musiciens} />
       
       {/* Séparateur image */}
-      <div className="w-full relative h-52">
+      {/* <div className="w-full relative h-52">
         <Image
           src="/entete.jpg"
           alt="Séparateur"
@@ -20,7 +20,7 @@ export default function AboutSection() {
           className="object-cover "
           sizes="200vw"
         />
-      </div>
+      </div> */}
 
       <ProjetStoltzel />
     </section>

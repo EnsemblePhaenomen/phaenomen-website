@@ -4,6 +4,7 @@ import { useState } from "react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 import EnsembleCarousel from "./EnsembleCarousel";
 import type { Musicien } from "@/app/types/dataConfig";
+import Entete from "./Entete";
 
 type EnfantProps = {
   data: Musicien[];
@@ -32,11 +33,11 @@ export default function Lensemble({ data: _data }: EnfantProps) {
         </div>
 
         {/* Main layout */}
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12  pt-4 md:pt-16">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 pt-4 md:pt-16">
           {/* Left image column */}
-          <div className="md:w-1/4">
-            <div className="hidden w-[50%] border border-neutral-400 lg:block">
-              <div className="aspect-[1/3] w-full bg-rose-200" aria-hidden />
+          <div className="hidden md:block md:w-40 lg:w-52 flex-shrink-0 border-r border-black/10">
+            <div className="h-screen w-full ">
+              <Entete className="w-full h-full" />
             </div>
           </div>
 
@@ -49,9 +50,8 @@ export default function Lensemble({ data: _data }: EnfantProps) {
                 onClick={() => toggleSection("presentation")}
               >
                 <div
-                  className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${
-                    openSections.presentation ? "rotate-45" : "rotate-0"
-                  }`}
+                  className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${openSections.presentation ? "rotate-45" : "rotate-0"
+                    }`}
                 >
                   <ArrowIcon className="w-10 h-auto md:w-12" />
                 </div>
@@ -60,11 +60,10 @@ export default function Lensemble({ data: _data }: EnfantProps) {
                 </h2>
               </div>
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  openSections.presentation
-                    ? "max-h-[500px] opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.presentation
+                  ? "max-h-[500px] opacity-100"
+                  : "max-h-0 opacity-0"
+                  }`}
               >
                 <p className="max-w-full bg-violet-400">
                   L&apos;ensemble Phænomen se consacre à la redécouverte de la
@@ -84,9 +83,8 @@ export default function Lensemble({ data: _data }: EnfantProps) {
                 onClick={() => toggleSection("ensemble")}
               >
                 <div
-                  className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${
-                    openSections.ensemble ? "rotate-45" : "rotate-0"
-                  }`}
+                  className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${openSections.ensemble ? "rotate-45" : "rotate-0"
+                    }`}
                 >
                   <ArrowIcon className="w-10 h-auto md:w-12" />
                 </div>
@@ -95,11 +93,10 @@ export default function Lensemble({ data: _data }: EnfantProps) {
                 </h2>
               </div>
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  openSections.ensemble
-                    ? "max-h-[1000px] opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.ensemble
+                  ? "max-h-[1000px] opacity-100"
+                  : "max-h-0 opacity-0"
+                  }`}
               >
                 <div className="max-w-full bg-green-200">
                   <p>
@@ -132,9 +129,8 @@ export default function Lensemble({ data: _data }: EnfantProps) {
                 onClick={() => toggleSection("interpretes")}
               >
                 <div
-                  className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${
-                    openSections.interpretes ? "rotate-45" : "rotate-0"
-                  }`}
+                  className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${openSections.interpretes ? "rotate-45" : "rotate-0"
+                    }`}
                 >
                   <ArrowIcon className="w-10 h-auto md:w-12" />
                 </div>
@@ -144,11 +140,10 @@ export default function Lensemble({ data: _data }: EnfantProps) {
               </div>
 
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  openSections.interpretes
-                    ? "max-h-[500px] opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.interpretes
+                  ? "max-h-[500px] opacity-100"
+                  : "max-h-0 opacity-0"
+                  }`}
               >
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-6 text-xs sm:text-sm">
                   <div className="space-y-1">
@@ -172,9 +167,7 @@ export default function Lensemble({ data: _data }: EnfantProps) {
 
             {/* Carousel galerie */}
             <section className="border-t border-black pt-8">
-              <h3 className="mb-6 text-2xl font-semibold tracking-tight">
-                Galerie de l&apos;ensemble
-              </h3>
+
               <EnsembleCarousel />
             </section>
           </div>
