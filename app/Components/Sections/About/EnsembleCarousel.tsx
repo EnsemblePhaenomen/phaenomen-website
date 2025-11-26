@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import data from "@/app/data";
 import Image from "next/image";
+import CarouselControls from "./CarouselControls";
 
 type CarouselPhoto = {
   name: string;
@@ -110,11 +111,39 @@ export default function EnsembleCarousel() {
 
   const closeModal = () => setSelectedPhoto(null);
 
+  const goToSlide = (index: number) => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+
+    const track = viewport.firstElementChild as HTMLElement | null;
+    if (!track) return;
+
+    const firstCard = track.firstElementChild as HTMLElement | null;
+    if (!firstCard) return;
+
+    const style = window.getComputedStyle(track);
+    const gap =
+      parseFloat(style.columnGap || "0") || parseFloat(style.gap || "0") || 0;
+
+    const step = firstCard.offsetWidth + gap;
+    const target = step * index;
+
+    viewport.scrollTo({ left: target, behavior: "smooth" });
+    setCurrentIndex(index);
+  };
+
   return (
     <>
-      <div className="relative w-full py-6">
-        {/* Viewport */}
-        <div ref={viewportRef} className="overflow-hidden">
+      <div className="w-full py-6">
+        {/* Viewport - Enable native scroll on mobile for swipe */}
+        <div 
+          ref={viewportRef} 
+          className="overflow-x-auto overflow-y-hidden md:overflow-hidden scrollbar-hide"
+          style={{
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+          }}
+        >
           {/* Track */}
           <div
             className="flex w-max gap-4"
@@ -127,6 +156,7 @@ export default function EnsembleCarousel() {
               <figure
                 key={`${photo.src}-${index}`}
                 className="group relative aspect-[2/3] w-40 cursor-pointer overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 shadow-sm sm:w-48 md:w-56"
+                style={{ scrollSnapAlign: 'start' }}
                 onClick={() => setSelectedPhoto(photo)}
               >
                 <Image
@@ -146,24 +176,15 @@ export default function EnsembleCarousel() {
           </div>
         </div>
 
-        {/* Controls */}
-        <button
-          type="button"
-          onClick={goPrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 px-2 py-1 text-xs shadow hover:bg-white hover:cursor-pointer"
-          aria-label="Previous musician"
-        >
-          ◀
-        </button>
-
-        <button
-          type="button"
-          onClick={goNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 px-2 py-1 text-xs shadow hover:bg-white hover:cursor-pointer"
-          aria-label="Next musician"
-        >
-          ▶
-        </button>
+        {/* Controls Component - Visible on hover (desktop only) */}
+        <CarouselControls
+          totalSlides={musicianPhotos.length}
+          currentIndex={currentIndex}
+          showDots={false}
+          onPrev={goPrev}
+          onNext={goNext}
+          onGoToSlide={goToSlide}
+        />
       </div>
       {selectedPhoto && console.log("Selected photo bio:", selectedPhoto.src)}
       {/* Modal */}
