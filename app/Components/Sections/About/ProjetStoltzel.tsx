@@ -18,7 +18,7 @@ export default function ProjetStoltzel() {
   };
 
   return (
-    <main className="w-full max-w-full text-black">
+    <main id="projet-stoltzel" className="w-full max-w-full text-black">
       <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         {/* Top title */}
         <div className="w-full flex flex-col">

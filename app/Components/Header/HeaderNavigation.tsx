@@ -1,8 +1,14 @@
 import HeaderNavLink from "./HeaderNavLink";
 
+interface SubMenuItem {
+  href: string;
+  label: string;
+}
+
 interface NavItem {
   href: string;
   label: string;
+  subMenu?: SubMenuItem[];
 }
 
 interface HeaderNavigationProps {
@@ -18,7 +24,8 @@ export default function HeaderNavigation({ items, isDark }: HeaderNavigationProp
           key={item.href} 
           href={item.href}
           label={item.label}
-          isDark={isDark} 
+          isDark={isDark}
+          subMenu={item.subMenu}
         />
       ))}
     </div>

@@ -1,7 +1,13 @@
 // Types
+export interface SubMenuItem {
+  href: string;
+  label: string;
+}
+
 export interface NavItem {
   href: string;
   label: string;
+  subMenu?: SubMenuItem[];
 }
 
 export interface LogoConfig {
@@ -13,7 +19,14 @@ export interface LogoConfig {
 
 // Constants
 export const NAVIGATION_ITEMS: NavItem[] = [
-  { href: "#about", label: "À propos" },
+  { 
+    href: "#about", 
+    label: "À propos",
+    subMenu: [
+      { href: "#about", label: "L'ensemble" },
+      { href: "#projet-stoltzel", label: "Projet Stöltzel" },
+    ]
+  },
   { href: "#contact", label: "Contact" },
   { href: "#agenda", label: "Agenda" },
   { href: "#media", label: "Médias" },
