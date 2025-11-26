@@ -1,8 +1,9 @@
 "use client";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
-
+import Image from "next/image";
 import { useState } from "react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
+
 export default function ProjetStoltzel() {
   const [openSections, setOpenSections] = useState({
     sonore: false,
@@ -18,8 +19,20 @@ export default function ProjetStoltzel() {
   };
 
   return (
-    <main id="projet-stoltzel" className="w-full max-w-full text-black">
-      <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
+    <main id="projet-stoltzel" className="relative w-full max-w-full text-black overflow-hidden">
+      {/* Image du hibou en arrière-plan - visible uniquement sur écrans > md */}
+      <div className="hidden md:block absolute bottom-0 right-0 w-64 lg:w-80 xl:w-96 h-auto pointer-events-none z-0">
+        <Image
+          src="/hibou - Buffon - detoure.png"
+          alt="Hibou décoratif"
+          width={400}
+          height={400}
+          className="object-contain opacity-20"
+          priority={false}
+        />
+      </div>
+
+      <section className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         {/* Top title */}
         <div className="w-full flex flex-col">
           <h2 className="section-title pb-6">Projet Stöltzel</h2>
