@@ -198,7 +198,7 @@ Appréciée pour ses qualités de continuiste, Manon est appelée en tant que vi
       alt: "Portrait du violoniste Christophe Mourault",
     },
     modal: {
-      src: "/ensembleGallery/photosFullModal/Mourault_full.png",
+      src: "/ensembleGallery/photos des musiciens/Christophe Mourault.png",
       alt: "Portrait background Christophe Mourault"
     }
   },

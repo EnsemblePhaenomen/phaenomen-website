@@ -1,7 +1,8 @@
 "use client";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { motion, useInView } from "motion/react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 
 export default function ProjetStoltzel() {
@@ -10,6 +11,9 @@ export default function ProjetStoltzel() {
     musicologique: false,
     programme: false,
   });
+
+  const hibouRef = useRef(null);
+  const isInView = useInView(hibouRef, { once: true, amount: 0.3 });
 
   const toggleSection = (section: keyof typeof openSections) => {
     setOpenSections((prev) => ({
@@ -21,16 +25,22 @@ export default function ProjetStoltzel() {
   return (
     <main id="projet-stoltzel" className="relative w-full max-w-full text-black overflow-hidden">
       {/* Image du hibou en arrière-plan - visible uniquement sur écrans > md */}
-      <div className="hidden md:block absolute  bottom-10 right-0 w-64 lg:w-80 xl:w-4xl h-auto pointer-events-none z-0">
+      <motion.div
+        ref={hibouRef}
+        initial={{ y: 100, opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 0.2 } : { y: 100, opacity: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+        className="hidden md:block absolute bottom-10 right-0 w-64 lg:w-80 xl:w-4xl h-auto pointer-events-none z-0"
+      >
         <Image
           src="/hibou_bg.png"
           alt="Hibou décoratif"
           width={800}
           height={800}
-          className="object-contain opacity-20"
+          className="object-contain"
           priority={false}
         />
-      </div>
+      </motion.div>
 
       <section className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         {/* Top title */}

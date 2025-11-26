@@ -207,7 +207,7 @@ export default function EnsembleCarousel() {
               src={selectedPhoto.modalSrc || selectedPhoto.src}
               alt={selectedPhoto.modalAlt || selectedPhoto.alt}
               fill
-              className="absolute inset-0 h-full w-full object-cover object-center blur-md"
+              className="absolute inset-0 h-full w-full object-cover object-top blur-md"
               sizes="(max-width: 768px) 90vw, 80vw"
               priority
             />

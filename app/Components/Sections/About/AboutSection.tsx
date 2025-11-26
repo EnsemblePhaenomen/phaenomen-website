@@ -22,8 +22,8 @@ export default function AboutSection() {
         {/* Right content column */}
         <div className="flex-1 min-w-0">
           <Lensemble data={data.musiciens} />
-          <ProjetStoltzel />
           <LeChef data={data.chef}/>
+          <ProjetStoltzel />
         </div>
       </div>
     </section>
