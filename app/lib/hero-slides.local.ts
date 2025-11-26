@@ -21,7 +21,7 @@ export const heroSlides: HeroSlide[] = [
     },
     cta: {
       label: "Plus d'informations",
-      href: "/about",
+      href: "/#about",
       targetId: "#about",
       ariaLabel: "Plus d'informations - Naviguer vers la section À propos",
     },

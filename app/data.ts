@@ -1,4 +1,4 @@
-import type { Musicien, Credit } from "./types/dataConfig";
+import type { Musicien, Credit, Chef } from "./types/dataConfig";
 
 const musiciens: Musicien[] = [
   {
@@ -17,7 +17,7 @@ const musiciens: Musicien[] = [
       alt: "Portrait de la mezzo-soprano Lara Morger",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Morger_full.jpg",
+      src: "/ensembleGallery/photosFullModal/Morger_full.jpg",
       alt: "Portrait background Lara Morger"
     }
   },
@@ -39,7 +39,7 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       alt: "Portrait du ténor Alberto Palacio",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Palacio_full.jpeg",
+      src: "/ensembleGallery/photosFullModal/Palacio_full.jpeg",
       alt: "Portrait background Alberto Palacio"
     }
   },
@@ -57,7 +57,7 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       alt: "Portrait du théorbiste Gabriel Rignol",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Rignol_full.jpg",
+      src: "/ensembleGallery/photosFullModal/Rignol_full.jpg",
       alt: "Portrait background Gabriel Rignol"
     }
   },
@@ -76,7 +76,7 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       alt: "Portrait du baryton Thierry Cartier",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Cartier_full.jpg",
+      src: "/ensembleGallery/photosFullModal/Cartier_full.jpg",
       alt: "Portrait background Thierry Cartier"
     }
   },
@@ -98,10 +98,10 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       alt: "Portrait de l'altiste Lisa Cardonnet",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Cardonnet_full.jpg",
+      src: "/ensembleGallery/photosFullModal/Cardonnet_full.jpg",
       alt: "Portrait background Lisa Cardonnet"
     }
-    
+
   },
   {
     nom: "Bouilloux",
@@ -118,7 +118,7 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       alt: "Portrait de la violoniste Véronique Bouilloux",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Bouilloux_full.jpg",
+      src: "/ensembleGallery/photosFullModal/Bouilloux_full.jpg",
       alt: "Portrait background Véronique Bouilloux"
     }
   },
@@ -138,7 +138,7 @@ Son expérience chorale est vaste et diversifiée. Ces dernières années, il a 
       alt: "Portrait du claveciniste David Erzberger",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Erzberger_full.jpg",
+      src: "/ensembleGallery/photosFullModal/Erzberger_full.jpg",
       alt: "Portrait background David Erzberger"
     }
   },
@@ -159,7 +159,7 @@ Appréciée pour ses qualités de continuiste, Manon est appelée en tant que vi
       alt: "Portrait de la gambiste Manon Papasergio",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Papasergio_full.jpg",
+      src: "/ensembleGallery/photosFullModal/Papasergio_full.jpg",
       alt: "Portrait background Manon Papasergio"
     }
   },
@@ -179,7 +179,7 @@ Appréciée pour ses qualités de continuiste, Manon est appelée en tant que vi
       alt: "Portrait de la chanteuse Maëlys Robinne",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Robinne_full.jpg",
+      src: "/ensembleGallery/photosFullModal/Robinne_full.jpg",
       alt: "Portrait background Maëlys Robinne"
     }
   },
@@ -198,17 +198,25 @@ Appréciée pour ses qualités de continuiste, Manon est appelée en tant que vi
       alt: "Portrait du violoniste Christophe Mourault",
     },
     modal: {
-      src :"/ensembleGallery/photosFullModal/Mourault_full.png",
+      src: "/ensembleGallery/photosFullModal/Mourault_full.png",
       alt: "Portrait background Christophe Mourault"
     }
   },
-  {
-    nom: "Chapolard",
-    prénom: "Noé",
-    instrument: "Chef d'orchestre",
-    bio: "",
-  },
 ];
+
+const chef: Chef = {
+  nom: "Chapolard",
+  prénom: "Noé",
+  role: "Chef d'orchestre",
+  portrait: {
+    src: "/ensembleGallery/photos des musiciens/noe_portrait.png",
+    alt: "Photo portrait de Noé Chapolard",
+  },
+  modal: {
+    src: "/ensembleGallery/photosFullModal/noe_background.png",
+    alt: "Noé Chapolard et l'ensemble Phaenomen",
+  }
+}
 
 const crédit: Credit[] = [
   {
@@ -263,5 +271,5 @@ const crédit: Credit[] = [
   },
 ];
 
-const data = { musiciens, crédit };
+const data = { musiciens, crédit, chef };
 export default data;

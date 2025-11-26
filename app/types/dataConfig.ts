@@ -17,4 +17,19 @@ export interface Credit {
   nom: string;
   prénom: string;
   role: string;
+
+}
+
+export interface Chef {
+  nom: string;
+  prénom: string;
+  role: string;
+  portrait?: {
+    src: string;
+    alt: string;
+  }
+  modal?: {
+    src: string;
+    alt: string;
+  }
 }
