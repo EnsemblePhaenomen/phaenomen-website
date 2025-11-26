@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { HeroSlide, HeroConfig } from "@/app/types/heroConfig";
 import Slide from "./Slide";
-import Controls from "./Controls";
+import CarouselControls from "../../(ui)/CarouselControls";
 
 type HeroCarouselIslandProps = {
   slides: HeroSlide[];
@@ -164,13 +164,15 @@ export default function HeroCarouselIsland({
 
       {/* Controls */}
       {config.showControls && (
-        <Controls
-          slides={slides}
+        <CarouselControls
+          totalSlides={slides.length}
           currentIndex={currentIndex}
           showDots={config.showDots}
           onPrev={goToPrev}
           onNext={goToNext}
           onGoToSlide={goToSlide}
+          variant="overlay"
+          theme="dark"
         />
       )}
     </section>

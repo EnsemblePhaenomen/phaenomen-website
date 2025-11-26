@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import data from "@/app/data";
 import Image from "next/image";
-import CarouselControls from "./CarouselControls";
+import CarouselControls from "../../(ui)/CarouselControls";
 
 type CarouselPhoto = {
   name: string;
