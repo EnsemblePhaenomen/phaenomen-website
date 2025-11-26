@@ -58,7 +58,7 @@ export default function HeaderNavLink({ href, label, isDark, subMenu }: HeaderNa
       <Link
         href={href}
         onClick={(e) => handleClick(e, href)}
-        className={`hover:underline transition-all duration-300 cursor-pointer flex items-center gap-1 ${
+        className={`hover:underline transition-all duration-300 cursor-pointer flex items-center gap-1 whitespace-nowrap ${
           isDark 
             ? 'text-black hover:text-gray-600' 
             : 'text-white hover:text-gray-200'
@@ -67,7 +67,7 @@ export default function HeaderNavLink({ href, label, isDark, subMenu }: HeaderNa
       >
         {label}
         <svg 
-          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"

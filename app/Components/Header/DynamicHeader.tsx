@@ -4,6 +4,7 @@ import useScrollPosition from "../../hooks/useScrollPosition";
 import HeaderBackground from "./HeaderBackground";
 import HeaderLogo from "./HeaderLogo";
 import HeaderNavigation from "./HeaderNavigation";
+import BurgerMenu from "./BurgerMenu";
 import { NAVIGATION_ITEMS, LOGO_CONFIG } from "./HeaderConfig";
 
 export default function DynamicHeader() {
@@ -23,7 +24,17 @@ export default function DynamicHeader() {
                         width={LOGO_CONFIG.width}
                         height={LOGO_CONFIG.height}
                     />
-                    <HeaderNavigation
+                    
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:block">
+                        <HeaderNavigation
+                            items={NAVIGATION_ITEMS}
+                            isDark={isOnWhiteSection}
+                        />
+                    </div>
+
+                    {/* Mobile Burger Menu */}
+                    <BurgerMenu
                         items={NAVIGATION_ITEMS}
                         isDark={isOnWhiteSection}
                     />
