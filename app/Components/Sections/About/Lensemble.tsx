@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 import EnsembleCarousel from "./EnsembleCarousel";
+import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 import type { Musicien } from "@/app/types/dataConfig";
 
 type EnfantProps = {
@@ -36,132 +37,140 @@ export default function Lensemble({ data: _data }: EnfantProps) {
           {/* Content column */}
           <div className="flex flex-col gap-8 text-sm leading-relaxed">
             {/* Présentation */}
-            <section className="pt-4">
-              <div
-                className="flex items-center gap-2 mb-3 group cursor-pointer"
-                onClick={() => toggleSection("presentation")}
-              >
+            <AnimatedBorderCard className="pt-4" animationDuration={0.3} delay={0.2}>
+              <section className="pt-4">
                 <div
-                  className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${openSections.presentation ? "rotate-45" : "rotate-0"
+                  className="flex items-center gap-2 mb-3 group cursor-pointer"
+                  onClick={() => toggleSection("presentation")}
+                >
+                  <div
+                    className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${openSections.presentation ? "rotate-45" : "rotate-0"
+                      }`}
+                  >
+                    <ArrowIcon className="w-10 h-auto md:w-12" />
+                  </div>
+                  <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+                    Présentation
+                  </h2>
+                </div>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.presentation
+                    ? "max-h-[500px] opacity-100"
+                    : "max-h-0 opacity-0"
                     }`}
                 >
-                  <ArrowIcon className="w-10 h-auto md:w-12" />
+                  <p className="max-w-full bg-violet-400">
+                    L&apos;ensemble Phænomen se consacre à la redécouverte de la
+                    musique baroque allemande du XVIIIᵉ siècle. Sous la direction
+                    de Noé Chapolard, il s&apos;attache tout particulièrement à
+                    faire revivre l&apos;œuvre de Gottfried Heinrich Stölzel
+                    (1690-1749), un compositeur majeur injustement tombé dans
+                    l&apos;oubli, tant des historiens que des musiciens.
+                  </p>
                 </div>
-                <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
-                  Présentation
-                </h2>
-              </div>
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.presentation
-                  ? "max-h-[500px] opacity-100"
-                  : "max-h-0 opacity-0"
-                  }`}
-              >
-                <p className="max-w-full bg-violet-400">
-                  L&apos;ensemble Phænomen se consacre à la redécouverte de la
-                  musique baroque allemande du XVIIIᵉ siècle. Sous la direction
-                  de Noé Chapolard, il s&apos;attache tout particulièrement à
-                  faire revivre l&apos;œuvre de Gottfried Heinrich Stölzel
-                  (1690-1749), un compositeur majeur injustement tombé dans
-                  l&apos;oubli, tant des historiens que des musiciens.
-                </p>
-              </div>
-            </section>
+              </section>
+            </AnimatedBorderCard>
 
             {/* Notre ensemble */}
-            <section className="border-t border-black pt-4">
-              <div
-                className="flex items-center gap-2 mb-3 group cursor-pointer"
-                onClick={() => toggleSection("ensemble")}
-              >
+            <AnimatedBorderCard className="pt-4" animationDuration={0.3} delay={0.2}>
+              <section>
                 <div
-                  className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${openSections.ensemble ? "rotate-45" : "rotate-0"
+                  className="flex items-center gap-2 mb-3 group cursor-pointer"
+                  onClick={() => toggleSection("ensemble")}
+                >
+                  <div
+                    className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${openSections.ensemble ? "rotate-45" : "rotate-0"
+                      }`}
+                  >
+                    <ArrowIcon className="w-10 h-auto md:w-12" />
+                  </div>
+                  <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+                    Notre ensemble
+                  </h2>
+                </div>
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.ensemble
+                    ? "max-h-[1000px] opacity-100"
+                    : "max-h-0 opacity-0"
                     }`}
                 >
-                  <ArrowIcon className="w-10 h-auto md:w-12" />
+                  <div className="max-w-full bg-green-200">
+                    <p>
+                      À ce jour, le cœur de l&apos;ensemble Phænomen réunit un
+                      quatuor à cordes, un trio de continuo et un quatuor vocal.
+                      Formés dans les plus grandes institutions européennes
+                      dédiées à la musique ancienne — Schola Cantorum de Bâle,
+                      ESMUC, CMBV, CNSMD de Lyon —, nos musiciennes et musiciens
+                      collaborent régulièrement avec des ensembles de renom tels
+                      que la Capella Reial de Catalunya, le Bach Collegium Japan
+                      ou l&apos;Ensemble Correspondances.
+                    </p>
+                    <br />
+                    <p>
+                      Spécialistes de la pratique historiquement informée, du jeu
+                      sur instruments d&apos;époque et de l&apos;interprétation du
+                      répertoire baroque, ils comptent parmi les artistes les plus
+                      prometteurs de la scène française et européenne, distingués
+                      par de nombreux prix internationaux, enregistrements
+                      discographiques et récitals en solistes.
+                    </p>
+                  </div>
                 </div>
-                <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
-                  Notre ensemble
-                </h2>
-              </div>
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.ensemble
-                  ? "max-h-[1000px] opacity-100"
-                  : "max-h-0 opacity-0"
-                  }`}
-              >
-                <div className="max-w-full bg-green-200">
-                  <p>
-                    À ce jour, le cœur de l&apos;ensemble Phænomen réunit un
-                    quatuor à cordes, un trio de continuo et un quatuor vocal.
-                    Formés dans les plus grandes institutions européennes
-                    dédiées à la musique ancienne — Schola Cantorum de Bâle,
-                    ESMUC, CMBV, CNSMD de Lyon —, nos musiciennes et musiciens
-                    collaborent régulièrement avec des ensembles de renom tels
-                    que la Capella Reial de Catalunya, le Bach Collegium Japan
-                    ou l&apos;Ensemble Correspondances.
-                  </p>
-                  <br />
-                  <p>
-                    Spécialistes de la pratique historiquement informée, du jeu
-                    sur instruments d&apos;époque et de l&apos;interprétation du
-                    répertoire baroque, ils comptent parmi les artistes les plus
-                    prometteurs de la scène française et européenne, distingués
-                    par de nombreux prix internationaux, enregistrements
-                    discographiques et récitals en solistes.
-                  </p>
-                </div>
-              </div>
-            </section>
+              </section>
+            </AnimatedBorderCard>
 
             {/* Nos interprètes */}
-            <section className="border-t border-black pt-4">
-              <div
-                className="flex items-center gap-2 mb-3 group cursor-pointer"
-                onClick={() => toggleSection("interpretes")}
-              >
+            <AnimatedBorderCard className="pt-4" animationDuration={0.3} delay={0.2}>
+              <section>
                 <div
-                  className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${openSections.interpretes ? "rotate-45" : "rotate-0"
+                  className="flex items-center gap-2 mb-3 group cursor-pointer"
+                  onClick={() => toggleSection("interpretes")}
+                >
+                  <div
+                    className={`mr-3 md:mr-4 flex-shrink-0 transform transition-all duration-300 ease-in-out group-hover:translate-x-1 ${openSections.interpretes ? "rotate-45" : "rotate-0"
+                      }`}
+                  >
+                    <ArrowIcon className="w-10 h-auto md:w-12" />
+                  </div>
+                  <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+                    Nos interprètes
+                  </h2>
+                </div>
+
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.interpretes
+                    ? "max-h-[500px] opacity-100"
+                    : "max-h-0 opacity-0"
                     }`}
                 >
-                  <ArrowIcon className="w-10 h-auto md:w-12" />
-                </div>
-                <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
-                  Nos interprètes
-                </h2>
-              </div>
-
-              <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.interpretes
-                  ? "max-h-[500px] opacity-100"
-                  : "max-h-0 opacity-0"
-                  }`}
-              >
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-6 text-xs sm:text-sm">
-                  <div className="space-y-1">
-                    <p>Nom Prénom</p>
-                    <p>Nom Prénom</p>
-                    <p>Nom Prénom</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p>Nom Prénom</p>
-                    <p>Nom Prénom</p>
-                    <p>Nom Prénom</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p>Nom Prénom</p>
-                    <p>Nom Prénom</p>
-                    <p>Nom Prénom</p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-6 text-xs sm:text-sm">
+                    <div className="space-y-1">
+                      <p>Nom Prénom</p>
+                      <p>Nom Prénom</p>
+                      <p>Nom Prénom</p>
+                    </div>
+                    <div className="space-y-1">
+                      <p>Nom Prénom</p>
+                      <p>Nom Prénom</p>
+                      <p>Nom Prénom</p>
+                    </div>
+                    <div className="space-y-1">
+                      <p>Nom Prénom</p>
+                      <p>Nom Prénom</p>
+                      <p>Nom Prénom</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </AnimatedBorderCard>
 
             {/* Carousel galerie */}
-            <section className="border-t border-black pt-8">
+            {/* <AnimatedBorderCard className="pt-8" animationDuration={0.2} delay={0.2}> */}
+              <section>
 
-              <EnsembleCarousel />
-            </section>
+                <EnsembleCarousel />
+              </section>
+            {/* </AnimatedBorderCard> */}
           </div>
         </div>
       </section>
