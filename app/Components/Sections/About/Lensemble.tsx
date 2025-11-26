@@ -28,8 +28,10 @@ export default function Lensemble({ data: _data }: EnfantProps) {
       <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         {/* Top title */}
         <div className="w-full flex flex-col">
-          <h2 className="section-title">L&apos;ensemble</h2>
-          <div className="mt-4 h-px w-full bg-black" />
+          <h2 className="section-title pb-6">L&apos;ensemble</h2>
+          <AnimatedBorderCard className="" sides={["top"]} animationDuration={0.3} delay={0.2}>
+            <div className="w-full" />
+          </AnimatedBorderCard>
         </div>
 
         {/* Main layout */}
@@ -37,8 +39,8 @@ export default function Lensemble({ data: _data }: EnfantProps) {
           {/* Content column */}
           <div className="flex flex-col gap-8 text-sm leading-relaxed">
             {/* Présentation */}
-            <AnimatedBorderCard className="pt-4" animationDuration={0.3} delay={0.2}>
-              <section className="pt-4">
+            <AnimatedBorderCard className="pt-4" sides={["bottom"]} animationDuration={0.3} delay={0.2}>
+              <section className="Présentation">
                 <div
                   className="flex items-center gap-2 mb-3 group cursor-pointer"
                   onClick={() => toggleSection("presentation")}
@@ -49,14 +51,14 @@ export default function Lensemble({ data: _data }: EnfantProps) {
                   >
                     <ArrowIcon className="w-10 h-auto md:w-12" />
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight">
                     Présentation
-                  </h2>
+                  </h3>
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.presentation
-                    ? "max-h-[500px] opacity-100"
-                    : "max-h-0 opacity-0"
+                      ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 opacity-0"
                     }`}
                 >
                   <p className="max-w-full bg-violet-400">
@@ -72,7 +74,7 @@ export default function Lensemble({ data: _data }: EnfantProps) {
             </AnimatedBorderCard>
 
             {/* Notre ensemble */}
-            <AnimatedBorderCard className="pt-4" animationDuration={0.3} delay={0.2}>
+            <AnimatedBorderCard className="pt-4" sides={["bottom"]} animationDuration={0.3} delay={0.2}>
               <section>
                 <div
                   className="flex items-center gap-2 mb-3 group cursor-pointer"
@@ -84,14 +86,14 @@ export default function Lensemble({ data: _data }: EnfantProps) {
                   >
                     <ArrowIcon className="w-10 h-auto md:w-12" />
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight">
                     Notre ensemble
-                  </h2>
+                  </h3>
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.ensemble
-                    ? "max-h-[1000px] opacity-100"
-                    : "max-h-0 opacity-0"
+                      ? "max-h-[1000px] opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 opacity-0"
                     }`}
                 >
                   <div className="max-w-full bg-green-200">
@@ -120,7 +122,7 @@ export default function Lensemble({ data: _data }: EnfantProps) {
             </AnimatedBorderCard>
 
             {/* Nos interprètes */}
-            <AnimatedBorderCard className="pt-4" animationDuration={0.3} delay={0.2}>
+            <AnimatedBorderCard className="pt-4" sides={["bottom"]} animationDuration={0.3} delay={0.2}>
               <section>
                 <div
                   className="flex items-center gap-2 mb-3 group cursor-pointer"
@@ -132,15 +134,15 @@ export default function Lensemble({ data: _data }: EnfantProps) {
                   >
                     <ArrowIcon className="w-10 h-auto md:w-12" />
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight">
                     Nos interprètes
-                  </h2>
+                  </h3>
                 </div>
 
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.interpretes
-                    ? "max-h-[500px] opacity-100"
-                    : "max-h-0 opacity-0"
+                      ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 opacity-0"
                     }`}
                 >
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-6 text-xs sm:text-sm">
@@ -166,10 +168,10 @@ export default function Lensemble({ data: _data }: EnfantProps) {
 
             {/* Carousel galerie */}
             {/* <AnimatedBorderCard className="pt-8" animationDuration={0.2} delay={0.2}> */}
-              <section>
+            <section>
 
-                <EnsembleCarousel />
-              </section>
+              <EnsembleCarousel />
+            </section>
             {/* </AnimatedBorderCard> */}
           </div>
         </div>

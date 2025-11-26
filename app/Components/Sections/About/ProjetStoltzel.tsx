@@ -21,18 +21,19 @@ export default function ProjetStoltzel() {
     <main className="w-full max-w-full text-black">
       <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         {/* Top title */}
-        <AnimatedBorderCard className="pt-8" animationDuration={0.3} delay={0.2}>
-          <div className="w-full flex flex-col">
-            <h2 className="section-title">Projet Stöltzel</h2>
-          </div>
-        </AnimatedBorderCard>
+        <div className="w-full flex flex-col">
+          <h2 className="section-title pb-6">Projet Stöltzel</h2>
+          <AnimatedBorderCard className="" sides={["top"]} animationDuration={0.3} delay={0.2}>
+            <div className="w-full" />
+          </AnimatedBorderCard>
+        </div>
 
         {/* Main layout */}
         <div className="flex flex-col gap-8 pt-4 md:pt-16">
           {/* Content column */}
           <div className="flex flex-col gap-8 text-sm leading-relaxed">
             {/* Projet sonore */}
-            <AnimatedBorderCard className="pt-8" animationDuration={0.3} delay={0.2}>
+            <AnimatedBorderCard className="pt-4" sides={["bottom"]} animationDuration={0.3} delay={0.2}>
 
               <section className="pt-4">
                 <div
@@ -45,14 +46,14 @@ export default function ProjetStoltzel() {
                   >
                     <ArrowIcon className="w-10 h-auto md:w-12" />
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight">
                     Projet sonore
-                  </h2>
+                  </h3>
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.sonore
-                      ? "max-h-[500px] opacity-100"
-                      : "max-h-0 opacity-0"
+                    ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                    : "max-h-0 opacity-0"
                     }`}
                 >
                   <p className="max-w-full">
@@ -66,7 +67,7 @@ export default function ProjetStoltzel() {
             </AnimatedBorderCard >
 
             {/* Projet musicologique */}
-            <AnimatedBorderCard className="pt-8" animationDuration={0.3} delay={0.2}>
+            <AnimatedBorderCard className="pt-8" sides={["bottom"]} animationDuration={0.3} delay={0.2}>
 
               <section className="Projet musicologique">
                 <div
@@ -79,14 +80,14 @@ export default function ProjetStoltzel() {
                   >
                     <ArrowIcon className="w-10 h-auto md:w-12" />
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight">
                     Projet musicologique
-                  </h2>
+                  </h3>
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.musicologique
-                      ? "max-h-[500px] opacity-100"
-                      : "max-h-0 opacity-0"
+                    ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                    : "max-h-0 opacity-0"
                     }`}
                 >
                   <p className="max-w-full">
@@ -101,7 +102,7 @@ export default function ProjetStoltzel() {
             </AnimatedBorderCard>
 
             {/* Programme */}
-            <AnimatedBorderCard className="pt-4" animationDuration={0.3} delay={0.2}>
+            <AnimatedBorderCard className="pt-4" sides={["bottom"]} animationDuration={0.3} delay={0.2}>
 
               <section className="Programme">
                 <div
@@ -114,14 +115,14 @@ export default function ProjetStoltzel() {
                   >
                     <ArrowIcon className="w-10 h-auto md:w-12" />
                   </div>
-                  <h2 className="text-2xl md:text-4xl font-semibold tracking-tight">
+                  <h3 className="text-2xl md:text-4xl font-semibold tracking-tight">
                     Notre programme
-                  </h2>
+                  </h3>
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.programme
-                      ? "max-h-[500px] opacity-100"
-                      : "max-h-0 opacity-0"
+                    ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                    : "max-h-0 opacity-0"
                     }`}
                 >
                   <p className="max-w-full">

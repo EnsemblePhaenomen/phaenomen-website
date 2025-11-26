@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Nova_Cut, Fira_Sans_Condensed } from "next/font/google";
 import "./globals.css";
 import DynamicHeader from "./Components/Header/DynamicHeader";
 
@@ -10,6 +10,18 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const novaCut = Nova_Cut({
+  weight: "400",
+  variable: "--font-nova-cut",
+  subsets: ["latin"],
+});
+
+const firaSansCondensed = Fira_Sans_Condensed({
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-fira-sans-condensed",
   subsets: ["latin"],
 });
 
@@ -26,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${novaCut.variable} ${firaSansCondensed.variable} antialiased`}
       >
         <DynamicHeader />
         {children}

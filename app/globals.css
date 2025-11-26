@@ -83,8 +83,17 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial;
+  font-family: var(--font-fira-sans-condensed), sans-serif;
+}
+
+/* Apply NovaCut font only to h1 and h2 */
+h1, h2 {
+  font-family: var(--font-nova-cut), cursive;
+}
+
+/* Apply Fira Sans Condensed to h3 and below */
+h3, h4, h5, h6 {
+  font-family: var(--font-fira-sans-condensed), sans-serif;
 }
 
 /* Couleur de sélection du texte */
@@ -99,6 +108,7 @@ body {
 }
 
 .section-title {
+  font-family: var(--font-nova-cut), cursive;
   color: black;
   font-size: var(--hero-title-size);
   line-height: 1.02;
@@ -108,6 +118,7 @@ body {
 
 /* Utility classes for hero elements  */
 .hero-title {
+  font-family: var(--font-nova-cut), cursive;
   color: var(--hero-title-color);
   font-size: var(--hero-title-size);
   line-height: 1.02;
@@ -116,6 +127,7 @@ body {
 }
 
 .hero-name {
+  font-family: var(--font-nova-cut), cursive;
   color: var(--hero-name-color);
   font-size: var(--hero-name-size);
   line-height: 1.05;
@@ -123,6 +135,7 @@ body {
 }
 
 .hero-role {
+  font-family: var(--font-nova-cut), cursive;
   color: var(--hero-role-color);
   font-size: var(--hero-role-size);
   line-height: 1.05;
@@ -130,6 +143,7 @@ body {
 }
 
 .hero-info {
+  font-family: var(--font-fira-sans-condensed), sans-serif;
   color: var(--hero-role-color);
   font-size: var(--hero-role-size);
   line-height: 1;
