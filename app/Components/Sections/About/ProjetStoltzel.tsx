@@ -21,7 +21,7 @@ export default function ProjetStoltzel() {
   return (
     <main id="projet-stoltzel" className="relative w-full max-w-full text-black overflow-hidden">
       {/* Image du hibou en arrière-plan - visible uniquement sur écrans > md */}
-      <div className="hidden md:block absolute bottom-10 right-0 w-64 lg:w-80 xl:w-96 h-auto pointer-events-none z-0">
+      <div className="hidden md:block absolute  bottom-10 right-0 w-64 lg:w-80 xl:w-4xl h-auto pointer-events-none z-0">
         <Image
           src="/hibou_bg.png"
           alt="Hibou décoratif"

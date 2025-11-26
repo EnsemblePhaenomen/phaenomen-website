@@ -47,9 +47,9 @@ export default function AnimatedEntete({ className }: AnimatedEnteteProps) {
       className={`group overflow-hidden ${className}`}
     >
       <div
-        className={`transition-all duration-700 ease-out group-hover:bg-[#E42B54] ${
+        className={`transition-all duration-700 ease-out  ${
           shouldAnimate
-            ? "translate-y-0 opacity-100"
+            ? "translate-y-0 opacity-60"
             : "-translate-y-full opacity-0"
         }`}
         style={{

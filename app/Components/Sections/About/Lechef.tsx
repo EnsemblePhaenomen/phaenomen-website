@@ -33,8 +33,8 @@ export default function Lechef({ data: _data }: EnfantProps) {
           group
           mx-auto
           w-full           
-          lg:w-[90vw]      
-          max-w-6xl        
+          lg:w-[70vw]      
+          max-w-2xl        
           aspect-[16/9]    
           rounded-xl
           overflow-hidden

@@ -29,8 +29,8 @@ export default function CarouselControls({
 
   // Styles conditionnels selon le thème
   const buttonStyles = theme === "dark" 
-    ? "bg-black/20 border-white/20 text-white hover:bg-black/40 hover:border-white/40 focus:ring-white/50"
-    : "bg-black/10 border-black/20 text-black hover:bg-black/20 hover:border-black/40 focus:ring-black/50";
+    ? "bg-black/20 border-white/20 text-white hover:bg-black/100 hover:border-white/40 focus:ring-white/50"
+    : "bg-white/40 border-black/20 text-black hover:bg-black/20 hover:text-white hover:border-black/10 focus:ring-white/50";
 
   const dotStyles = theme === "dark"
     ? "bg-white/40 hover:bg-white/60 data-[active=true]:bg-white"

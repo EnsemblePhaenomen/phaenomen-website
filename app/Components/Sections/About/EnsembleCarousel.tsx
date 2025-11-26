@@ -167,7 +167,7 @@ export default function EnsembleCarousel() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 px-3 pb-3 pt-12 text-sm font-semibold tracking-tight text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 px-3 pb-3 pt-12 text-sm font-semibold tracking-tight text-[#E42B54] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   {photo.name}
                   {photo.instrument ? ` — ${photo.instrument}` : ""}
                 </figcaption>
@@ -199,7 +199,7 @@ export default function EnsembleCarousel() {
         >
           {/* Modale avec background-image */}
           <div
-            className="relative w-full max-w-4xl h-[70vh] overflow-hidden rounded-2xl text-white shadow-xl"
+            className="relative w-full max-w-6xl h-[90vh] overflow-hidden rounded-2xl text-white shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Background image */}
@@ -207,7 +207,7 @@ export default function EnsembleCarousel() {
               src={selectedPhoto.modalSrc || selectedPhoto.src}
               alt={selectedPhoto.modalAlt || selectedPhoto.alt}
               fill
-              className="absolute inset-0 h-full w-full object-cover blur-md"
+              className="absolute inset-0 h-full w-full object-cover object-center blur-md"
               sizes="(max-width: 768px) 90vw, 80vw"
               priority
             />
@@ -217,7 +217,7 @@ export default function EnsembleCarousel() {
             <button
               type="button"
               onClick={closeModal}
-              className="absolute right-4 top-4 z-20 rounded-full px-3 py-1 text-sm text-neutral-200 hover:bg-white/10 hover:cursor-pointer"
+              className="absolute right-4 top-4 z-20 rounded-full px-3 py-1 text-sm text-neutral-200 hover:bg-white/30 hover:cursor-pointer"
               aria-label="Close"
             >
               ✕
@@ -231,7 +231,7 @@ export default function EnsembleCarousel() {
                   src={selectedPhoto.src}
                   alt={selectedPhoto.alt}
                   fill
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover "
                   sizes="(max-width: 768px) 192px, 256px"
                 />
               </div>
@@ -240,11 +240,11 @@ export default function EnsembleCarousel() {
               <div className="flex flex-1 flex-col gap-4 overflow-y-auto">
                 {/* Titre */}
                 <div>
-                  <h2 className="text-2xl font-semibold tracking-tight">
+                  <h2 className="text-4xl font-semibold tracking-tight">
                     {selectedPhoto.name}
                   </h2>
                   {selectedPhoto.instrument && (
-                    <p className="mt-1 text-base text-neutral-200 italic">
+                    <p className="mt-1 text-2xl text-neutral-200 ">
                       {selectedPhoto.instrument}
                     </p>
                   )}
@@ -252,7 +252,7 @@ export default function EnsembleCarousel() {
 
                 {/* Bio */}
                 {selectedPhoto.bio ? (
-                  <p className="text-sm leading-relaxed whitespace-pre-line text-neutral-100">
+                  <p className="text-lg leading-relaxed whitespace-pre-line text-neutral-100">
                     {selectedPhoto.bio}
                   </p>
                 ) : (
