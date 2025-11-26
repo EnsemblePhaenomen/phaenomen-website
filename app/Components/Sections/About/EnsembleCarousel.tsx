@@ -134,7 +134,7 @@ export default function EnsembleCarousel() {
 
   return (
     <>
-      <div className="w-full py-6">
+      <div className="relative w-full py-6">
         {/* Viewport - Enable native scroll on mobile for swipe */}
         <div 
           ref={viewportRef} 
@@ -176,7 +176,7 @@ export default function EnsembleCarousel() {
           </div>
         </div>
 
-        {/* Controls Component - Visible on hover (desktop only) */}
+        {/* Controls Component - Sides on desktop, bottom on mobile */}
         <CarouselControls
           totalSlides={musicianPhotos.length}
           currentIndex={currentIndex}
@@ -184,6 +184,8 @@ export default function EnsembleCarousel() {
           onPrev={goPrev}
           onNext={goNext}
           onGoToSlide={goToSlide}
+          variant="sides"
+          theme="light"
         />
       </div>
       {selectedPhoto && console.log("Selected photo bio:", selectedPhoto.src)}

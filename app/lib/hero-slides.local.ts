@@ -42,7 +42,7 @@ export const heroSlides: HeroSlide[] = [
       "Spécialistes de la pratique musicale et du répertoire baroque",
     cta: {
       label: "En savoir plus",
-      href: "/#about",
+      href: "/#projet-stoltzel",
     },
   },
 ];
