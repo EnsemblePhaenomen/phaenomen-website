@@ -102,93 +102,38 @@ export default function CarouselControls({
     );
   }
 
-  // Variante sides (Ensemble) - Côtés sur desktop, bas sur mobile
+  // Variante sides (Ensemble) - Côtés sur desktop uniquement, masqué sur mobile
   if (variant === "sides") {
     return (
-      <>
-        {/* Mobile: Boutons en bas centrés */}
-        <div className="md:hidden mt-6 flex items-center justify-center gap-4">
-          <button
-            onClick={onPrev}
-            aria-label="Précédent"
-            className={`
-              cursor-pointer p-2 rounded-full backdrop-blur-sm border
-              focus:outline-none focus:ring-2 transition-all duration-200
-              ${buttonStyles}
-            `}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+      <div className="hidden md:flex absolute inset-y-0 left-0 right-0 items-center justify-between pointer-events-none">
+        <button
+          onClick={onPrev}
+          aria-label="Précédent"
+          className={`
+            cursor-pointer ml-4 p-2 rounded-full backdrop-blur-sm border
+            focus:outline-none focus:ring-2 transition-all duration-200 pointer-events-auto
+            ${buttonStyles}
+          `}
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
 
-          {showDots && (
-            <div className="flex space-x-2" role="tablist" aria-label="Navigation">
-              {Array.from({ length: totalSlides }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => onGoToSlide(index)}
-                  aria-label={`Aller à ${index + 1}`}
-                  aria-current={index === currentIndex ? "true" : "false"}
-                  role="tab"
-                  data-active={index === currentIndex}
-                  className={`
-                    cursor-pointer w-2.5 h-2.5 rounded-full transition-all duration-200
-                    focus:outline-none focus:ring-2 focus:ring-offset-2
-                    ${index === currentIndex ? "scale-125" : ""}
-                    ${dotStyles}
-                  `}
-                />
-              ))}
-            </div>
-          )}
-
-          <button
-            onClick={onNext}
-            aria-label="Suivant"
-            className={`
-              cursor-pointer p-2 rounded-full backdrop-blur-sm border
-              focus:outline-none focus:ring-2 transition-all duration-200
-              ${buttonStyles}
-            `}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Desktop: Boutons sur les côtés */}
-        <div className="hidden md:flex absolute inset-y-0 left-0 right-0 items-center justify-between pointer-events-none">
-          <button
-            onClick={onPrev}
-            aria-label="Précédent"
-            className={`
-              cursor-pointer ml-4 p-2 rounded-full backdrop-blur-sm border
-              focus:outline-none focus:ring-2 transition-all duration-200 pointer-events-auto
-              ${buttonStyles}
-            `}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          <button
-            onClick={onNext}
-            aria-label="Suivant"
-            className={`
-              cursor-pointer mr-4 p-2 rounded-full backdrop-blur-sm border
-              focus:outline-none focus:ring-2 transition-all duration-200 pointer-events-auto
-              ${buttonStyles}
-            `}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-      </>
+        <button
+          onClick={onNext}
+          aria-label="Suivant"
+          className={`
+            cursor-pointer mr-4 p-2 rounded-full backdrop-blur-sm border
+            focus:outline-none focus:ring-2 transition-all duration-200 pointer-events-auto
+            ${buttonStyles}
+          `}
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     );
   }
 
