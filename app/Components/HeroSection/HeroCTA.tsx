@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ArrowIcon from "../(ui)/Arrows/ArrowIcon";
+import { scrollToSection } from "@/app/utils/scrollToSection";
 
 interface HeroCTAProps {
   href: string;
@@ -20,10 +21,7 @@ export default function HeroCTA({
     // Si targetId fourni, on scrolle vers la section sans rechargement
     if (targetId) {
       e.preventDefault();
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      scrollToSection(targetId);
     }
   };
 

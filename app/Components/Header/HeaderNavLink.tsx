@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { scrollToSection } from "@/app/utils/scrollToSection";
 
 interface SubMenuItem {
   href: string;
@@ -20,13 +21,7 @@ export default function HeaderNavLink({ href, label, isDark, subMenu }: HeaderNa
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, targetHref: string) => {
     e.preventDefault();
-    const targetElement = document.querySelector(targetHref);
-    if (targetElement) {
-      targetElement.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+    scrollToSection(targetHref);
     setIsOpen(false);
   };
 

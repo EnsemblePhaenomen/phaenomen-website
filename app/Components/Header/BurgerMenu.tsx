@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { scrollToSection } from "@/app/utils/scrollToSection";
 
 interface SubMenuItem {
   href: string;
@@ -25,13 +26,7 @@ export default function BurgerMenu({ items, isDark }: BurgerMenuProps) {
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const targetElement = document.querySelector(href);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    scrollToSection(href);
     setIsOpen(false);
     setOpenSubMenus(new Set());
   };
