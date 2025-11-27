@@ -38,7 +38,7 @@ export default function ScrollLinkedText() {
   return (
     <section 
       ref={sectionRef} 
-      className="relative bg-white"
+      className="relative bg-[#f4f4f4]"
       style={{ height: isMobile ? '200vh' : '300vh' }}
     >
       <div className="sticky top-0 flex h-screen items-center justify-center px-4">
