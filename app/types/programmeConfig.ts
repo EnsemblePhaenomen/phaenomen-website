@@ -3,7 +3,10 @@ export interface Work {
   catalogue?: string;           // "H. 388"
   liturgicalPeriod?: string;    // "Exaudi", "4. Avent", etc.
   notes?: string;
-  imageSrc: string;             
+  imageSrc: string;  
+  imageAlt: string;
+  imageCredits: string;
+  audioSrc: string;           
 }
 
 export interface ProgrammeSection {
