@@ -17,6 +17,7 @@ export interface Chef {
   nom: string;
   prénom: string;
   role: string;
+  bio: string;
   portrait?: {
     src: string;
     alt: string;
