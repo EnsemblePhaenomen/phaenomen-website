@@ -4,32 +4,47 @@ import { useState } from "react";
 import AnimatedBorderCard from "../(ui)/AnimatedBorderCard";
 import ContactButton from "../(ui)/Animations/ContactButton";
 
-const events = [
-  { date: "24 JAN.", title: "Cantates de Bach", city: "Nantes", place: "Église Saint-Nicolas", info: "20h — Entrée libre." },
-  { date: "02 FÉV.", title: "Project Stölzel", city: "Rennes", place: "Théâtre municipal", info: "19h30 — Réservation conseillée." },
-  { date: "16 MARS", title: "Passions allemandes", city: "Angers", place: "Centre culturel", info: "18h — Concert commenté." },
-  { date: "30 MARS", title: "Concert baroque", city: "Laval", place: "Chapelle St-Pierre", info: "20h." },
-  { date: "12 AVR.", title: "Stabat Mater", city: "Vannes", place: "Cathédrale", info: "20h — Entrée libre." },
-  { date: "20 AVR.", title: "Oratorio de Pâques", city: "Tours", place: "Grand Théâtre", info: "19h." },
-  { date: "04 MAI", title: "Musique sacrée", city: "Brest", place: "Église St-Martin", info: "17h." },
-  { date: "11 MAI", title: "Motets allemands", city: "Clisson", place: "Halle aux grains", info: "20h." },
-  { date: "19 MAI", title: "Requiem allemand", city: "Quimper", place: "Théâtre", info: "18h." },
-  { date: "01 JUIN", title: "Bach & Telemann", city: "Orléans", place: "Salle Philharmonique", info: "20h." },
-  { date: "16 JUIN", title: "Concert estival", city: "La Roche-sur-Yon", place: "Auditorium", info: "19h." },
-  { date: "29 JUIN", title: "Fête de la musique", city: "Nantes", place: "Place Royale", info: "21h — Extérieur." },
+const reservationUrl = "https://example.com/reservation";
+
+type EventItem = {
+  date: string;
+  title: string;
+  city: string;
+  place: string;
+  info: string;
+  url: string;
+};
+
+const events: EventItem[] = [
+  { date: "24 JAN.", title: "Cantates de Bach", city: "Nantes", place: "Église Saint-Nicolas", info: "20h – Entrée libre.", url: reservationUrl },
+  { date: "02 FÉV.", title: "Project Stölzel", city: "Rennes", place: "Théâtre municipal", info: "19h30 – Réservation conseillée.", url: reservationUrl },
+  { date: "16 MARS", title: "Passions allemandes", city: "Angers", place: "Centre culturel", info: "18h – Concert commenté.", url: reservationUrl },
+  { date: "30 MARS", title: "Concert baroque", city: "Laval", place: "Chapelle St-Pierre", info: "20h.", url: reservationUrl },
+  { date: "12 AVR.", title: "Stabat Mater", city: "Vannes", place: "Cathédrale", info: "20h – Entrée libre.", url: reservationUrl },
+  { date: "20 AVR.", title: "Oratorio de Pâques", city: "Tours", place: "Grand Théâtre", info: "19h.", url: reservationUrl },
+  { date: "04 MAI", title: "Musique sacrée", city: "Brest", place: "Église St-Martin", info: "17h.", url: reservationUrl },
+  { date: "11 MAI", title: "Motets allemands", city: "Clisson", place: "Halle aux grains", info: "20h.", url: reservationUrl },
+  { date: "19 MAI", title: "Requiem allemand", city: "Quimper", place: "Théâtre", info: "18h.", url: reservationUrl },
+  { date: "01 JUIN", title: "Bach & Telemann", city: "Orléans", place: "Salle Philharmonique", info: "20h.", url: reservationUrl },
+  { date: "16 JUIN", title: "Concert estival", city: "La Roche-sur-Yon", place: "Auditorium", info: "19h.", url: reservationUrl },
+  { date: "29 JUIN", title: "Fête de la musique", city: "Nantes", place: "Place Royale", info: "21h – Extérieur.", url: reservationUrl },
 ];
 
 export default function AgendaSection() {
   const [isScrolling, setIsScrolling] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
-    if (target.scrollTop > 0 && !isScrolling) {
-      setIsScrolling(true);
-    } else if (target.scrollTop === 0 && isScrolling) {
-      setIsScrolling(false);
-    }
+    setIsScrolling(target.scrollTop > 0);
   };
+
+  const handleSelect = (event: EventItem) => {
+    setSelectedEvent(event);
+  };
+
+  const isSelected = (event: EventItem) =>
+    selectedEvent && selectedEvent.date === event.date && selectedEvent.title === event.title;
 
   return (
     <section className="min-h-screen pt-20 flex items-center">
@@ -66,11 +81,16 @@ export default function AgendaSection() {
                 px-8
               "
             >
-              <ContactButton />
+              <ContactButton
+                dateLabel={selectedEvent?.date ?? null}
+                titleLabel={selectedEvent?.title ?? null}
+                ctaLabel="réserver"
+                href={selectedEvent?.url}
+              />
             </div>
           </AnimatedBorderCard>
 
-          {/* RIGHT — scrollable event list */}
+          {/* RIGHT – scrollable event list */}
           <div
             className="
               w-full md:flex-[2]
@@ -88,7 +108,7 @@ export default function AgendaSection() {
                 md:h-[713px]
                 pr-2
                 space-y-6
-                ${isScrolling ? 'scrollbar-visible' : 'scrollbar-hidden'}
+                ${isScrolling ? "scrollbar-visible" : "scrollbar-hidden"}
               `}
             >
               <p className="text-sm md:text-base uppercase tracking-[0.25em]">
@@ -99,7 +119,19 @@ export default function AgendaSection() {
                 {events.map((event, index) => (
                   <article
                     key={index}
-                    className="border-b border-neutral-300 pb-6 last:border-none last:pb-0"
+                    className={`
+                      border-b border-neutral-300 pb-6 last:border-none last:pb-0
+                      cursor-pointer transition-colors
+                      ${isSelected(event) ? "bg-black text-white" : "hover:bg-black/5"}
+                    `}
+                    onClick={() => handleSelect(event)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        handleSelect(event);
+                      }
+                    }}
+                    tabIndex={0}
                   >
                     <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:gap-6">
                       <p className="font-serif text-xl md:text-2xl tracking-tight">
@@ -110,9 +142,11 @@ export default function AgendaSection() {
                           {event.title}
                         </h2>
                         <p className="text-[0.7rem] md:text-xs uppercase tracking-[0.2em] text-neutral-500">
-                          {event.city} — {event.place}
+                          {event.city} – {event.place}
                         </p>
-                        <p className="text-sm text-neutral-700">{event.info}</p>
+                        <p className="text-sm text-neutral-700">
+                          {event.info}
+                        </p>
                       </div>
                     </div>
                   </article>
@@ -120,7 +154,7 @@ export default function AgendaSection() {
               </div>
 
               <p className="text-xs md:text-sm text-neutral-500 leading-relaxed pb-4">
-                Certains horaires peuvent être modifiés — consultez régulièrement cette page.
+                Certains horaires peuvent être modifiés – consultez régulièrement cette page.
               </p>
             </div>
           </div>
