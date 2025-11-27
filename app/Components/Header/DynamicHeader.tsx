@@ -17,12 +17,12 @@ export default function DynamicHeader() {
 
     // Mettre à jour isDark selon la page et la position de scroll
     useEffect(() => {
-        if (pathname === "/contact") {
-            // Sur la page contact, toujours en mode dark
-            setIsDark(true);
-        } else {
+        if (pathname === "/") {
             // Sur la page d'accueil, utiliser la position de scroll
             setIsDark(isOnWhiteSection);
+        } else {
+            // Sur les autres pages (/pages/*), toujours en mode dark
+            setIsDark(true);
         }
     }, [pathname, isOnWhiteSection, setIsDark]);
 

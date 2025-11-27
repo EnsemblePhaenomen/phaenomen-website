@@ -27,9 +27,9 @@ export const NAVIGATION_ITEMS: NavItem[] = [
       { href: "#projet-stoltzel", label: "Projet Stöltzel" },
     ]
   },
-  { href: "/contact", label: "Contact" },
-  { href: "#agenda", label: "Agenda" },
-  { href: "#media", label: "Médias" },
+  { href: "/pages/contact", label: "Contact" },
+  { href: "/pages/agenda", label: "Agenda" },
+  { href: "/pages/medias", label: "Médias" },
 ];
 
 export const LOGO_CONFIG: LogoConfig = {
