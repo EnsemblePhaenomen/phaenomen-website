@@ -1,9 +1,6 @@
 import type { Musicien, Credit, Chef } from "./types/dataConfig";
 
-
-
-
-const musiciens = [
+const musiciens: Musicien[] = [
     {
         nom: "Morger",
         prénom: "Lara",

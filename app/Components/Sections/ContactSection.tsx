@@ -1,4 +1,6 @@
 import AnimatedBorderCard from "../(ui)/AnimatedBorderCard";
+import MapRevealButton from "../(ui)/Animations/MapRevealButton";
+
 export default function ContactSection() {
   return (
     <section className="min-h-screen bg-[#f4f4f4] flex items-center">
@@ -14,14 +16,9 @@ export default function ContactSection() {
           </div>
 
           {/* CENTER – 1/5 – grande hauteur + bouton centré */}
-          <AnimatedBorderCard className="" sides={["left", "right"]} animationDuration={0.3} delay={0.2}>
-
-            <div className="flex-[1] border-x border-neutral-300 flex items-center justify-center h-[713px]  px-8">
-              <button
-                className="h-44 w-44 rounded-full bg-black text-white flex flex-col items-center justify-center text-1xl uppercase tracking-[0.18em]"
-              >
-                AFFICHER<br />LE LIEU
-              </button>
+          <AnimatedBorderCard className="flex-[1]" sides={["left", "right"]} animationDuration={0.3} delay={0.2}>
+            <div className="flex items-center justify-center h-[713px] px-8">
+              <MapRevealButton />
             </div>
           </AnimatedBorderCard>
 
@@ -47,7 +44,7 @@ export default function ContactSection() {
 
               <div className="flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase">
                 <span className="h-[6px] w-[6px] rounded-full bg-black inline-block" />
-                ADRESSE DE L'ENSEMBLE.
+                ADRESSE DE L&apos;ENSEMBLE.
               </div>
 
             </div>
