@@ -13,13 +13,13 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
   const [hoveredWork, setHoveredWork] = useState<Work | null>(null);
 
   return (
-    <div className="relative w-full bg-[#f4f4f4]">
+    <div className="relative w-full bg-transparent">
       {/* === IMAGE CENTRÉE EN BACKGROUND (FIXE) === */}
       {hoveredWork?.imageSrc && (
         <div
           className="
             pointer-events-none
-            fixed inset-0          /* ⬅️ ici: fixed au lieu de absolute */
+            fixed inset-0
             flex items-center justify-center
             z-0
           "
@@ -27,7 +27,7 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
           <div
             className="
               relative
-              w-64 h-64 md:w-150 md:h-96
+              w-64 h-64 md:w-150 md:h-150
               rounded-full overflow-hidden
               opacity-30 
               transition-all duration-300
@@ -44,25 +44,24 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
       )}
 
       {/* === CONTENU AU-DESSUS DE L’IMAGE === */}
-      <div className="relative z-10 w-full px-6 md:px-12 py-16">
-        <div className="max-w-5xl mx-auto text-left">
-          {programmes.map((programme, index) => (
-            <ProgrammeBlock
-              key={index}
-              programme={programme}
-              setHoveredWork={setHoveredWork}
-            />
-          ))}
+      {/* Pas de padding horizontal ici, on laisse le parent (ProjetStoltzel) gérer */}
+      <div className="relative z-10 w-full py-4 md:py-8">
+        {/* pas de max-w-5xl/mx-auto ici si tu veux qu'il colle au container du card */}
+        {programmes.map((programme, index) => (
+          <ProgrammeBlock
+            key={index}
+            programme={programme}
+            setHoveredWork={setHoveredWork}
+          />
+        ))}
 
-          {/* CTA vers Contact */}
-          <div className="mt-16 pt-8 border-t border-neutral-300">
-            <Link
-              href="/contact"
-              className="inline-block text-lg md:text-xl font-light hover:underline transition-all duration-300"
-            >
-              Contactez-nous pour programmer ces concerts ou accueillir d&apos;autres programmes →
-            </Link>
-          </div>
+        <div className="mt-10 pt-6 border-t border-neutral-300">
+          <Link
+            href="/contact"
+            className="inline-block text-sm md:text-base font-light hover:underline transition-all duration-300"
+          >
+            Contactez-nous pour programmer ces concerts ou accueillir d&apos;autres programmes →
+          </Link>
         </div>
       </div>
     </div>
@@ -77,15 +76,15 @@ function ProgrammeBlock({
   setHoveredWork: (w: Work | null) => void;
 }) {
   return (
-    <div className="mb-16">
-      <h1 className="text-2xl md:text-4xl font-light mb-8">
+    <div className="mb-10">
+      <h1 className="text-xl md:text-2xl font-light mb-6">
         {programme.title}
       </h1>
 
       {programme.sections.map((section, sIndex) => (
-        <div key={sIndex} className="mb-10">
+        <div key={sIndex} className="mb-8">
           {section.title && (
-            <h2 className="text-sm md:text-base uppercase tracking-[0.2em] opacity-60 mb-4">
+            <h2 className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-60 mb-3">
               {section.title}
             </h2>
           )}
@@ -94,17 +93,17 @@ function ProgrammeBlock({
             <div
               key={wIndex}
               className="
-                py-4 border-b border-neutral-300
+                py-3 border-b border-neutral-300
                 cursor-pointer transition-colors
                 hover:bg-white/40
               "
               onMouseEnter={() => setHoveredWork(work)}
               onMouseLeave={() => setHoveredWork(null)}
             >
-              <p className="text-lg md:text-xl">{work.title}</p>
+              <p className="text-base md:text-lg">{work.title}</p>
 
               {(work.catalogue || work.liturgicalPeriod) && (
-                <p className="text-xs md:text-sm opacity-60 mt-1">
+                <p className="text-[0.7rem] md:text-xs opacity-60 mt-1">
                   {work.catalogue && <span>{work.catalogue} • </span>}
                   {work.liturgicalPeriod}
                 </p>
