@@ -20,11 +20,11 @@ export interface LogoConfig {
 // Constants
 export const NAVIGATION_ITEMS: NavItem[] = [
   { 
-    href: "#about", 
+    href: "/#about", 
     label: "À propos",
     subMenu: [
-      { href: "#about", label: "L'ensemble" },
-      { href: "#projet-stoltzel", label: "Projet Stöltzel" },
+      { href: "/#about", label: "L'ensemble" },
+      { href: "/#projet-stoltzel", label: "Projet Stöltzel" },
     ]
   },
   { href: "/pages/contact", label: "Contact" },

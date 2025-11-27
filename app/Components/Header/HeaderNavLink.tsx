@@ -20,11 +20,12 @@ export default function HeaderNavLink({ href, label, isDark, subMenu }: HeaderNa
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, targetHref: string) => {
-    // Si c'est une ancre (#), utiliser scrollToSection
-    if (targetHref.startsWith('#')) {
+    // Si c'est une ancre (#) et qu'on est sur la page d'accueil, utiliser scrollToSection
+    if (targetHref.startsWith('#') && window.location.pathname === '/') {
       e.preventDefault();
       scrollToSection(targetHref);
     }
+    // Si c'est /#ancre, laisser Next.js naviguer vers la page d'accueil puis l'ancre
     // Sinon, laisser Next.js gérer la navigation
     setIsOpen(false);
   };

@@ -47,7 +47,7 @@ export default function AnimatedEntete({ className }: AnimatedEnteteProps) {
       className={`group overflow-hidden ${className}`}
     >
       <div
-        className={`transition-all duration-700 ease-out  ${
+        className={`h-full transition-all duration-700 ease-out  ${
           shouldAnimate
             ? "translate-y-0 opacity-60"
             : "-translate-y-full opacity-0"
@@ -56,7 +56,7 @@ export default function AnimatedEntete({ className }: AnimatedEnteteProps) {
           transition: "transform 0.7s ease-out, opacity 0.7s ease-out, background-color 0.3s ease",
         }}
       >
-        <Entete className="w-full h-auto object-contain" />
+        <Entete className="w-full h-full object-cover" />
       </div>
     </div>
   );

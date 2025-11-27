@@ -14,8 +14,8 @@ export default function AboutSection() {
       <div className="flex w-full max-w-full">
         {/* Left image column - partagée entre les deux sections */}
         <div className="hidden md:block md:w-40 lg:w-52 flex-shrink-0">
-          <AnimatedBorderCard className="" sides={["right"]} animationDuration={0.6} delay={0.2}>
-            <AnimatedEntete className="w-full h-auto sticky top-0" />
+          <AnimatedBorderCard className="h-full" sides={["right"]} animationDuration={0.6} delay={0.2}>
+            <AnimatedEntete className="w-full h-full" />
           </AnimatedBorderCard>
         </div>
 

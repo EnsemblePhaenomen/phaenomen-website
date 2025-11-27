@@ -23,7 +23,7 @@ export default function ProjetStoltzel() {
   };
 
   return (
-    <main id="projet-stoltzel" className="relative w-full max-w-full text-black overflow-hidden">
+    <main id="projet-stoltzel" className="relative w-full max-w-full text-black overflow-hidden ">
       {/* Image du hibou en arrière-plan - visible uniquement sur écrans > md */}
       <motion.div
         ref={hibouRef}
