@@ -61,7 +61,7 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
               href="/pages/contact"
               className="inline-block text-lg md:text-xl font-light hover:underline transition-all duration-300"
             >
-              Contactez-nous pour programmer ces concerts ou accueillir d'autres programmes →
+              Contactez-nous pour programmer ces concerts ou accueillir d`&apos;autres programmes →
             </a>
           </div>
 
