@@ -9,23 +9,23 @@ export const programmeCantatesVolI: Programme = {
         {
           title: "Gelobet Sey Gott und der Vater",
           liturgicalPeriod: "4. Avent",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco1.jpg",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         },
         {
           title: "Deutsche Messe in c moll",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco2.png",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         },
         {
           title: "Ich danke dir Herr",
           liturgicalPeriod: "Reminiscere",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco3.png",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         },
@@ -33,16 +33,16 @@ export const programmeCantatesVolI: Programme = {
           title: "Wir sind voller Angst et Plag",
           catalogue: "H. 388",
           liturgicalPeriod: "Exaudi",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco4.png",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         },
         {
           title: "Siehe, dein König kommt zu dir",
           liturgicalPeriod: "Estomihi",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco5.png",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         }

@@ -4,6 +4,10 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 import { motion, useInView } from "motion/react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
+import ProgrammePage from "./ProgrammePage";
+import { programmeCantatesVolI } from "@/app/data/programmes/cantates-vol1";
+import { programmeInstrumentalVolI } from "@/app/data/programmes/instrumental-vol1";
+
 
 export default function ProjetStoltzel() {
   const [openSections, setOpenSections] = useState({
@@ -75,7 +79,7 @@ export default function ProjetStoltzel() {
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.sonore
-                    ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                    ? "max-h-[2000px] opacity-100 pt-4 px-4 pb-8"
                     : "max-h-0 opacity-0"
                     }`}
                 >
@@ -109,7 +113,7 @@ export default function ProjetStoltzel() {
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.musicologique
-                    ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                    ? "max-h-[2000px] opacity-100 pt-4 px-4 pb-8"
                     : "max-h-0 opacity-0"
                     }`}
                 >
@@ -143,18 +147,12 @@ export default function ProjetStoltzel() {
                   </h3>
                 </div>
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.programme
-                    ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                  className={`overflow-y-auto transition-all duration-500 ease-in-out ${openSections.programme
+                    ? "max-h-[2000px] opacity-100 pt-4 px-4 pb-8"
                     : "max-h-0 opacity-0"
                     }`}
                 >
-                  <p className="max-w-full">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                  </p>
+                  <ProgrammePage  programmes={[programmeCantatesVolI, programmeInstrumentalVolI]} />
                 </div>
               </section>
             </AnimatedBorderCard>

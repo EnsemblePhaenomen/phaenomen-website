@@ -8,36 +8,36 @@ export const programmeInstrumentalVolI: Programme = {
       works: [
         {
           title: "Concerto pour hautbois, cordes, et continuo en ré majeur",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco6.png",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         },
         {
           title: "Concerto pour hautbois d’amour, cordes et continuo en sol majeur",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco7.png",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         },
         {
           title: "Concerto pour hautbois, cordes et continuo en sol mineur",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco8.png",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         },
         {
           title: "Concerto pour hautbois, cordes et continuo en fa majeur",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco9.png",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         },
         {
           title: "Concerto pour hautbois d’amour, cordes et continuo en la majeur",
-          imageSrc: "",
-          imageAlt: "",
+          imageSrc: "/programmePhotos/deco10.png",
+          imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
         }
