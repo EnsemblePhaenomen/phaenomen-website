@@ -14,7 +14,7 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
   return (
     <div className="relative w-full bg-[#f4f4f4] overflow-hidden">
 
-      {/* === IMAGE CENTRÉE EN BACKGROUND (ne bouge plus) === */}
+      {/* === IMAGE CENTRÉE EN BACKGROUND === */}
       {hoveredWork?.imageSrc && (
         <div
           className="
@@ -54,6 +54,16 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
               setHoveredWork={setHoveredWork}
             />
           ))}
+
+          {/* CTA vers Contact */}
+          <div className="mt-16 pt-8 border-t border-neutral-300">
+            <a
+              href="/pages/contact"
+              className="inline-block text-lg md:text-xl font-light hover:underline transition-all duration-300"
+            >
+              Contactez-nous pour programmer ces concerts ou accueillir d'autres programmes →
+            </a>
+          </div>
 
         </div>
       </div>
