@@ -252,7 +252,7 @@ export default function EnsembleCarousel() {
 
                 {/* Bio */}
                 {selectedPhoto.bio ? (
-                  <p className="text-lg  leading-relaxed whitespace-pre-line text-neutral-100">
+                  <p className="text-lg leading-relaxed whitespace-pre-line text-neutral-100">
                     {selectedPhoto.bio}
                   </p>
                 ) : (
