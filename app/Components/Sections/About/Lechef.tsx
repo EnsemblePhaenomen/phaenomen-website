@@ -1,4 +1,4 @@
-import type { Chef } from "@/app/types/dataConfig"
+import type { Chef } from "@/app/types/musiciensConfig"
 import Image from "next/image";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 
