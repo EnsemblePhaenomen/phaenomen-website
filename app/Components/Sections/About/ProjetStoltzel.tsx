@@ -28,13 +28,17 @@ export default function ProjetStoltzel() {
 
   return (
     <main id="projet-stoltzel" className="relative w-full max-w-full text-black overflow-hidden ">
-      {/* Image du hibou en arrière-plan - visible uniquement sur écrans > md */}
+      {/* Image du hibou en arrière-plan - visible uniquement sur écrans > md et quand programme est fermé */}
       <motion.div
         ref={hibouRef}
         initial={{ y: 100, opacity: 0 }}
-        animate={isInView ? { y: 0, opacity: 0.2 } : { y: 100, opacity: 0 }}
+        animate={
+          isInView && !openSections.programme
+            ? { y: 0, opacity: 0.2 }
+            : { y: 100, opacity: 0 }
+        }
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-        className="hidden md:block absolute bottom-10 right-0 w-64 lg:w-80 xl:w-4xl h-auto pointer-events-none z-0"
+        className="hidden md:block absolute bottom-10 right-0 w-64 lg:w-80 xl:w-4xl h-auto pointer-events-none z-10"
       >
         <Image
           src="/hibou_bg.png"
@@ -46,7 +50,7 @@ export default function ProjetStoltzel() {
         />
       </motion.div>
 
-      <section className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
+      <section className="relative z-0 mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         {/* Top title */}
         <div className="w-full flex flex-col">
           <h2 className="section-title pb-6">Projet Stöltzel</h2>

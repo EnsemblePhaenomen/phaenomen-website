@@ -14,12 +14,12 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
 
   return (
     <div className="relative w-full bg-transparent">
-      {/* === IMAGE CENTRÉE EN BACKGROUND (FIXE) === */}
+      {/* === IMAGE CENTRÉE EN BACKGROUND === */}
       {hoveredWork?.imageSrc && (
         <div
           className="
             pointer-events-none
-            fixed inset-0
+            absolute inset-0
             flex items-center justify-center
             z-0
           "
@@ -27,7 +27,7 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
           <div
             className="
               relative
-              w-64 h-64 md:w-150 md:h-150
+              w-64 h-64 md:w-96 md:h-96
               rounded-full overflow-hidden
               opacity-30 
               transition-all duration-300
