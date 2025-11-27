@@ -148,7 +148,13 @@ const chef: Chef = {
     nom: "Chapolard",
     prénom: "Noé",
     role: "Chef d'orchestre",
-    bio: `Originaire de Paris, baryton et chef, Noé Chapolard se forme d'abord aux États-Unis, puis au Conservatoire national supérieur musique et danse de Lyon et à la Schola Cantorum de Bâle. Passionné de musique ancienne et du répertoire sacré pour chœur, il a débuté comme assistant chef à la Chapelle de l’Université de Princeton et à l’Orchestre des jeunes de New York, a été académicien du Chœur de l'Orchestre de Paris en chant, et des ensembles Aedes et Spirito en direction. Il a récemment travaillé sous la baguette de chefs tels Stephan MacLeod, Raphaël Pichon ou Jordi Savall, et chante entre autres avec les ensembles Musica Nova, La Capella Reial de Catalunya, Scandicus ou La Chapelle rhénane. Par ailleurs, Noé dirige les chœurs amateurs Vocappella et De Usu Canendi à Lyon ainsi que l'orchestre symphonique du Conservatoire du IXe arrondissement à Paris. En 2022, il a pris la direction du Jeune Chœur d'Auvergne et est devenu formateur régulier du Chœur régional d'Auvergne.`,
+    bio: `Originaire de Paris, baryton et chef, Noé Chapolard se forme d'abord aux États-Unis, puis au Conservatoire national supérieur musique et danse de Lyon et à la Schola Cantorum de Bâle. 
+    
+    Passionné de musique ancienne et du répertoire sacré pour chœur, il a débuté comme assistant chef à la Chapelle de l'Université de Princeton et à l'Orchestre des jeunes de New York, a été académicien du Chœur de l'Orchestre de Paris en chant, et des ensembles Aedes et Spirito en direction. 
+    
+    Il a récemment travaillé sous la baguette de chefs tels Stephan MacLeod, Raphaël Pichon ou Jordi Savall, et chante entre autres avec les ensembles Musica Nova, La Capella Reial de Catalunya, Scandicus ou La Chapelle rhénane. 
+    
+    Par ailleurs, Noé dirige les chœurs amateurs Vocappella et De Usu Canendi à Lyon ainsi que l'orchestre symphonique du Conservatoire du IXe arrondissement à Paris. En 2022, il a pris la direction du Jeune Chœur d'Auvergne et est devenu formateur régulier du Chœur régional d'Auvergne.`,
     portrait: {
         src: "/ensembleGallery/photos des musiciens/noe_portrait.png",
         alt: "Photo portrait de Noé Chapolard",
