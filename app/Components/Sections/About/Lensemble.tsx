@@ -10,7 +10,7 @@ type EnfantProps = {
   data: Musicien[];
 };
 
-export default function Lensemble({ data: _data }: EnfantProps) {
+export default function Lensemble({ data: musiciens }: EnfantProps) {
   const [openSections, setOpenSections] = useState({
     presentation: false,
     ensemble: false,
@@ -141,26 +141,21 @@ export default function Lensemble({ data: _data }: EnfantProps) {
 
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${openSections.interpretes
-                      ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                      ? "max-h-[1000px] opacity-100 pt-4 px-4 pb-8"
                       : "max-h-0 opacity-0"
                     }`}
                 >
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-6 text-xs sm:text-sm">
-                    <div className="space-y-1">
-                      <p>Nom Prénom</p>
-                      <p>Nom Prénom</p>
-                      <p>Nom Prénom</p>
-                    </div>
-                    <div className="space-y-1">
-                      <p>Nom Prénom</p>
-                      <p>Nom Prénom</p>
-                      <p>Nom Prénom</p>
-                    </div>
-                    <div className="space-y-1">
-                      <p>Nom Prénom</p>
-                      <p>Nom Prénom</p>
-                      <p>Nom Prénom</p>
-                    </div>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-4 text-xs sm:text-sm">
+                    {musiciens && musiciens.length > 0 ? (
+                      musiciens.map((musicien, index) => (
+                        <div key={index} className="space-y-1">
+                          <p className="font-medium">{musicien.prénom} {musicien.nom}</p>
+                          <p className="text-neutral-600">{musicien.instrument}</p>
+                        </div>
+                      ))
+                    ) : (
+                      <p className="text-neutral-500">Aucun musicien disponible</p>
+                    )}
                   </div>
                 </div>
               </section>

@@ -13,14 +13,13 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
   const [hoveredWork, setHoveredWork] = useState<Work | null>(null);
 
   return (
-    <div className="relative w-full bg-[#f4f4f4] overflow-hidden">
-
-      {/* === IMAGE CENTRÉE EN BACKGROUND === */}
+    <div className="relative w-full bg-[#f4f4f4]">
+      {/* === IMAGE CENTRÉE EN BACKGROUND (FIXE) === */}
       {hoveredWork?.imageSrc && (
         <div
           className="
             pointer-events-none
-            absolute inset-0
+            fixed inset-0          /* ⬅️ ici: fixed au lieu de absolute */
             flex items-center justify-center
             z-0
           "
@@ -47,7 +46,6 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
       {/* === CONTENU AU-DESSUS DE L’IMAGE === */}
       <div className="relative z-10 w-full px-6 md:px-12 py-16">
         <div className="max-w-5xl mx-auto text-left">
-
           {programmes.map((programme, index) => (
             <ProgrammeBlock
               key={index}
@@ -62,10 +60,9 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
               href="/contact"
               className="inline-block text-lg md:text-xl font-light hover:underline transition-all duration-300"
             >
-              Contactez-nous pour programmer ces concerts ou accueillir d`&apos;autres programmes →
+              Contactez-nous pour programmer ces concerts ou accueillir d&apos;autres programmes →
             </Link>
           </div>
-
         </div>
       </div>
     </div>
@@ -87,15 +84,12 @@ function ProgrammeBlock({
 
       {programme.sections.map((section, sIndex) => (
         <div key={sIndex} className="mb-10">
-
-          {/* Titre de section */}
           {section.title && (
             <h2 className="text-sm md:text-base uppercase tracking-[0.2em] opacity-60 mb-4">
               {section.title}
             </h2>
           )}
 
-          {/* Lignes */}
           {section.works.map((work, wIndex) => (
             <div
               key={wIndex}
