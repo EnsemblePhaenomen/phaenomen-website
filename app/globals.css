@@ -87,6 +87,7 @@ body {
 }
 
 /* Apply NovaCut font only to h1 and h2 */
+
 h1, h2 {
   font-family: var(--font-nova-cut), cursive;
 }
@@ -94,6 +95,11 @@ h1, h2 {
 /* Apply Fira Sans Condensed to h3 and below */
 h3, h4, h5, h6 {
   font-family: var(--font-fira-sans-condensed), sans-serif;
+}
+
+/* Reduce font weight for h3 */
+h3 {
+  font-weight: 400;
 }
 
 /* Couleur de sélection du texte */
@@ -112,7 +118,7 @@ h3, h4, h5, h6 {
   color: black;
   font-size: var(--hero-title-size);
   line-height: 1.02;
-  font-weight: 600;
+  font-weight: 300;
   letter-spacing: -0.02em;
 }
 
@@ -122,7 +128,7 @@ h3, h4, h5, h6 {
   color: var(--hero-title-color);
   font-size: var(--hero-title-size);
   line-height: 1.02;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.02em;
 }
 
@@ -131,15 +137,15 @@ h3, h4, h5, h6 {
   color: var(--hero-name-color);
   font-size: var(--hero-name-size);
   line-height: 1.05;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .hero-role {
-  font-family: var(--font-nova-cut), cursive;
+  font-family: var(--font-fira-sans-condensed), cursive;
   color: var(--hero-role-color);
   font-size: var(--hero-role-size);
   line-height: 1.05;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .hero-info {
