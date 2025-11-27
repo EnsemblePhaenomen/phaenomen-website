@@ -4,7 +4,7 @@ import { useState } from "react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 import EnsembleCarousel from "./EnsembleCarousel";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
-import type { Musicien } from "@/app/types/dataConfig";
+import type { Musicien } from "@/app/types/musiciensConfig";
 
 type EnfantProps = {
   data: Musicien[];

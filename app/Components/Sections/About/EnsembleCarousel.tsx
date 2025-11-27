@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import data from "@/app/data";
 import musiciensData from "@/app/data/musiciens/musiciens";
 import Image from "next/image";
 import CarouselControls from "../../(ui)/CarouselControls";
