@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 
 const sentence =
-"L'ensemble Phænomen est spécialisé dans la musique baroque allemande du XVIIIème siècle et qui se donne pour mission principale de promouvoir et de diffuser la musique de Gottfried Heinrich Stölzel (1690-1749)."
+"L'ensemble Phænomen est spécialisé dans la musique baroque allemande du XVIIIème siècle et se donne pour mission principale de promouvoir et de diffuser la musique de Gottfried Heinrich Stölzel (1690-1749)."
 const words = sentence.split(" ");
 
 export default function ScrollLinkedText() {

@@ -93,7 +93,7 @@ function ProgrammeBlock({
       {programme.sections.map((section, sIndex) => (
         <div key={sIndex} className="mb-8">
           {section.title && (
-            <h2 className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-60 mb-3">
+            <h2 className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-60 mb-3 ">
               {section.title}
             </h2>
           )}
@@ -105,11 +105,12 @@ function ProgrammeBlock({
                 py-3 border-b border-neutral-300
                 cursor-pointer transition-colors
                 hover:bg-white/40
+                
               "
               onMouseEnter={() => setHoveredWork(work)}
               onMouseLeave={() => setHoveredWork(null)}
             >
-              <p className="text-base md:text-lg">{work.title}</p>
+              <p className="text-base md:text-lg hover:text-[#E42B54]">{work.title}</p>
 
               {(work.catalogue || work.liturgicalPeriod) && (
                 <p className="text-[0.7rem] md:text-xs opacity-60 mt-1">
