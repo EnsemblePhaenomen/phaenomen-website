@@ -15,33 +15,42 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
   return (
     <div className="relative w-full bg-transparent">
       {/* === IMAGE CENTRÉE EN BACKGROUND === */}
-      {hoveredWork?.imageSrc && (
-        <div
-          className="
-            pointer-events-none
-            absolute inset-0
-            flex items-center justify-center
-            z-0
-          "
-        >
-          <div
-            className="
-              relative
-              w-64 h-64 md:w-96 md:h-96
-              rounded-full overflow-hidden
-              opacity-30 
-              transition-all duration-300
-            "
-          >
-            <Image
-              src={hoveredWork.imageSrc}
-              alt={hoveredWork.imageAlt || ""}
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      )}
+{hoveredWork?.imageSrc && (
+  <div
+    className="
+      pointer-events-none
+      fixed inset-0
+      flex items-center justify-center
+      z-0
+    "
+  >
+    <div
+      className="
+        relative
+        w-64 h-64 md:w-150 md:h-130
+        rounded-full overflow-hidden
+        opacity-80
+        translate-x-10 md:translate-x-100
+      "
+    >
+      {/* Image floue + désaturée */}
+      <Image
+        src={hoveredWork.imageSrc}
+        alt={hoveredWork.imageAlt || ""}
+        fill
+        className="object-cover  saturate-1"
+      />
+
+      {/* Halo clair sur les bords pour les fondre avec le background */}
+      <div
+        className="
+          absolute inset-0 pointer-events-none
+          bg-[radial-gradient(circle,transparent_40%,#f4f4f4_100%)]
+        "
+      />
+    </div>
+  </div>
+)}
 
       {/* === CONTENU AU-DESSUS DE L’IMAGE === */}
       {/* Pas de padding horizontal ici, on laisse le parent (ProjetStoltzel) gérer */}
