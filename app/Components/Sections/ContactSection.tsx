@@ -54,13 +54,13 @@ export default function ContactSection() {
                 PAR TÉLÉPHONE OU PAR MAIL
               </p>
 
-              <p className="text-2xl lg:text-4xl leading-none">
+              <p className="text-2xl lg:text-2xl leading-none hover:text-[#E42B54]">
                 06 06 06 06 06
               </p>
 
               <a
                 href="mailto:ensemblephaenomen@gmail.com"
-                className="text-2xl lg:text-4xl"
+                className="text-2xl lg:text-2xl hover:text-[#E42B54]"
               >
                 ensemblephaenomen@gmail.com
               </a>
