@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { useScroll, useMotionValueEvent } from "framer-motion";
 
 const sentence =
-"L'ensemble Phænomen est un ensemble spécialisé dans la musique baroque allemande du XVIIIème siècle. Sous la direction de Noé Chapolard, l'ensemble se donne pour mission principale de promouvoir et de diffuser la musique de Gottfried Heinrich Stölzel (1690-1749), pour la plupart oubliée tant par les historiens que par les interprètes."
+"L'ensemble Phænomen est spécialisé dans la musique baroque allemande du XVIIIème siècle et qui se donne pour mission principale de promouvoir et de diffuser la musique de Gottfried Heinrich Stölzel (1690-1749)."
 const words = sentence.split(" ");
 
 export default function ScrollLinkedText() {
@@ -29,7 +29,7 @@ export default function ScrollLinkedText() {
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     // Sur mobile, révéler plus rapidement
-    const revealEnd = isMobile ? 0.6 : 0.8;
+    const revealEnd = isMobile ? 0.4 : 0.5;
     const clamped = Math.min(latest / revealEnd, 1);
     const maxCursor = totalLetters - 1;
     setCursor(clamped * maxCursor);
@@ -39,7 +39,7 @@ export default function ScrollLinkedText() {
     <section 
       ref={sectionRef} 
       className="relative bg-[#f4f4f4]"
-      style={{ height: isMobile ? '200vh' : '300vh' }}
+      style={{ height: isMobile ? '100vh' : '150vh' }}
     >
       <div className="sticky top-0 flex h-screen items-center justify-center px-4">
         <h1 className="inline-block relative text-center text-xl sm:text-2xl md:text-4xl font-serif leading-tight max-w-4xl">
