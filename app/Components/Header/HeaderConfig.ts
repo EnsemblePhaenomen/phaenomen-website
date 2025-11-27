@@ -27,7 +27,7 @@ export const NAVIGATION_ITEMS: NavItem[] = [
       { href: "#projet-stoltzel", label: "Projet Stöltzel" },
     ]
   },
-  { href: "#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
   { href: "#agenda", label: "Agenda" },
   { href: "#media", label: "Médias" },
 ];

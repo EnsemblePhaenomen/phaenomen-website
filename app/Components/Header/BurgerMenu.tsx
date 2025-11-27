@@ -25,8 +25,12 @@ export default function BurgerMenu({ items, isDark }: BurgerMenuProps) {
   const [openSubMenus, setOpenSubMenus] = useState<Set<string>>(new Set());
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    scrollToSection(href);
+    // Si c'est une ancre (#), utiliser scrollToSection
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      scrollToSection(href);
+    }
+    // Sinon, laisser Next.js gérer la navigation
     setIsOpen(false);
     setOpenSubMenus(new Set());
   };

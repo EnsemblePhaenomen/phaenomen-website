@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nova_Cut, Fira_Sans_Condensed } from "next/font/google";
 import "./globals.css";
 import DynamicHeader from "./Components/Header/DynamicHeader";
+import { HeaderProvider } from "./contexts/HeaderContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,8 +49,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${novaCut.variable} ${firaSansCondensed.variable} antialiased`}
       >
-        <DynamicHeader />
-        {children}
+        <HeaderProvider>
+          <DynamicHeader />
+          {children}
+        </HeaderProvider>
       </body>
     </html>
   );
