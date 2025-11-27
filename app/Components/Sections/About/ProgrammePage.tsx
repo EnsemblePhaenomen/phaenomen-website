@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Programme, Work } from "@/app/types/programmeConfig";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProgrammePageProps {
   programmes: Programme[];
@@ -57,12 +58,12 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
 
           {/* CTA vers Contact */}
           <div className="mt-16 pt-8 border-t border-neutral-300">
-            <a
-              href="/pages/contact"
+            <Link
+              href="/contact"
               className="inline-block text-lg md:text-xl font-light hover:underline transition-all duration-300"
             >
               Contactez-nous pour programmer ces concerts ou accueillir d`&apos;autres programmes →
-            </a>
+            </Link>
           </div>
 
         </div>

@@ -19,19 +19,11 @@ export default function MapRevealButton({ className = "" }: MapRevealButtonProps
       {/* Bouton animé */}
       <motion.button
         onClick={handleClick}
-        className={`h-44 w-44 rounded-full bg-black text-white flex flex-col items-center justify-center text-1xl uppercase tracking-[0.18em] relative overflow-hidden ${className}`}
+        className={`h-44 w-44 rounded-full bg-black text-white border-2 border-black flex flex-col items-center justify-center text-1xl uppercase tracking-[0.18em] relative overflow-hidden transition-all duration-300 hover:bg-[#f4f4f4] hover:text-black ${className} hover:cursor-pointer`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
-        {/* Effet de pulse au hover */}
-        <motion.div
-          className="absolute inset-0 rounded-full bg-white"
-          initial={{ scale: 0, opacity: 0.5 }}
-          whileHover={{ scale: 1.5, opacity: 0 }}
-          transition={{ duration: 0.6 }}
-        />
-        
         <span className="relative z-10">
           {isMapVisible ? "MASQUER" : "AFFICHER"}
           <br />
@@ -47,7 +39,7 @@ export default function MapRevealButton({ className = "" }: MapRevealButtonProps
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm "
             onClick={handleClick}
           >
             <motion.div

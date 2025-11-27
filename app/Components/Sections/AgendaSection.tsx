@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import AnimatedBorderCard from "../(ui)/AnimatedBorderCard";
+import ContactButton from "../(ui)/Animations/ContactButton";
 
 const events = [
   { date: "24 JAN.", title: "Cantates de Bach", city: "Nantes", place: "Église Saint-Nicolas", info: "20h — Entrée libre." },
@@ -16,6 +20,17 @@ const events = [
 ];
 
 export default function AgendaSection() {
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    if (target.scrollTop > 0 && !isScrolling) {
+      setIsScrolling(true);
+    } else if (target.scrollTop === 0 && isScrolling) {
+      setIsScrolling(false);
+    }
+  };
+
   return (
     <section className="min-h-screen pt-20 flex items-center">
       <div className="w-full max-w-7xl mx-auto px-8">
@@ -51,26 +66,7 @@ export default function AgendaSection() {
                 px-8
               "
             >
-              <button
-                type="button"
-                className="
-                  flex items-center justify-center
-                  h-52 w-52 md:h-64 md:w-64
-                  rounded-full
-                  bg-black text-white
-                  text-[0.7rem] md:text-xs
-                  tracking-[0.25em]
-                  uppercase
-                  text-center
-                  leading-relaxed
-                "
-              >
-                Télécharger
-                <br />
-                le programme
-                <br />
-                complet (PDF)
-              </button>
+              <ContactButton />
             </div>
           </AnimatedBorderCard>
 
@@ -84,14 +80,16 @@ export default function AgendaSection() {
             "
           >
             <div
-              className="
+              onScroll={handleScroll}
+              className={`
                 w-full max-w-xl
                 text-center md:text-left
                 overflow-y-auto
                 md:h-[713px]
                 pr-2
                 space-y-6
-              "
+                ${isScrolling ? 'scrollbar-visible' : 'scrollbar-hidden'}
+              `}
             >
               <p className="text-sm md:text-base uppercase tracking-[0.25em]">
                 Prochains rendez-vous
