@@ -112,7 +112,7 @@ export default function AgendaSection() {
               `}
             >
               <p className="text-sm md:text-base uppercase tracking-[0.25em]">
-                Prochains rendez-vous
+                Prochains concerts
               </p>
 
               <div className="space-y-8">
