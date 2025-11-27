@@ -54,7 +54,7 @@ export default function BurgerMenu({ items, isDark }: BurgerMenuProps) {
         onClick={() => setIsOpen(!isOpen)}
         className={`md:hidden p-2 rounded-lg transition-colors duration-200 ${
           isDark
-            ? "text-black hover:bg-gray-100"
+            ? "text-black hover:bg-grey-100"
             : "text-white hover:bg-white/10"
         }`}
         aria-label="Menu"
@@ -96,7 +96,7 @@ export default function BurgerMenu({ items, isDark }: BurgerMenuProps) {
       <div
         className={`fixed top-0 right-0 h-full w-64 z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } ${isDark ? "bg-white" : "bg-gray-900"}`}
+        } ${isDark ? "bg-[#f4f4f4]" : "bg-gray-900"}`}
       >
         {/* Close Button */}
         <div className="flex justify-end p-4">

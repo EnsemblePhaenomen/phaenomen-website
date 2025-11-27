@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 
 interface AnimatedBorderCardProps {
   children: React.ReactNode;
@@ -9,7 +10,8 @@ interface AnimatedBorderCardProps {
   borderColor?: string;
   animationDuration?: number;
   delay?: number;
-  sides?: ("top" | "right" | "bottom" | "left")[]; 
+  sides?: ("top" | "right" | "bottom" | "left")[];
+  responsive?: boolean; // NEW
 }
 
 export default function AnimatedBorderCard({
@@ -18,10 +20,21 @@ export default function AnimatedBorderCard({
   borderColor = "black",
   animationDuration = 0.15,
   delay = 0,
-  sides = ["top", "right", "bottom", "left"], // default: full frame
+  sides = ["top", "right", "bottom", "left"],
+  responsive = false, // NEW
 }: AnimatedBorderCardProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  // Detect md breakpoint
+  const isDesktop = useMediaQuery("(min-width: 811px)");
+
+  // Responsive automatic side selection
+  const effectiveSides = responsive
+    ? isDesktop
+      ? ["left", "right"] // desktop
+      : ["top", "bottom"] // mobile
+    : sides;
 
   const topDelay = delay;
   const rightDelay = delay + animationDuration;
@@ -33,7 +46,7 @@ export default function AnimatedBorderCard({
       <div className="relative z-10">{children}</div>
 
       {/* TOP */}
-      {sides.includes("top") && (
+      {effectiveSides.includes("top") && (
         <motion.div
           className="absolute top-0 left-0 right-0 h-px origin-right"
           style={{ backgroundColor: borderColor }}
@@ -48,7 +61,7 @@ export default function AnimatedBorderCard({
       )}
 
       {/* RIGHT */}
-      {sides.includes("right") && (
+      {effectiveSides.includes("right") && (
         <motion.div
           className="absolute top-0 right-0 bottom-0 w-px origin-top"
           style={{ backgroundColor: borderColor }}
@@ -63,7 +76,7 @@ export default function AnimatedBorderCard({
       )}
 
       {/* BOTTOM */}
-      {sides.includes("bottom") && (
+      {effectiveSides.includes("bottom") && (
         <motion.div
           className="absolute bottom-0 left-0 right-0 h-px origin-left"
           style={{ backgroundColor: borderColor }}
@@ -78,7 +91,7 @@ export default function AnimatedBorderCard({
       )}
 
       {/* LEFT */}
-      {sides.includes("left") && (
+      {effectiveSides.includes("left") && (
         <motion.div
           className="absolute top-0 left-0 bottom-0 w-px origin-bottom"
           style={{ backgroundColor: borderColor }}

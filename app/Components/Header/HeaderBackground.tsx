@@ -5,8 +5,8 @@ interface HeaderBackgroundProps {
 export default function HeaderBackground({ isVisible }: HeaderBackgroundProps) {
   return (
     <div 
-      className={`fixed inset-x-0 top-0 h-20 bg-[#f4f4f4]/60 backdrop-blur-md transition-opacity duration-300 z-40 ${
-        isVisible ? 'opacity-95' : 'opacity-0'
+      className={`fixed inset-x-0 top-0 h-20 bg-[#f4f4f4] transition-opacity duration-300 z-40 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     />
   );

@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import data from "@/app/data";
+import musiciensData from "@/app/data/musiciens/musiciens";
 import Image from "next/image";
 import CarouselControls from "../../(ui)/CarouselControls";
 
@@ -15,7 +16,7 @@ type CarouselPhoto = {
   modalAlt?: string;
 };
 
-const musicianPhotos: CarouselPhoto[] = data.musiciens
+const musicianPhotos: CarouselPhoto[] = musiciensData.musiciens
   .filter((musicien) => Boolean(musicien.portrait))
   .map((musicien) => ({
     name: `${musicien.prénom} ${musicien.nom}`.trim(),

@@ -13,13 +13,6 @@ export interface Musicien {
   }
 }
 
-export interface Credit {
-  nom: string;
-  prénom: string;
-  role: string;
-
-}
-
 export interface Chef {
   nom: string;
   prénom: string;
@@ -33,4 +26,3 @@ export interface Chef {
     alt: string;
   }
 }
-

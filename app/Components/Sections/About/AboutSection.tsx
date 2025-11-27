@@ -1,6 +1,6 @@
 import Lensemble from "./Lensemble";
 import ProjetStoltzel from "./ProjetStoltzel";
-import data from "@/app/data";
+import musiciensData from "@/app/data/musiciens/musiciens";
 import AnimatedEntete from "./AnimatedEntete";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 import LeChef from "./Lechef";
@@ -21,8 +21,8 @@ export default function AboutSection() {
 
         {/* Right content column */}
         <div className="flex-1 min-w-0">
-          <Lensemble data={data.musiciens} />
-          <LeChef data={data.chef}/>
+          <Lensemble data={musiciensData.musiciens} />
+          <LeChef data={musiciensData.chef}/>
           <ProjetStoltzel />
         </div>
       </div>

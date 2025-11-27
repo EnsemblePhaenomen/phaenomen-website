@@ -48,6 +48,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${novaCut.variable} ${firaSansCondensed.variable} antialiased`}
+        suppressHydrationWarning
       >
         <HeaderProvider>
           <DynamicHeader />
