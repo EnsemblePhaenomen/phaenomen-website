@@ -1,63 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { GalleryImages } from "@/app/types/galleryConfig";
-
-const galleryColumns: GalleryImages[][] = [
-  [
-    {
-      src: "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-      alt: "gallery-photo",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80",
-      alt: "gallery-photo",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-      alt: "gallery-photo",
-    },
-  ],
-  [
-    {
-      src: "https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      alt: "gallery-photo",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-      alt: "gallery-photo",
-    },
-    {
-      src: "https://docs.material-tailwind.com/img/team-3.jpg",
-      alt: "gallery-photo",
-    },
-  ],
-  [
-    {
-      src: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-      alt: "gallery-photo",
-    },
-    {
-      src: "https://docs.material-tailwind.com/img/team-3.jpg",
-      alt: "gallery-photo",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      alt: "gallery-photo",
-    },
-  ],
-  [
-    {
-      src: "https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      alt: "gallery-photo",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80",
-      alt: "gallery-photo",
-    },
-  ],
-];
-
+import galleryImages from "@/app/data/galleryImage/galleryImage";
 
 export default function PhotoGallery() {
   const [selectedImage, setSelectedImage] = useState<GalleryImages | null>(
@@ -88,7 +34,7 @@ export default function PhotoGallery() {
   return (
     <>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        {galleryColumns.map((column, columnIndex) => (
+        {galleryImages.map((column, columnIndex) => (
           <div key={`column-${columnIndex}`} className="grid gap-4">
             {column.map((image, imageIndex) => (
               <button
@@ -97,10 +43,13 @@ export default function PhotoGallery() {
                 onClick={() => setSelectedImage(image)}
                 className="group relative block overflow-hidden rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white hover:cursor-pointer"
               >
-                <img
-                  className="h-auto w-full object-cover object-center transition duration-300 group-hover:scale-105"
+                <Image
                   src={image.src}
                   alt={image.alt}
+                  width={image.width ?? 1200}
+                  height={image.height ?? 1600}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+                  className="h-auto w-full rounded-lg object-cover object-center transition duration-300 group-hover:scale-105"
                 />
               </button>
             ))}
@@ -126,14 +75,19 @@ export default function PhotoGallery() {
               className="absolute right-3 top-3 z-10 rounded-full bg-black/60 px-3 py-1 text-sm text-white transition hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               aria-label="Fermer la modale"
             >
-              ✕
+              X
             </button>
 
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="h-[60vh] w-full bg-neutral-950 object-contain"
-            />
+            <div className="relative h-[60vh] w-full bg-neutral-950">
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                fill
+                sizes="100vw"
+                className="object-contain"
+                priority
+              />
+            </div>
             {selectedImage.caption && (
               <div className="px-6 py-4 text-left">
                 <p className="text-lg font-semibold text-white">
@@ -148,3 +102,5 @@ export default function PhotoGallery() {
     </>
   );
 }
+
+
