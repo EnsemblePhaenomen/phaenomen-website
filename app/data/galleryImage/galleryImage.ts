@@ -2,23 +2,23 @@ import type { GalleryImages } from "@/app/types/galleryConfig";
 
 const galleryImages: GalleryImages[] = [
   {
-    src: "/images/gallery/image1.jpg",
-    alt: "A beautiful sunrise over the mountains",
-    caption: "Elisanda Canals",
+            src: "/ensembleGallery/photos des musiciens/Morger Lara.jpg",
+            alt: "Portrait de la mezzo-soprano Lara Morger",
+    caption: "Lara Morger",
   },
   {
-    src: "/images/gallery/image2.jpg",
-    alt: "City skyline at night with lights reflecting on water",
-    caption: "Andrej Grilc",
+    src: "/ensembleGallery/photoGallery/phaenomenScreen.png",
+    alt: "L'ensemble Phaenomen en répétition",
+    caption: "L'ensemble Phaenomen",
   },
   {
-    src: "/images/gallery/image3.jpg",
-    alt: "Close-up of a colorful butterfly on a flower",
+    src: "/ensembleGallery/photos des musiciens/Montezuma Ana-lucia.jpg",
+    alt: "Portrait de la mezzo-soprano Ana-lucia Montezuma",
     caption: "Ana-lucia Montezuma",
   },
   {
-    src: "/images/gallery/image4.jpg",
-    alt: "Serene beach with turquoise waters and white sand",
+    src: "/ensembleGallery/photos des musiciens/Bermudez Sergio.jpg",
+    alt: "Portrait du ténor Sergio Bermudez",
     caption: "Sergio Bermudez",
   },
   {
