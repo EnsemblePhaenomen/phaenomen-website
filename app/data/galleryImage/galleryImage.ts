@@ -1,6 +1,6 @@
-import type { GalleryImage } from "@/app/types/galleryConfig";
+import type { GalleryImages } from "@/app/types/galleryConfig";
 
-const galleryImages: GalleryImage[] = [
+const galleryImages: GalleryImages[] = [
   {
     src: "/images/gallery/image1.jpg",
     alt: "A beautiful sunrise over the mountains",
