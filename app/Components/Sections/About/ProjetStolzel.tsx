@@ -55,7 +55,7 @@ export default function ProjetStolzel() {
       <section className="relative z-0 mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         {/* Top title */}
         <div className="w-full flex flex-col">
-          <h2 className="section-title pb-6">Projet Stöltzel</h2>
+          <h2 className="section-title pb-6">Projet Stölzel</h2>
           <AnimatedBorderCard
             className=""
             sides={["top"]}
