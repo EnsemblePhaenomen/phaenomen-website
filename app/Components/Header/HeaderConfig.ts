@@ -24,7 +24,7 @@ export const NAVIGATION_ITEMS: NavItem[] = [
     label: "À propos",
     subMenu: [
       { href: "/#about", label: "L'ensemble" },
-      { href: "/#projet-stoltzel", label: "Projet Stöltzel" },
+      { href: "/#projet-stolzel", label: "Projet Stölzel" },
     ]
   },
   { href: "/contact", label: "Contact" },

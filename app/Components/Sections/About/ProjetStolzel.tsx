@@ -8,7 +8,7 @@ import ProgrammePage from "./ProgrammePage";
 import { programmeCantatesVolI } from "@/app/data/programmes/cantates-vol1";
 import { programmeInstrumentalVolI } from "@/app/data/programmes/instrumental-vol1";
 
-export default function ProjetStoltzel() {
+export default function ProjetStolzel() {
   const [openSections, setOpenSections] = useState({
     sonore: false,
     musicologique: false,
@@ -27,7 +27,7 @@ export default function ProjetStoltzel() {
 
   return (
     <main
-      id="projet-stoltzel"
+      id="projet-stolzel"
       className="relative w-full max-w-full text-black overflow-hidden "
     >
       {/* Image du hibou en arrière-plan - visible uniquement sur écrans > md et quand programme est fermé */}

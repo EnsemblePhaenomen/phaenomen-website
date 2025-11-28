@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import type { GalleryImages } from "@/app/types/galleryConfig";
 
-
 const galleryColumns: GalleryImages[][] = [
   [
     {
@@ -59,8 +58,11 @@ const galleryColumns: GalleryImages[][] = [
   ],
 ];
 
+
 export default function PhotoGallery() {
-  const [selectedImage, setSelectedImage] = useState<GalleryImages | null>(null);
+  const [selectedImage, setSelectedImage] = useState<GalleryImages | null>(
+    null
+  );
 
   useEffect(() => {
     if (!selectedImage) return;

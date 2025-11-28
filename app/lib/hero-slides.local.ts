@@ -42,7 +42,7 @@ export const heroSlides: HeroSlide[] = [
       "Spécialistes de la pratique musicale et du répertoire baroque",
     cta: {
       label: "En savoir plus",
-      href: "/#projet-stoltzel",
+      href: "/#projet-stolzel",
     },
   },
 ];
@@ -53,7 +53,7 @@ heroSlides.push({
     src: "/heroGallery/slide_2.jpg",
     alt: "Masterclass de musique baroque",
   },
-  headline: "Project Stöltzel",
+  headline: "Project Stölzel",
   subheadline:
     "Parcourir l'intégrale des cantates de Gottfried Heinrich Stölzel",
   cta: {
