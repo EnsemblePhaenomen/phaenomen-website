@@ -18,10 +18,6 @@ export default function Lechef({ data: _data }: EnfantProps) {
   const imageSrc = _data.modal?.src || _data.portrait?.src;
   const imageAlt = _data.modal?.alt || _data.portrait?.alt || _data.nom;
 
-  if (!imageSrc) {
-    return null;
-  }
-
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout> | undefined;
 
@@ -37,6 +33,10 @@ export default function Lechef({ data: _data }: EnfantProps) {
       }
     };
   }, [isOpen]);
+
+  if (!imageSrc) {
+    return null;
+  }
 
   return (
     <main className="w-full max-w-full text-black">
@@ -95,11 +95,9 @@ export default function Lechef({ data: _data }: EnfantProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
                 <div
-                  className={`absolute inset-0 z-20 flex items-center text-center justify-center p-4 transition-opacity duration-500  ${
-                    showName
-                      ? "opacity-100 "
-                      : "opacity-0 "
-                  }                  }`}
+                  className={`absolute inset-0 z-20 flex items-center text-center justify-center p-4 transition-opacity duration-500 ${
+                    showName ? "opacity-100" : "opacity-0"
+                  }`}
                 >
                   <h2 className="text-[#E42B54] text-xl md:text-2xl font-semibold drop-shadow">
                     {_data.prénom} {_data.nom}
