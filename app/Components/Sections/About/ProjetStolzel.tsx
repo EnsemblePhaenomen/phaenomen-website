@@ -1,7 +1,7 @@
 "use client";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 import ProgrammePage from "./ProgrammePage";
@@ -17,6 +17,19 @@ export default function ProjetStolzel() {
 
   const hibouRef = useRef(null);
   const isInView = useInView(hibouRef, { once: true, amount: 0.3 });
+  const programmeSectionRef = useRef<HTMLElement | null>(null);
+  const isProgrammeInView = useInView(programmeSectionRef, {
+    amount: 0.2,
+    margin: "0px 0px -10% 0px",
+  });
+
+  // Ferme automatiquement le bloc programme dès qu'il sort du viewport
+  useEffect(() => {
+    if (isProgrammeInView) return;
+    setOpenSections((prev) =>
+      prev.programme ? { ...prev, programme: false } : prev
+    );
+  }, [isProgrammeInView]);
 
   const toggleSection = (section: keyof typeof openSections) => {
     setOpenSections((prev) => ({
@@ -167,7 +180,7 @@ export default function ProjetStolzel() {
               animationDuration={0.3}
               delay={0.2}
             >
-              <section className="Programme">
+              <section className="Programme" ref={programmeSectionRef}>
                 <div
                   className="flex items-center gap-2 mb-3 group cursor-pointer"
                   onClick={() => toggleSection("programme")}

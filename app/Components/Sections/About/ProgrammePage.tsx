@@ -55,7 +55,6 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
       {/* === CONTENU AU-DESSUS DE L’IMAGE === */}
       {/* Pas de padding horizontal ici, on laisse le parent (ProjetStolzel) gérer */}
       <div className="relative z-10 w-full py-4 md:py-8">
-        {/* pas de max-w-5xl/mx-auto ici si tu veux qu'il colle au container du card */}
         {programmes.map((programme, index) => (
           <ProgrammeBlock
             key={index}
