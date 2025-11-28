@@ -39,7 +39,7 @@ export default function Lechef({ data: _data }: EnfantProps) {
   }
 
   return (
-    <main className="w-full max-w-full text-black">
+    <main className="w-full max-w-full text-black ">
       <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         <div className="w-full flex flex-col">
           <h2 className="section-title pb-6">Le chef</h2>
@@ -79,7 +79,7 @@ export default function Lechef({ data: _data }: EnfantProps) {
                   : "max-h-0 opacity-0"
               }`}
             >
-              <div className="max-w-[40%] md:flex-row gap-6">
+              <div className="max-w-[80%] md:max-w-[40%] md:flex-row gap-6">
                 <p className="flex-1 leading-relaxed whitespace-pre-line">{_data.bio}</p>
               </div>
               <div className="relative group w-full md:w-1/2 aspect-[16/9] rounded-xl overflow-hidden">
@@ -87,7 +87,7 @@ export default function Lechef({ data: _data }: EnfantProps) {
                   src={imageSrc}
                   alt={imageAlt}
                   fill
-                  className="object-cover"
+                  className="object-cover pt-4 md:pt-0"
                   sizes="(min-width: 768px) 50vw, 100vw"
                 />
 
