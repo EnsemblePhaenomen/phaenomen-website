@@ -1,7 +1,7 @@
 "use client";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 import ProgrammePage from "./ProgrammePage";
@@ -24,12 +24,12 @@ export default function ProjetStolzel() {
   });
 
   // Ferme automatiquement le bloc programme dès qu'il sort du viewport
-  useEffect(() => {
-    if (isProgrammeInView) return;
-    setOpenSections((prev) =>
-      prev.programme ? { ...prev, programme: false } : prev
-    );
-  }, [isProgrammeInView]);
+  // useEffect(() => {
+  //   if (isProgrammeInView) return;
+  //   setOpenSections((prev) =>
+  //     prev.programme ? { ...prev, programme: false } : prev
+  //   );
+  // }, [isProgrammeInView]);
 
   const toggleSection = (section: keyof typeof openSections) => {
     setOpenSections((prev) => ({
@@ -160,11 +160,11 @@ export default function ProjetStolzel() {
                 >
                   <p className="max-w-full md:max-w-[80%] text-1xl">
                     Le Project Stölzel porte une ambition unique : rassembler,
-                    numériser et rendre accessible l&apos;intégralité de l&apos;œuvre de
-                    Gottfried Heinrich Stölzel. <br/> Phænomen développe une base de
-                    données trilingue ouverte à tous, collabore avec
-                    bibliothèques et institutions pour encourager la
-                    numérisation des sources, et produit des éditions
+                    numériser et rendre accessible l&apos;intégralité de
+                    l&apos;œuvre de Gottfried Heinrich Stölzel. <br /> Phænomen
+                    développe une base de données trilingue ouverte à tous,
+                    collabore avec bibliothèques et institutions pour encourager
+                    la numérisation des sources, et produit des éditions
                     scientifiques destinées chercheurs, interprètes et
                     passionnés. Ce travail remet en lumière un compositeur
                     essentiel de l&apos;histoire baroque.
@@ -197,7 +197,7 @@ export default function ProjetStolzel() {
                   </h3>
                 </div>
                 <div
-                  className={`overflow-y-auto transition-all duration-500 ease-in-out ${
+                  className={`transition-all duration-500 ease-in-out ${
                     openSections.programme
                       ? "max-h-[2000px] opacity-100 pt-4 px-4 pb-8"
                       : "max-h-0 opacity-0"

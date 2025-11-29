@@ -9,8 +9,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col items-center justify-center w-full overflow-hidden"
-    >
+      className="min-h-screen flex flex-col items-center w-full overflow-x-hidden"    >
       <div className="flex w-full max-w-full">
         {/* Left image column - partagée entre les deux sections */}
         <div className="hidden md:block md:w-40 lg:w-52 flex-shrink-0">
