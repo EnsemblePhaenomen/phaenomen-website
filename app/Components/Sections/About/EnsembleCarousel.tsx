@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import musiciensData from "@/app/data/musiciens/musiciens";
 import Image from "next/image";
 import CarouselControls from "../../(ui)/CarouselControls";
@@ -47,6 +47,22 @@ export default function EnsembleCarousel() {
     null
   );
   const viewportRef = useRef<HTMLDivElement | null>(null);
+  const previousOverflowRef = useRef<string>("");
+
+  // Lock page scroll when modal is open
+  useEffect(() => {
+    if (selectedPhoto) {
+      previousOverflowRef.current = document.body.style.overflow || "";
+      document.body.style.overflow = "hidden";
+      return;
+    }
+
+    document.body.style.overflow = previousOverflowRef.current;
+
+    return () => {
+      document.body.style.overflow = previousOverflowRef.current;
+    };
+  }, [selectedPhoto]);
 
   if (!musicianPhotos.length) return null;
 
@@ -61,14 +77,12 @@ export default function EnsembleCarousel() {
     const firstCard = track.firstElementChild as HTMLElement | null;
     if (!lastCard || !firstCard) return;
 
-    // 1️⃣ Si la dernière carte est ENTIEREMENT visible → retour au début
     if (isElementFullyInViewport(viewport, lastCard)) {
       viewport.scrollTo({ left: 0, behavior: "smooth" });
       setCurrentIndex(0);
       return;
     }
 
-    // 2️⃣ Sinon, on avance d’une carte
     const style = window.getComputedStyle(track);
     const gap =
       parseFloat(style.columnGap || "0") || parseFloat(style.gap || "0") || 0;
@@ -97,7 +111,6 @@ export default function EnsembleCarousel() {
     const step = firstCard.offsetWidth + gap;
     const target = viewport.scrollLeft - step;
 
-    // Si on dépasse le début → on saute à la fin
     if (target < 0) {
       const maxScroll = track.scrollWidth - viewport.clientWidth;
       viewport.scrollTo({ left: maxScroll, behavior: "smooth" });
@@ -134,14 +147,15 @@ export default function EnsembleCarousel() {
 
   return (
     <>
+      {/* Carousel */}
       <div className="relative w-full py-6">
-        {/* Viewport - Enable native scroll on mobile for swipe */}
-        <div 
-          ref={viewportRef} 
+        {/* Viewport - scroll horizontal natif pour mobile */}
+        <div
+          ref={viewportRef}
           className="overflow-x-auto overflow-y-hidden md:overflow-hidden scrollbar-hide"
           style={{
-            scrollSnapType: 'x mandatory',
-            WebkitOverflowScrolling: 'touch',
+            scrollSnapType: "x mandatory",
+            WebkitOverflowScrolling: "touch",
           }}
         >
           {/* Track */}
@@ -156,7 +170,7 @@ export default function EnsembleCarousel() {
               <figure
                 key={`${photo.src}-${index}`}
                 className="group relative aspect-[2/3] w-40 cursor-pointer overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 shadow-sm sm:w-48 md:w-56"
-                style={{ scrollSnapAlign: 'start' }}
+                style={{ scrollSnapAlign: "start" }}
                 onClick={() => setSelectedPhoto(photo)}
               >
                 <Image
@@ -176,7 +190,7 @@ export default function EnsembleCarousel() {
           </div>
         </div>
 
-        {/* Controls Component - Sides on desktop, bottom on mobile */}
+        {/* Controls Component */}
         <CarouselControls
           totalSlides={musicianPhotos.length}
           currentIndex={currentIndex}
@@ -188,21 +202,31 @@ export default function EnsembleCarousel() {
           theme="light"
         />
       </div>
-      {selectedPhoto && console.log("Selected photo bio:", selectedPhoto.src)}
+
       {/* Modal */}
       {selectedPhoto && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/65 px-4"
+          className="
+            fixed inset-0 z-50 
+            flex items-start justify-center md:items-center
+            bg-black/65 
+            px-4 py-8 
+            overflow-y-auto
+          "
           role="dialog"
           aria-modal="true"
           onClick={closeModal}
         >
-          {/* Modale avec background-image */}
+          {/* Boîte de modal centrée horizontalement, hauteur = contenu */}
           <div
-            className="relative w-full max-w-6xl h-[90vh] overflow-hidden rounded-2xl text-white shadow-xl"
+            className="
+              relative mx-auto w-full max-w-6xl 
+              rounded-2xl text-white shadow-xl 
+              overflow-hidden
+            "
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Background image */}
+            {/* Background image qui suit la hauteur du contenu */}
             <Image
               src={selectedPhoto.modalSrc || selectedPhoto.src}
               alt={selectedPhoto.modalAlt || selectedPhoto.alt}
@@ -211,7 +235,7 @@ export default function EnsembleCarousel() {
               sizes="(max-width: 768px) 90vw, 80vw"
               priority
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/80" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/90" />
 
             {/* Bouton fermer */}
             <button
@@ -223,34 +247,31 @@ export default function EnsembleCarousel() {
               ✕
             </button>
 
-            {/* Contenu */}
-            <div className="relative z-10 flex h-full flex-col items-center justify-center gap-6 p-8 md:flex-row md:gap-8">
+            <div className="relative z-10 flex flex-col gap-6 p-8 md:flex-row md:items-start md:gap-8">
               {/* Photo du musicien */}
               <div className="relative aspect-[2/3] w-48 flex-shrink-0 overflow-hidden rounded-xl border-2 border-white/20 shadow-lg md:w-64">
                 <Image
                   src={selectedPhoto.src}
                   alt={selectedPhoto.alt}
                   fill
-                  className="h-full w-full object-cover "
+                  className="h-full w-full object-cover"
                   sizes="(max-width: 768px) 192px, 256px"
                 />
               </div>
 
               {/* Texte */}
-              <div className="flex flex-1 flex-col gap-4 overflow-y-auto max-w-[90ch]">
-                {/* Titre */} 
+              <div className="flex flex-1 flex-col gap-4 max-w-[90ch] max-h-[70vh] overflow-y-auto pr-2">
                 <div>
                   <h2 className="text-4xl font-semibold tracking-tight">
                     {selectedPhoto.name}
                   </h2>
                   {selectedPhoto.instrument && (
-                    <p className="mt-1 text-2xl text-neutral-200 ">
+                    <p className="mt-1 text-2xl text-neutral-200">
                       {selectedPhoto.instrument}
                     </p>
                   )}
                 </div>
 
-                {/* Bio */}
                 {selectedPhoto.bio ? (
                   <p className="text-lg leading-relaxed whitespace-pre-line text-neutral-100">
                     {selectedPhoto.bio}
