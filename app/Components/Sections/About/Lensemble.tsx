@@ -73,24 +73,39 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="max-w-full md:max-w-[80%]">
-                    L&apos;ensemble Phænomen se consacre à la redécouverte de la
-                    musique baroque allemande du XVIIIᵉ siècle. Sous la
-                    direction de Noé Chapolard, il s&apos;attache tout
-                    particulièrement à faire revivre l&apos;œuvre de Gottfried
-                    Heinrich Stölzel (1690-1749), un compositeur majeur
-                    injustement tombé dans l&apos;oubli, tant des historiens que
-                    des musiciens. <br/> <br/> Phænomen rassemble un noyau de musiciens
-                    issus des grands conservatoires européens (Schola Cantorum
-                    de Bâle, CNSMD de Lyon, CMBV, ESMUC…) et actifs au sein
-                    d&apos;ensembles internationaux de renom. Son effectif flexible —
-                    quatuor à cordes, continuo, quatuor vocal et artistes
-                    invités — permet d&apos;explorer un large répertoire baroque avec
-                    des instruments d&apos;époque et une approche historiquement
-                    informée. Porteur d&apos;une identité européenne, diverse et
-                    inclusive, Phænomen cherche à créer des expériences
-                    musicales fortes, sensibles et profondément ancrées dans
-                    l&apos;art vivant.
+                  <p className="max-w-full text-md md:text-2xl md:max-w-[80%]">
+                    Phénomène : Ce qui apparaît, ce qui se manifeste aux sens ou
+                    à la conscience, tant dans l&apos;ordre physique que dans
+                    l&apos;ordre psychique, et qui peut devenir l&apos;objet
+                    d&apos;un savoir.
+                    <br /> <br /> Phænomen naît sous l&apos;impulsion de son
+                    chef Noé Chapolard en 2025, avec pour vocation de se
+                    consacrer à la musique baroque allemande. L&apos;ensemble se
+                    constitue d&apos;un noyau fixe de musiciens autour duquel
+                    gravitent différents artistes invités. Phænomen, graphie
+                    ancienne du mot allemand signifiant “phénomène” (Phänomen en
+                    allemand moderne), évoque l&apos;aspiration de ses musiciens
+                    à explorer la puissance des événements musicaux, des
+                    phénomènes sonores, des apparitions auditives qui donnent
+                    saveur et émotion à la musique baroque.
+                    <br /> <br /> Phænomen est aussi un clin d&apos;œil au grec
+                    ancien et au latin, qui ont laissé leurs racines communes de
+                    ce mot à presque toutes les langues du continent européen,
+                    lui donnant un aspect universel et fédérateur. Pour
+                    l&apos;ensemble Phænomen, se rassembler par la musique
+                    au-delà des frontières linguistiques et culturelles, et se
+                    placer face à des phénomènes, c&apos;est à dire comme
+                    témoins d&apos;apparitions ou d&apos;événements rares, est
+                    un acte fort pour affirmer que l&apos;art vivant a une place
+                    essentielle face aux enjeux d&apos;aujourd&apos;hui. Nos
+                    artistes viennent de nombreuses régions d&apos;Europe
+                    (France, Suisse, Espagne, Hongrie, Allemagne, Italie) et
+                    au-delà (Japon, USA), et nous sommes fiers de promouvoir à
+                    la fois l&apos;excellence et la diversité d&apos;expériences
+                    artistiques, culturelles et linguistiques. Dans cette même
+                    démarche, l&apos;ensemble souhaite s&apos;affirmer fermement
+                    dans sa diversité et promeut l&apos;inclusion dans
+                    l&apos;élaboration de son environnement de travail.
                   </p>
                 </div>
               </section>
@@ -116,7 +131,7 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                     <ArrowIcon className="w-10 h-auto md:w-12" />
                   </div>
                   <h3 className="text-2xl md:text-4xl font-semibold tracking-tight">
-                    Notre ensemble
+                    L&apos;ensemble et ses membres
                   </h3>
                 </div>
                 <div
@@ -127,25 +142,23 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                   }`}
                 >
                   <div className="max-w-full md:max-w-[80%]">
-                    <p>
-                      À ce jour, le cœur de l&apos;ensemble Phænomen réunit un
-                      quatuor à cordes, un trio de continuo et un quatuor vocal.
-                      Formés dans les plus grandes institutions européennes
-                      dédiées à la musique ancienne — Schola Cantorum de Bâle,
-                      ESMUC, CMBV, CNSMD de Lyon —, nos musiciennes et musiciens
-                      collaborent régulièrement avec des ensembles de renom tels
-                      que la Capella Reial de Catalunya, le Bach Collegium Japan
-                      ou l&apos;Ensemble Correspondances.
-                    </p>
-                    <br />
-                    <p>
-                      Spécialistes de la pratique historiquement informée, du
-                      jeu sur instruments d&apos;époque et de
-                      l&apos;interprétation du répertoire baroque, ils comptent
-                      parmi les artistes les plus prometteurs de la scène
-                      française et européenne, distingués par de nombreux prix
-                      internationaux, enregistrements discographiques et
-                      récitals en solistes.
+                    <p className="text-md md:text-2xl ">
+                      À ce jour le cœur de l&apos;ensemble Phænomen est
+                      constitué dun quatuor à cordes, d&apos;un trio de
+                      continuo, et d&apos;un quatuor vocal. <br /> <br /> Issus
+                      des grandes écoles et conservatoires européens de musique
+                      ancienne (Schola Cantorum de Bâle, ESMUC (Barcelone), CMBV
+                      (Versailles), CNSMD de Lyon), et membres d&apos;ensembles
+                      prestigieux établis sur la scène européenne et
+                      internationale (Capella Reial de Catalunya, Bach Collegium
+                      Japan, Ensemble Correspondances… ), nos musiciennes et
+                      musiciens sont spécialistes de la pratique musicale
+                      historiquement informée, du jeu sur instruments
+                      d&apos;époque, et de l&apos;interprétation du répertoire
+                      baroque, et comptent parmi les artistes montants de la
+                      scène française et européenne, avec à leur actif :
+                      récompenses et concours internationaux, enregistrements de
+                      disques et récitals en solistes.
                     </p>
                   </div>
                 </div>
@@ -172,7 +185,7 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                     <ArrowIcon className="w-10 h-auto md:w-12" />
                   </div>
                   <h3 className="text-2xl md:text-4xl font-semibold tracking-tight">
-                    Nos interprètes
+                    Les artistes
                   </h3>
                 </div>
 
@@ -186,8 +199,11 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-4 text-xs sm:text-sm">
                     {musiciens && musiciens.length > 0 ? (
                       musiciens.map((musicien, index) => (
-                        <div key={index} className="space-y-1">
-                          <p className="font-medium">
+                        <div
+                          key={index}
+                          className="space-y-1 text-md md:text-2xl "
+                        >
+                          <p className="">
                             {musicien.prénom} {musicien.nom}
                           </p>
                           <p className="text-neutral-600">
