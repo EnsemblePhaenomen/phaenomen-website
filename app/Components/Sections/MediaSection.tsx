@@ -10,9 +10,6 @@ export default function MediaSection() {
       <div className="container max-w-full mx-auto px-6 py-20 ">
         <div className=" xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-8">Médias</h2>
-          <p className="text-xl md:text-2xl leading-relaxed opacity-90 mb-12">
-            Explorez notre univers sonore et visuel à travers nos créations.
-          </p>
           <div className="flex flex-col gap-6 ">
             
             {/* AUDIO SI UN JOUR IL Y EN A */}
