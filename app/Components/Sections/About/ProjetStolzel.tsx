@@ -7,8 +7,8 @@ import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 import ProgrammePage from "./ProgrammePage";
 import { programmeCantatesVolI } from "@/app/data/programmes/cantates-vol1";
 import { programmeInstrumentalVolI } from "@/app/data/programmes/instrumental-vol1";
-import { s } from "motion/react-client";
 import Link from "next/link";
+import ContacterButton from "../../(ui)/Animations/ContacterButton";
 
 export default function ProjetStolzel() {
   const [openSections, setOpenSections] = useState({
@@ -359,11 +359,7 @@ export default function ProjetStolzel() {
                     projet, pour nous aider à financer les différents éléments
                     de cette mission.
                   </p>
-                  <Link href={"/contact"}>
-                    <p className="pt-8 text-4xl hover:text-[#e42b54] text-center">
-                      Nous contacter
-                    </p>
-                  </Link>
+                  <ContacterButton className="mx-auto mt-8" />
                 </div>
               </section>
             </AnimatedBorderCard>
