@@ -46,7 +46,6 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
           {/* Content column */}
           <div className="flex flex-col gap-8 text-sm leading-relaxed">
 
-                      <LeChef data={musiciensData.chef}/>
 
             {/* Présentation */}
             <AnimatedBorderCard
@@ -229,6 +228,8 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
             {/* Carousel galerie */}
             <section>
               <EnsembleCarousel />
+                                    <LeChef data={musiciensData.chef}/>
+
             </section>
           </div>
         </div>

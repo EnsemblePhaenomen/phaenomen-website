@@ -41,16 +41,7 @@ export default function Lechef({ data: _data }: EnfantProps) {
   return (
     <main className="w-full max-w-full text-black ">
       <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
-        <div className="w-full flex flex-col">
-          <AnimatedBorderCard
-            className=""
-            sides={["top"]}
-            animationDuration={0.3}
-            delay={0.2}
-          >
-            <div className="w-full" />
-          </AnimatedBorderCard>
-        </div>
+ 
 
         <div className="flex flex-col gap-8 pt-4 md:pt-16">
           <section>
@@ -79,7 +70,7 @@ export default function Lechef({ data: _data }: EnfantProps) {
               }`}
             >
               <div className="max-w-[80%] md:max-w-[40%] md:flex-row gap-6">
-                <p className="flex-1 leading-relaxed whitespace-pre-line">{_data.bio}</p>
+                <p className="flex-1 leading-relaxed whitespace-pre-line text-md md:text-xl ">{_data.bio}</p>
               </div>
               <div className="relative group w-full md:w-1/2 aspect-[16/9] rounded-xl overflow-hidden">
                 <Image
