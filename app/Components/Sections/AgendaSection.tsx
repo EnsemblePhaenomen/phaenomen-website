@@ -4,8 +4,6 @@ import { useState } from "react";
 import AnimatedBorderCard from "../(ui)/AnimatedBorderCard";
 import ContactButton from "../(ui)/Animations/ContactButton";
 
-const reservationUrl = "https://example.com/reservation";
-
 type EventItem = {
   date: string;
   title: string;
@@ -16,23 +14,22 @@ type EventItem = {
 };
 
 const events: EventItem[] = [
-  { date: "24 JAN.", title: "Cantates de Bach", city: "Nantes", place: "Église Saint-Nicolas", info: "20h – Entrée libre.", url: reservationUrl },
-  { date: "02 FÉV.", title: "Project Stölzel", city: "Rennes", place: "Théâtre municipal", info: "19h30 – Réservation conseillée.", url: reservationUrl },
-  { date: "16 MARS", title: "Passions allemandes", city: "Angers", place: "Centre culturel", info: "18h – Concert commenté.", url: reservationUrl },
-  { date: "30 MARS", title: "Concert baroque", city: "Laval", place: "Chapelle St-Pierre", info: "20h.", url: reservationUrl },
-  { date: "12 AVR.", title: "Stabat Mater", city: "Vannes", place: "Cathédrale", info: "20h – Entrée libre.", url: reservationUrl },
-  { date: "20 AVR.", title: "Oratorio de Pâques", city: "Tours", place: "Grand Théâtre", info: "19h.", url: reservationUrl },
-  { date: "04 MAI", title: "Musique sacrée", city: "Brest", place: "Église St-Martin", info: "17h.", url: reservationUrl },
-  { date: "11 MAI", title: "Motets allemands", city: "Clisson", place: "Halle aux grains", info: "20h.", url: reservationUrl },
-  { date: "19 MAI", title: "Requiem allemand", city: "Quimper", place: "Théâtre", info: "18h.", url: reservationUrl },
-  { date: "01 JUIN", title: "Bach & Telemann", city: "Orléans", place: "Salle Philharmonique", info: "20h.", url: reservationUrl },
-  { date: "16 JUIN", title: "Concert estival", city: "La Roche-sur-Yon", place: "Auditorium", info: "19h.", url: reservationUrl },
-  { date: "29 JUIN", title: "Fête de la musique", city: "Nantes", place: "Place Royale", info: "21h – Extérieur.", url: reservationUrl },
+  {
+    date: "16 MAI.",
+    title:
+      "Cantates Sacrées - Volume I : cantates pour choeur, cordes, et continuo",
+    city: "",
+    place: "",
+    info: "",
+    url: "",
+  },
 ];
 
 export default function AgendaSection() {
   const [isScrolling, setIsScrolling] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(
+    events[0] ?? null
+  );
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
@@ -44,14 +41,19 @@ export default function AgendaSection() {
   };
 
   const isSelected = (event: EventItem) =>
-    selectedEvent && selectedEvent.date === event.date && selectedEvent.title === event.title;
+    selectedEvent &&
+    selectedEvent.date === event.date &&
+    selectedEvent.title === event.title;
+
+  // 💡 Helpers UI en fonction de l'event sélectionné
+  const hasReservationUrl = Boolean(selectedEvent?.url);
+  const hasVenue =
+    Boolean(selectedEvent?.city?.trim()) || Boolean(selectedEvent?.place?.trim());
 
   return (
     <section className="min-h-screen pt-20 flex items-center">
       <div className="w-full max-w-7xl mx-auto px-8">
-
         <div className="flex flex-col lg:flex-row">
-
           {/* LEFT */}
           <div
             className="
@@ -61,9 +63,7 @@ export default function AgendaSection() {
               md:pr-[4vw]
             "
           >
-            <h1 className="text-4xl md:text-8xl leading-none">
-              Agenda
-            </h1>
+            <h1 className="text-4xl md:text-8xl leading-none">Agenda</h1>
           </div>
 
           {/* CENTER */}
@@ -75,17 +75,25 @@ export default function AgendaSection() {
           >
             <div
               className="
-                flex items-center justify-center
+                flex flex-col items-center justify-center gap-4
                 h-[350px]
                 md:h-[713px]
                 px-8
               "
             >
+              {/* Petit texte d'état */}
+              {!hasVenue || !hasReservationUrl ? (
+                <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 text-center">
+                  Informations complètes à venir
+                </p>
+              ) : null}
+
               <ContactButton
                 dateLabel={selectedEvent?.date ?? null}
                 titleLabel={selectedEvent?.title ?? null}
-                ctaLabel="réserver"
-                href={selectedEvent?.url}
+                ctaLabel={hasReservationUrl ? "réserver" : "coming soon!"}
+                // On ne passe un href que si on a vraiment une URL
+                href={hasReservationUrl ? selectedEvent!.url : undefined}
               />
             </div>
           </AnimatedBorderCard>
@@ -116,51 +124,80 @@ export default function AgendaSection() {
               </p>
 
               <div className="space-y-8">
-                {events.map((event, index) => (
-                  <article
-                    key={index}
-                    className={`
-                      border-b border-neutral-300 pb-6 last:border-none last:pb-0
-                      cursor-pointer transition-colors
-                      ${isSelected(event) ? "bg-black text-white" : "hover:bg-black/5"}
-                    `}
-                    onClick={() => handleSelect(event)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        handleSelect(event);
-                      }
-                    }}
-                    tabIndex={0}
-                  >
-                    <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:gap-6">
-                      <p className="font-serif text-xl md:text-2xl tracking-tight">
-                        {event.date}
-                      </p>
-                      <div className="space-y-1">
-                        <h2 className="font-serif text-lg md:text-xl leading-snug">
-                          {event.title}
-                        </h2>
-                        <p className="text-[0.7rem] md:text-xs uppercase tracking-[0.2em] text-neutral-500">
-                          {event.city} – {event.place}
+                {events.map((event, index) => {
+                  const eventHasVenue =
+                    Boolean(event.city?.trim()) ||
+                    Boolean(event.place?.trim());
+                  const eventHasUrl = Boolean(event.url?.trim());
+
+                  return (
+                    <article
+                      key={index}
+                      className={`
+                        border-b border-neutral-300 pb-6 last:border-none last:pb-0
+                        cursor-pointer transition-colors
+                        ${isSelected(event) ? "bg-black p-5 text-white" : "hover:bg-black/5"}
+                      `}
+                      onClick={() => handleSelect(event)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          handleSelect(event);
+                        }
+                      }}
+                      tabIndex={0}
+                    >
+                      <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:gap-6">
+                        <p className="font-serif text-xl md:text-2xl tracking-tight">
+                          {event.date}
                         </p>
-                        <p className="text-sm text-neutral-700">
-                          {event.info}
-                        </p>
+
+                        <div className="space-y-1">
+                          <h2 className="font-serif text-lg md:text-xl leading-snug">
+                            {event.title}
+                          </h2>
+
+                          {/* Lieu */}
+                          <p className="text-[0.7rem] md:text-xs uppercase tracking-[0.2em] text-white">
+                            {eventHasVenue ? (
+                              <>
+                                {event.city}
+                                {event.city && event.place && " — "}
+                                {event.place}
+                              </>
+                            ) : (
+                              <span className="italic">
+                                Lieu et horaires à venir
+                              </span>
+                            )}
+                          </p>
+
+                          {/* Infos / réservation */}
+                          <p className="text-sm text-neutral-700">
+                            {event.info ? (
+                              event.info
+                            ) : eventHasUrl ? (
+                              "Plus d'informations et réservation via le bouton ci-contre."
+                            ) : (
+                              <span className="italic text-white">
+                                Détails pratiques et réservation à venir.
+                              </span>
+                            )}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </article>
-                ))}
+                    </article>
+                  );
+                })}
               </div>
 
               <p className="text-xs md:text-sm text-neutral-500 leading-relaxed pb-4">
-                Certains horaires peuvent être modifiés – consultez régulièrement cette page.
+                Certains horaires peuvent être modifiés – consultez régulièrement
+                cette page.
               </p>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
