@@ -102,9 +102,9 @@ export default function Overlay({ slide }: OverlayProps) {
               className="
                 sm:col-span-3 sm:col-start-3 sm:row-start-5 sm:row-span-2
                 md:col-start-7 md:col-span-4 md:row-start-7 md:row-span-2
-                lg:col-start-7 lg:row-start-7 lg:col-span-3 lg:flex-col lg:w-full lg:pt-5
+                lg:col-start-7 lg:row-start-7 lg:col-span-3 lg:flex-col lg:w-full 
                 flex flex-col gap-3 
-                2xl:pt-10
+                
               "
             >
               {slide.director && (
