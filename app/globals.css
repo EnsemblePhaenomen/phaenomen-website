@@ -9,12 +9,12 @@
   --hero-title-color: #ffffff;
   --hero-name-color: #ffffff;
   --hero-role-color: #ffffff;
-  
-  --hero-title-size: 1.125rem;
+
+  --hero-title-size: 1.5rem;
   /* ~18px */
   --hero-name-size: 1.5rem;
   /* ~24px */
-  --hero-role-size: 1.25rem;
+  --hero-role-size: 1.5rem;
   /* ~20px */
 }
 
@@ -28,7 +28,6 @@
 
 /* Media Queries */
 @media (max-width: 639px) {
-
   /* base */
   :root {
     --hero-title-size: 2.5rem;
@@ -41,20 +40,18 @@
 }
 
 @media (min-width: 640px) {
-
   /* sm */
   :root {
-    --hero-title-size: 1.5rem;
+    --hero-title-size: 3rem;
     /* 24px */
-    --hero-name-size: 2rem;
+    --hero-name-size: 2.5rem;
     /* 32px */
-    --hero-role-size: 1rem;
+    --hero-role-size: 1.5rem;
     /* 24px */
   }
 }
 
 @media (min-width: 768px) {
-
   /* md */
   :root {
     --hero-title-size: 2.5rem;
@@ -67,7 +64,6 @@
 }
 
 @media (min-width: 1024px) {
-
   /* lg */
   :root {
     --hero-title-size: 6rem;
@@ -88,12 +84,16 @@ body {
 
 /* Apply NovaCut font only to h1 and h2 */
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--font-nova-cut), cursive;
 }
 
 /* Apply Fira Sans Condensed to h3 and below */
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-fira-sans-condensed), sans-serif;
 }
 
@@ -104,12 +104,12 @@ h3 {
 
 /* Couleur de sélection du texte */
 ::selection {
-  background-color: #E42B54;
+  background-color: #e42b54;
   color: #ffffff;
 }
 
 ::-moz-selection {
-  background-color: #E42B54;
+  background-color: #e42b54;
   color: #ffffff;
 }
 
@@ -133,7 +133,7 @@ h3 {
 }
 
 .hero-name {
-  font-family: var(--font-nova-cut), cursive;
+  font-family: var(--font-fira-sans-condensed), cursive;
   color: var(--hero-name-color);
   font-size: var(--hero-name-size);
   line-height: 1.05;
@@ -203,12 +203,12 @@ h3 {
 
 /* Hide scrollbar for carousel swipe on mobile */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
+  display: none; /* Chrome, Safari and Opera */
 }
 
 /* Scrollbar visibility control */

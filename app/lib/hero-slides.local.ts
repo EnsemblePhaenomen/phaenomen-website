@@ -39,7 +39,7 @@ export const heroSlides: HeroSlide[] = [
     },
     headline: "L’ensemble Phænomen",
     subheadline:
-      "Spécialistes de la pratique musicale et du répertoire baroque",
+      "Un ensemble spécialisé en musique baroque et en pratique historiquement informée",
     cta: {
       label: "En savoir plus",
       href: "/#projet-stolzel",
@@ -55,9 +55,9 @@ heroSlides.push({
   },
   headline: "Project Stölzel",
   subheadline:
-    "Parcourir l'intégrale des cantates de Gottfried Heinrich Stölzel",
+    "L'intégrale des cantates de Gottfried Heinrich Stölzel",
   cta: {
-    label: "Découvrez nos projets",
+    label: "Découvrez le projet",
     href: "/#about",
   },
 });

@@ -26,7 +26,7 @@ export default function HeroCTA({
   };
 
   return (
-    <div className="relative z-50 flex justify-start pointer-events-auto">
+    <div className="relative z-50 mt-10 flex justify-start pointer-events-auto">
       <Link
         href={href}
         onClick={handleClick}
@@ -40,7 +40,7 @@ export default function HeroCTA({
         </div>
 
         {/* Label */}
-        <p className="hero-info leading-none transition-opacity duration-300 group-hover:opacity-90">
+        <p className="hero-info leading-none text-4xltransition-opacity duration-300 group-hover:opacity-90">
           {label}
         </p>
       </Link>
