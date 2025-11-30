@@ -161,6 +161,23 @@ Riho a participé à des concerts dans le cadre du festival «Toulouse les Orgue
       alt: "Portrait background Christophe Mourault",
     },
   },
+{    nom: "Chapolard",
+  prénom: "Noé",
+  instrument: "Direction musicale",
+  bio: `Noé Chapolard : À l’origine du projet et à la tête de l’ensemble Phænomen, Noé Chapolard a étudié la direction au CNSMD de Lyon et la polyphonie vocale à la Schola Cantorum de Bâle, après des études de politique publique à l’Université de Princeton. 
+  
+  Il dirige actuellement le Jeune Chœur d’Auvergne, le Jeune Chœur Symphonique de Lyon et l’Orchestre Symphonique des Grandes Ecoles de Lyon, est chef assistant au chœur Spirito et au Choeur Régional d’Auvergne, et a été invité par le Choeur de l’Opéra Royal de Versailles, le Consort Musica Vera, l’Ensemble La Sportelle, ou le NFM de Wroclaw pour la préparation de disques ou de concerts de musique ancienne. 
+  
+  Il chante régulièrement avec des ensembles comme l’Ensemble La Sportelle, Graindelavoix, La Capella Reial de Catalunya.`,
+  portrait: {
+    src: "/ensembleGallery/photos des musiciens/noe_portrait.png",
+    alt: "Photo portrait de Noé Chapolard",
+  },
+  modal: {
+    src: "/ensembleGallery/photosFullModal/noe_background.png",
+    alt: "Noé Chapolard et l'ensemble Phaenomen",
+  },}
+
 ];
 
 const chef: Chef = {
