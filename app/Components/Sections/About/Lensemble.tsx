@@ -5,6 +5,8 @@ import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 import EnsembleCarousel from "./EnsembleCarousel";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 import type { Musicien } from "@/app/types/musiciensConfig";
+import LeChef from "./Lechef";
+import musiciensData from "@/app/data/musiciens/musiciens";
 
 type EnfantProps = {
   data: Musicien[];
@@ -43,6 +45,9 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
         <div className="flex flex-col gap-8 pt-4 md:pt-16">
           {/* Content column */}
           <div className="flex flex-col gap-8 text-sm leading-relaxed">
+
+                      <LeChef data={musiciensData.chef}/>
+
             {/* Présentation */}
             <AnimatedBorderCard
               className="pt-4"

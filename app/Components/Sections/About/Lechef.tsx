@@ -42,7 +42,6 @@ export default function Lechef({ data: _data }: EnfantProps) {
     <main className="w-full max-w-full text-black ">
       <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
         <div className="w-full flex flex-col">
-          <h2 className="section-title pb-6">Le chef</h2>
           <AnimatedBorderCard
             className=""
             sides={["top"]}
