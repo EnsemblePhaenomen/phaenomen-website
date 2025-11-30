@@ -167,13 +167,11 @@ const chef: Chef = {
   nom: "Chapolard",
   prénom: "Noé",
   role: "Chef d'orchestre",
-  bio: `Originaire de Paris, baryton et chef, Noé Chapolard se forme d'abord aux États-Unis, puis au Conservatoire national supérieur musique et danse de Lyon et à la Schola Cantorum de Bâle. 
-    
-    Passionné de musique ancienne et du répertoire sacré pour chœur, il a débuté comme assistant chef à la Chapelle de l'Université de Princeton et à l'Orchestre des jeunes de New York, a été académicien du Chœur de l'Orchestre de Paris en chant, et des ensembles Aedes et Spirito en direction. 
-    
-    Il a récemment travaillé sous la baguette de chefs tels Stephan MacLeod, Raphaël Pichon ou Jordi Savall, et chante entre autres avec les ensembles Musica Nova, La Capella Reial de Catalunya, Scandicus ou La Chapelle rhénane. 
-    
-    Par ailleurs, Noé dirige les chœurs amateurs Vocappella et De Usu Canendi à Lyon ainsi que l'orchestre symphonique du Conservatoire du IXe arrondissement à Paris. En 2022, il a pris la direction du Jeune Chœur d'Auvergne et est devenu formateur régulier du Chœur régional d'Auvergne.`,
+  bio: `Noé Chapolard : À l’origine du projet et à la tête de l’ensemble Phænomen, Noé Chapolard a étudié la direction au CNSMD de Lyon et la polyphonie vocale à la Schola Cantorum de Bâle, après des études de politique publique à l’Université de Princeton. 
+  
+  Il dirige actuellement le Jeune Chœur d’Auvergne, le Jeune Chœur Symphonique de Lyon et l’Orchestre Symphonique des Grandes Ecoles de Lyon, est chef assistant au chœur Spirito et au Choeur Régional d’Auvergne, et a été invité par le Choeur de l’Opéra Royal de Versailles, le Consort Musica Vera, l’Ensemble La Sportelle, ou le NFM de Wroclaw pour la préparation de disques ou de concerts de musique ancienne. 
+  
+  Il chante régulièrement avec des ensembles comme l’Ensemble La Sportelle, Graindelavoix, La Capella Reial de Catalunya.`,
   portrait: {
     src: "/ensembleGallery/photos des musiciens/noe_portrait.png",
     alt: "Photo portrait de Noé Chapolard",

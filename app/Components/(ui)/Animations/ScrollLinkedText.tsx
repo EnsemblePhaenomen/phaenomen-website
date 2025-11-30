@@ -47,7 +47,7 @@ export default function ScrollLinkedText() {
     <section className="bg-[#f4f4f4] py-16 px-4 flex justify-center">
       <motion.h1
         ref={ref}
-        className="inline-block text-center text-xl sm:text-2xl md:text-4xl font-serif leading-tight max-w-4xl"
+        className="inline-block text-center text-lg sm:text-1xl md:text-2xl font-serif leading-tight max-w-4xl"
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
