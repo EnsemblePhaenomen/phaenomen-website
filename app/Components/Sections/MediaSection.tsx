@@ -34,7 +34,6 @@ export default function MediaSection() {
               delay={0.2}
             >
               <div className="rounded-lg p-6 w-full mx-auto">
-                <h3 className="text-xl font-semibold mb-4">Vidéos</h3>
                       <div className="mt-10 mx-auto">
             <VideoList />
           </div>
@@ -49,8 +48,6 @@ export default function MediaSection() {
               delay={0.2}
             >
               <div className="rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-4">Photos</h3>
-                <p className="opacity-80">Galerie</p>
               </div>
             </AnimatedBorderCard>
           </div>
