@@ -45,8 +45,6 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
         <div className="flex flex-col gap-8 pt-4 md:pt-16">
           {/* Content column */}
           <div className="flex flex-col gap-8 text-sm leading-relaxed">
-
-
             {/* Présentation */}
             <AnimatedBorderCard
               className="pt-4"
@@ -73,7 +71,7 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     openSections.presentation
-                      ? "max-h-[500px] opacity-100 pt-4 px-4 pb-8"
+                      ? "max-h-[600px] opacity-100 pt-4 px-4 pb-8"
                       : "max-h-0 opacity-0"
                   }`}
                 >
@@ -109,7 +107,8 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                     artistiques, culturelles et linguistiques. Dans cette même
                     démarche, l&apos;ensemble souhaite s&apos;affirmer fermement
                     dans sa diversité et promeut l&apos;inclusion dans
-                    l&apos;élaboration de son environnement de travail.
+                    l&apos;élaboration de son environnement de travail. 
+                  
                   </p>
                 </div>
               </section>
@@ -228,8 +227,7 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
             {/* Carousel galerie */}
             <section>
               <EnsembleCarousel />
-                                    <LeChef data={musiciensData.chef}/>
-
+              <LeChef data={musiciensData.chef} />
             </section>
           </div>
         </div>
