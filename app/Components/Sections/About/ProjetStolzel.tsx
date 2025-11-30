@@ -304,6 +304,12 @@ export default function ProjetStolzel() {
                     scientifiques destinées chercheurs, interprètes et
                     passionnés. Ce travail remet en lumière un compositeur
                     essentiel de l&apos;histoire baroque.
+                    <br /> <br />
+                    La plupart des partitions est dans des bibliothèques, et
+                    pour certaines numérisées, mais pas toutes. Nous accueillons
+                    donc volontiers l&apos;aide des musicologues ou de spécialistes
+                    des manuscrits allemands du XVIIIème siècle pour nous épauler dans ce
+                    travail.
                   </p>
                 </div>
               </section>
@@ -340,19 +346,24 @@ export default function ProjetStolzel() {
                   }`}
                 >
                   <p className="max-w-full text-md md:text-2xl md:max-w-[80%]">
-                    La clef de voûte de l&apos;activité de l&apos;ensemble est la
-                    redécouverte des œuvres de Stölzel dans le monde du sonore :
-                    jouer, travailler, donner en concerts et enregistrer les
-                    œuvres de Stölzel. L&apos;Ensemble Phænomen se lance donc dans
-                    l&apos;intégrale des cantates de Gottfried Heinrich Stölzel, par
-                    volumes correspondant à des formats de concerts thématiques
-                    et par effectif instrumental et vocal, avec l&apos;ambition
-                    d&apos;enregistrer chaque nouvelle redécouverte. <br/> <br/> Soutenez cette
+                    La clef de voûte de l&apos;activité de l&apos;ensemble est
+                    la redécouverte des œuvres de Stölzel dans le monde du
+                    sonore : jouer, travailler, donner en concerts et
+                    enregistrer les œuvres de Stölzel. L&apos;Ensemble Phænomen
+                    se lance donc dans l&apos;intégrale des cantates de
+                    Gottfried Heinrich Stölzel, par volumes correspondant à des
+                    formats de concerts thématiques et par effectif instrumental
+                    et vocal, avec l&apos;ambition d&apos;enregistrer chaque
+                    nouvelle redécouverte. <br /> <br /> Soutenez cette
                     initiative en programmant l&apos;ensemble ou en donnant au
                     projet, pour nous aider à financer les différents éléments
-                    de cette mission. 
+                    de cette mission.
                   </p>
-                  <Link href={"/contact"}><p className="pt-8 text-4xl hover:text-[#e42b54] text-center">Nous contacter</p></Link>
+                  <Link href={"/contact"}>
+                    <p className="pt-8 text-4xl hover:text-[#e42b54] text-center">
+                      Nous contacter
+                    </p>
+                  </Link>
                 </div>
               </section>
             </AnimatedBorderCard>
