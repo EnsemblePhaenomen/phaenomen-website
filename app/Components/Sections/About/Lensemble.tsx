@@ -71,7 +71,7 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     openSections.presentation
-                      ? "max-h-[600px] opacity-100 pt-4 px-4 pb-8"
+                      ? "max-h-[1000px] opacity-100 pt-4 px-4 pb-8"
                       : "max-h-0 opacity-0"
                   }`}
                 >
@@ -107,8 +107,7 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                     artistiques, culturelles et linguistiques. Dans cette même
                     démarche, l&apos;ensemble souhaite s&apos;affirmer fermement
                     dans sa diversité et promeut l&apos;inclusion dans
-                    l&apos;élaboration de son environnement de travail. 
-                  
+                    l&apos;élaboration de son environnement de travail.
                   </p>
                 </div>
               </section>
