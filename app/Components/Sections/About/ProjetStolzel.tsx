@@ -7,7 +7,6 @@ import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 import ProgrammePage from "./ProgrammePage";
 import { programmeCantatesVolI } from "@/app/data/programmes/cantates-vol1";
 import { programmeInstrumentalVolI } from "@/app/data/programmes/instrumental-vol1";
-import Link from "next/link";
 import ContacterButton from "../../(ui)/Animations/ContacterButton";
 
 export default function ProjetStolzel() {
@@ -22,10 +21,10 @@ export default function ProjetStolzel() {
   const hibouRef = useRef(null);
   const isInView = useInView(hibouRef, { once: true, amount: 0.3 });
   const programmeSectionRef = useRef<HTMLElement | null>(null);
-  const isProgrammeInView = useInView(programmeSectionRef, {
-    amount: 0.2,
-    margin: "0px 0px -10% 0px",
-  });
+  // const isProgrammeInView = useInView(programmeSectionRef, {
+  //   amount: 0.2,
+  //   margin: "0px 0px -10% 0px",
+  // });
 
   // Ferme automatiquement le bloc programme dès qu&apos;il sort du viewport
   // useEffect(() => {

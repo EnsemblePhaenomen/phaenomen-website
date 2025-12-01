@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import type { Chef } from "@/app/types/musiciensConfig";
 import Image from "next/image";
-import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 
 type EnfantProps = {
