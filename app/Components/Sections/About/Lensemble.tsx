@@ -76,10 +76,12 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                   }`}
                 >
                   <p className="max-w-full text-md md:text-2xl md:max-w-[80%]">
-                    Phénomène : Ce qui apparaît, ce qui se manifeste aux sens ou
-                    à la conscience, tant dans l&apos;ordre physique que dans
-                    l&apos;ordre psychique, et qui peut devenir l&apos;objet
-                    d&apos;un savoir.
+                    <span className="font-nova">
+                      Phénomène : Ce qui apparaît, ce qui se manifeste aux sens
+                      ou à la conscience, tant dans l&apos;ordre physique que
+                      dans l&apos;ordre psychique, et qui peut devenir
+                      l&apos;objet d&apos;un savoir.
+                    </span>
                     <br /> <br /> Phænomen naît sous l&apos;impulsion de son
                     chef Noé Chapolard en 2025, avec pour vocation de se
                     consacrer à la musique baroque allemande. L&apos;ensemble se

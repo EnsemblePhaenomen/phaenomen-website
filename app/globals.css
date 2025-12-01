@@ -156,6 +156,11 @@ h3 {
   font-weight: 400;
 }
 
+/* Utility font classes */
+.font-nova {
+  font-family: var(--font-nova-cut), cursive;
+}
+
 /* Slideshow transitions */
 .slide-transition {
   transition: opacity 600ms ease-in-out, transform 600ms ease-in-out;

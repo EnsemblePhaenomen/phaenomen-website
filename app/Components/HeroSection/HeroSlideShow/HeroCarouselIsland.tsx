@@ -22,6 +22,10 @@ export default function HeroCarouselIsland({
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLElement>(null);
 
+  // refs pour swipe
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
   // Détection prefers-reduced-motion
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -46,7 +50,7 @@ export default function HeroCarouselIsland({
       document.removeEventListener("visibilitychange", handleVisibilityChange);
   }, []);
 
-  // Navigation functions
+  // Navigation
   const goToSlide = useCallback((index: number) => {
     setCurrentIndex(index);
   }, []);
@@ -59,11 +63,9 @@ export default function HeroCarouselIsland({
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   }, [slides.length]);
 
-  // Timer pour autoplay
+  // Timer autoplay
   useEffect(() => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-    }
+    if (timerRef.current) clearInterval(timerRef.current);
 
     const shouldPlay =
       config.autoplay &&
@@ -79,9 +81,7 @@ export default function HeroCarouselIsland({
     }
 
     return () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-      }
+      if (timerRef.current) clearInterval(timerRef.current);
     };
   }, [
     config.autoplay,
@@ -137,6 +137,34 @@ export default function HeroCarouselIsland({
     };
   }, []);
 
+  // SWIPE HANDLERS
+  const handleTouchStart = (e: React.TouchEvent<HTMLElement>) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLElement>) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+
+    const deltaX = touchStartX.current - touchEndX.current;
+    const SWIPE_THRESHOLD = 50;
+
+    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      if (deltaX > 0) {
+        goToNext();
+      } else {
+        goToPrev();
+      }
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   if (slides.length === 0) return null;
 
   return (
@@ -149,6 +177,9 @@ export default function HeroCarouselIsland({
       className="relative w-full min-h-[100svh] overflow-hidden group/carousel"
       onMouseEnter={() => config.pauseOnHover && setIsHovering(true)}
       onMouseLeave={() => config.pauseOnHover && setIsHovering(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Slides */}
       {slides.map((slide, index) => (
