@@ -76,22 +76,10 @@ export default function Lechef({ data: _data }: EnfantProps) {
                   src={imageSrc}
                   alt={imageAlt}
                   fill
-                  className="object-cover pt-4 md:pt-0"
+                  className="object-contain md:object-cover bg-black/5"
                   sizes="(min-width: 768px) 50vw, 100vw"
                 />
 
-                {/* Overlay avec gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-
-                <div
-                  className={`absolute inset-0 z-20 flex items-center text-center justify-center p-4 transition-opacity duration-500 ${
-                    showName ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  <h2 className="text-[#E42B54] text-xl md:text-2xl font-semibold drop-shadow">
-                    {_data.prénom} {_data.nom}
-                  </h2>
-                </div>
               </div>
             </div>
           </section>

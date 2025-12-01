@@ -15,7 +15,7 @@ type EventItem = {
 
 const events: EventItem[] = [
   {
-    date: "16 MAI.",
+    date: "16 AVR.",
     title:
       "Cantates Sacrées - Volume I : cantates pour choeur, cordes, et continuo",
     city: "",
