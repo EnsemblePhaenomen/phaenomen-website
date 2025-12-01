@@ -193,10 +193,10 @@ export default function Overlay({ slide }: OverlayProps) {
       md:col-start-3 md:col-span-8 md:row-start-4 md:row-span-2
 
       /* À partir de lg : full width + centrage */
-      lg:col-start-1 lg:col-span-12 lg:row-start-5 lg:row-span-2
-      lg:flex lg:items-center lg:justify-center
-
+      lg:col-start-4 lg:col-span-8 lg:row-start-5 lg:row-span-2
+      lg:flex lg:items-center lg:justify-start 
       xl:row-start-5
+      2xl:col-span-6 2xl:col-start-5 2xl:justify-start 
     "
         >
           <h1
@@ -218,8 +218,9 @@ export default function Overlay({ slide }: OverlayProps) {
             className="
               sm:col-span-4 sm:col-start-2 sm:row-start-5
               md:col-start-3 md:col-span-8 md:row-start-6 md:text-center
-              lg:col-start-4 lg:row-start-7 lg:col-span-6
+              lg:col-start-4 lg:text-left lg:row-start-7 lg:col-span-6
               xl:col-start-4 xl:col-span-7 xl:row-start-7
+              2xl:col-span-6 2xl:col-start-5 2xl:justify-start 2xl:text-left
             "
           >
             <p
@@ -241,6 +242,7 @@ export default function Overlay({ slide }: OverlayProps) {
               md: row-span-3 
               lg:col-start-4
               xl:col-start-4 xl:row-start-8
+              2xl:col-start-5
               pointer-events-auto
             "
           >
