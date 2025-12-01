@@ -20,6 +20,7 @@ export default function VideoList() {
             <article
               key={video.youtubeId}
               className="w-full md:w-[calc(50%-0.75rem)] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-lg backdrop-blur"
+              
             >
               <div className="relative aspect-video bg-black">
                 <iframe
