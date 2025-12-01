@@ -61,21 +61,21 @@ export default function Overlay({ slide }: OverlayProps) {
           "
         >
           {/* Titre "ensemble" */}
-    <div
-  className="
+          <div
+            className="
     self-end justify-self-center     
     sm:col-start-2 sm:col-span-4 sm:row-start-3
     md:col-start-7 md:col-span-3 md:row-start-5 md:row-span-2 md:self-end md:justify-self-center
     lg:col-start-7 lg:w-full
-
-    flex justify-center items-end    // centre horizontalement, place le h2 en bas
+    xl:col-start-6 xl:row-start-4 xl:justify-start
+    2xl:row-start-3
+    flex justify-center items-end    
   "
->
-  <h2 className="hero-title pb-2 md:pb-5 md:mb-10 text-white">
-    {slide.headline}
-  </h2>
-</div>
-
+          >
+            <h2 className="hero-title pb-2 md:pb-5 md:mb-10 text-white">
+              {slide.headline}
+            </h2>
+          </div>
 
           {/* Logo */}
           {slide.logo && (
@@ -84,6 +84,8 @@ export default function Overlay({ slide }: OverlayProps) {
                 sm:col-start-2 sm:col-span-4 sm:row-start-4 flex items-end justify-center
                 md:col-start-5 md:col-span-5 md:row-start-6 md:justify-end
                 lg:h-fit
+                xl:col-start-4 xl:row-start-5
+                2xl:row-start-4
               "
             >
               <Image
@@ -100,31 +102,43 @@ export default function Overlay({ slide }: OverlayProps) {
           )}
 
           {/* Container Sous-titre + CTA / directeur */}
-          {(slide.director || slide.cta) && (
-            <div
-              className="
-                sm:col-span-3 sm:col-start-3 sm:row-start-5 sm:row-span-2
-                md:col-start-7 md:col-span-4 md:row-start-7 md:row-span-2
-                lg:col-start-7 lg:row-start-7 lg:col-span-3 lg:flex-col lg:w-full 
-                flex flex-col gap-3 
-                
-              "
-            >
-              {slide.director && (
-                <DirectorInfo
-                  name={slide.director.name}
-                  role={slide.director.role}
-                />
-              )}
-              {slide.cta && (
-                <div className="pointer-events-auto">
-                  <HeroCTA
-                    href={slide.cta.href}
-                    label={slide.cta.label}
-                    targetId={slide.cta.targetId}
-                    ariaLabel={slide.cta.ariaLabel}
-                  />
-                </div>
+{(slide.director || slide.cta) && (
+  <div
+    className="
+      sm:col-span-3 sm:col-start-3 sm:row-start-5 sm:row-span-2
+      md:col-start-7 md:col-span-4 md:row-start-7 md:row-span-2
+
+      /* À partir de lg : placement précis dans la grille */
+      lg:col-start-6 lg:col-span-5 lg:row-start-6 lg:row-span-3
+      lg:pt-5
+
+      /* Flex par défaut (mobile/tablette) */
+      flex flex-col gap-3
+
+      lg:grid lg:grid-rows-[auto_auto] lg:gap-1
+      lg:items-center lg:justify-center lg:justify-items-center
+      lg:row-start-5
+      xl:col-start-6 xl:col-span-4 xl:row-start-6 xl:row-span-3
+      xl:justify-start 
+      2xl:row-start-6
+    "
+  >
+    {slide.director && (
+      <DirectorInfo
+        name={slide.director.name}
+        role={slide.director.role}
+      />
+    )}
+
+    {slide.cta && (
+      <div className="pointer-events-auto">
+        <HeroCTA
+          href={slide.cta.href}
+          label={slide.cta.label}
+          targetId={slide.cta.targetId}
+          ariaLabel={slide.cta.ariaLabel}
+        />
+      </div>
               )}
             </div>
           )}
@@ -166,28 +180,34 @@ export default function Overlay({ slide }: OverlayProps) {
 
       {/* DESKTOP+ : grille */}
       <div
-        className="
-          hidden sm:grid h-full gap-0 p-6
-          sm:grid-cols-6 sm:grid-rows-[repeat(8,minmax(0,1fr))]
-          md:grid-cols-12 md:grid-rows-12 md:p-8
-        "
+        className=" 
+    hidden sm:grid h-full gap-0 p-6
+    sm:grid-cols-6 sm:grid-rows-[repeat(8,minmax(0,1fr))]
+    md:grid-cols-12 md:grid-rows-12 md:p-8
+  "
       >
         {/* Titre principal */}
         <div
           className="
-            sm:col-span-4 sm:col-start-2 sm:row-start-4 sm:row-span-1
-            md:col-start-3 md:col-span-8 md:row-start-4 md:row-span-2
-            lg:col-start-2 lg:col-span-6
-            xl:col-start-6 xl:col-span-6 xl:row-start-5
-          "
+
+      sm:col-span-4 sm:col-start-2 sm:row-start-4 sm:row-span-1
+      md:col-start-3 md:col-span-8 md:row-start-4 md:row-span-2
+
+      /* À partir de lg : full width + centrage */
+      lg:col-start-1 lg:col-span-12 lg:row-start-5 lg:row-span-2
+      lg:flex lg:items-center lg:justify-center
+
+      xl:row-start-5
+    "
         >
           <h1
             className="
-              text-white text-4xl font-bold leading-[0.95] m-0
-              sm:text-5xl
-              md:text-6xl
-              lg:text-7xl
-            "
+        text-white font-bold leading-[0.95] m-0
+        text-4xl sm:text-5xl md:text-6xl
+        lg:text-6xl xl:text-7xl
+        text-center
+        lg:whitespace-nowrap
+      "
           >
             {slide.headline}
           </h1>
@@ -198,9 +218,9 @@ export default function Overlay({ slide }: OverlayProps) {
           <div
             className="
               sm:col-span-4 sm:col-start-2 sm:row-start-5
-              md:col-start-3 md:col-span-6 md:row-start-6
-              lg:col-start-2 lg:col-span-5
-              xl:col-start-6 xl:col-span-6 xl:row-start-7
+              md:col-start-3 md:col-span-8 md:row-start-6 md:text-center
+              lg:col-start-4 lg:row-start-7 lg:col-span-6
+              xl:col-start-4 xl:col-span-7 xl:row-start-7
             "
           >
             <p
@@ -220,8 +240,8 @@ export default function Overlay({ slide }: OverlayProps) {
               sm:col-span-4 sm:col-start-2 sm:row-start-6
               md:col-start-3 md:col-span-6 md:row-start-8
               md: row-span-3 
-              lg:col-start-2
-              xl:col-start-6 xl:row-start-8
+              lg:col-start-4
+              xl:col-start-4 xl:row-start-8
               pointer-events-auto
             "
           >

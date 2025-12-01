@@ -66,7 +66,19 @@
 @media (min-width: 1024px) {
   /* lg */
   :root {
-    --hero-title-size: 6rem;
+    --hero-title-size: 4rem;
+    /* 56px */
+    --hero-name-size: 2.5rem;
+    /* 60px */
+    --hero-role-size: 1.7rem;
+    /* 36px */
+  }
+}
+
+@media (min-width: 1280px) {
+  /* lg */
+  :root {
+    --hero-title-size: 5rem;
     /* 56px */
     --hero-name-size: 3.75rem;
     /* 60px */
