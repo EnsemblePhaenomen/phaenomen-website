@@ -14,7 +14,7 @@ export default function Lechef({ data: _data }: EnfantProps) {
   const [showName, setShowName] = useState(false);
 
   // Utiliser modal si disponible, sinon portrait
-  const imageSrc = _data.modal?.src || _data.portrait?.src;
+  const imageSrc = _data.portrait?.src || _data.modal?.src;
   const imageAlt = _data.modal?.alt || _data.portrait?.alt || _data.nom;
 
   useEffect(() => {
@@ -40,8 +40,6 @@ export default function Lechef({ data: _data }: EnfantProps) {
   return (
     <main className="w-full max-w-full text-black ">
       <section className="mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-full">
- 
-
         <div className="flex flex-col gap-8 pt-4 md:pt-16">
           <section>
             <div
@@ -69,17 +67,18 @@ export default function Lechef({ data: _data }: EnfantProps) {
               }`}
             >
               <div className="max-w-[80%] md:max-w-[40%] md:flex-row gap-6">
-                <p className="flex-1 leading-relaxed whitespace-pre-line text-md md:text-xl ">{_data.bio}</p>
+                <p className="flex-1 leading-relaxed whitespace-pre-line text-md md:text-xl ">
+                  {_data.bio}
+                </p>
               </div>
-              <div className="relative group w-full md:w-1/2 aspect-[16/9] rounded-xl overflow-hidden">
+              <div className="relative pt-5 group w-full md:w-1/2 h-auto rounded-xl overflow-hidden">
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
-                  fill
-                  className="object-contain md:object-cover bg-black/5"
-                  sizes="(min-width: 768px) 50vw, 100vw"
+                  width={600}
+                  height={900}
+                  className="object-cover bg-black/5 w-full h-auto"
                 />
-
               </div>
             </div>
           </section>
