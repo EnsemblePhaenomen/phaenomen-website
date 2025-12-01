@@ -27,8 +27,30 @@ const firaSansCondensed = Fira_Sans_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Ensemble Phænomen",
-  description: "Ensemble spécialisé dans la musique baroque allemande du XVIIIème siècle, sous la direction de Noé Chapolard",
+  metadataBase: new URL("https://ensemble-phaenomen.eu"),
+  title: {
+    default: "Ensemble Phænomen | Musique baroque allemande",
+    template: "%s | Ensemble Phænomen",
+  },
+  description:
+    "Ensemble Phænomen, dirigé par Noé Chapolard, explore la musique baroque allemande du XVIIIe siècle à travers concerts, captations et projets musicologiques.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://ensemble-phaenomen.eu",
+    title: "Ensemble Phænomen | Musique baroque allemande",
+    description:
+      "Ensemble baroque dirigé par Noé Chapolard, dédié aux cantates et œuvres de Stölzel et Bach.",
+    siteName: "Ensemble Phænomen",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ensemble Phænomen | Musique baroque allemande",
+    description:
+      "Ensemble baroque dirigé par Noé Chapolard, dédié aux cantates et œuvres de Stölzel et Bach.",
+  },
   icons: {
     icon: [
       { url: "/LOGO_ROSE_SVG.svg", type: "image/svg+xml" },
@@ -45,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${novaCut.variable} ${firaSansCondensed.variable} antialiased`}
         suppressHydrationWarning
