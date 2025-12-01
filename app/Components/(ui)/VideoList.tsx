@@ -10,9 +10,9 @@ export default function VideoList() {
     <div className="relative overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[url('/hibou_bg.png')] bg-contain bg-center bg-no-repeat opacity-20"
+        className="pointer-events-none absolute inset-0 bg-[url('/hibou_bg.png')] md:hidden bg-contain bg-center bg-no-repeat opacity-20"
       />
-      <div className="relative z-10 flex flex-col gap-6 md:flex-row md:flex-wrap">
+      <div className="relative z-10 flex flex-col gap-20 md:gap-6 md:flex-row md:flex-wrap">
         {videos.map((video) => {
           const embedUrl = `https://www.youtube.com/embed/${video.youtubeId}`;
 
@@ -20,7 +20,6 @@ export default function VideoList() {
             <article
               key={video.youtubeId}
               className="w-full md:w-[calc(50%-0.75rem)] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-lg backdrop-blur"
-              
             >
               <div className="relative aspect-video bg-black">
                 <iframe
@@ -39,10 +38,7 @@ export default function VideoList() {
                     <h3 className="text-xl font-semibold leading-tight">
                       {video.title}
                     </h3>
-            
                   </div>
-
-        
                 </div>
               </div>
             </article>
