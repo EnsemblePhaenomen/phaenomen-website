@@ -72,7 +72,7 @@ export default function Overlay({ slide }: OverlayProps) {
     flex justify-center items-end    
   "
           >
-            <h2 className="hero-title pb-2 md:pb-5 md:mb-10 text-white">
+            <h2 className="hero-title pb-2 md:pb-5 md:mb-10 lg:mb-20 xl:mb-5 text-white">
               {slide.headline}
             </h2>
           </div>
