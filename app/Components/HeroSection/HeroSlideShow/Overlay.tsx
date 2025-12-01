@@ -114,13 +114,12 @@ export default function Overlay({ slide }: OverlayProps) {
 
       /* Flex par défaut (mobile/tablette) */
       flex flex-col gap-3
-
       lg:grid lg:grid-rows-[auto_auto] lg:gap-1
       lg:items-center lg:justify-center lg:justify-items-center
       lg:row-start-5
       xl:col-start-6 xl:col-span-4 xl:row-start-6 xl:row-span-3
       xl:justify-start 
-      2xl:row-start-6
+      2xl:row-start-5
     "
   >
     {slide.director && (
