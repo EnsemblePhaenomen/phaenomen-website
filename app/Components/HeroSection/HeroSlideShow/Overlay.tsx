@@ -15,7 +15,7 @@ export default function Overlay({ slide }: OverlayProps) {
         {/* 🌱 MOBILE : tout centré, simple */}
         <div className="h-full w-full flex flex-col items-center justify-center gap-6 p-6 text-center sm:hidden">
           {/* Titre */}
-          <h2 className="hero-title text-white">{slide.headline}</h2>
+          <h2 className="hero-title text-white ">{slide.headline}</h2>
 
           {/* Logo */}
           {slide.logo && (
@@ -61,18 +61,21 @@ export default function Overlay({ slide }: OverlayProps) {
           "
         >
           {/* Titre "ensemble" */}
-          <div
-            className="
-               self-end justify-self-center
-              sm:col-start-2 sm:col-span-4 sm:row-start-3
-              md:col-start-7 md:col-span-3 md:row-start-4 md:row-span-2 md:seld-end md:justify-self-center
-              lg:col-start-7 lg:w-full
-            "
-          >
-            <h2 className="hero-title pb-2 md:pb-5 md:mb-10 text-white">
-              {slide.headline}
-            </h2>
-          </div>
+    <div
+  className="
+    self-end justify-self-center     
+    sm:col-start-2 sm:col-span-4 sm:row-start-3
+    md:col-start-7 md:col-span-3 md:row-start-5 md:row-span-2 md:self-end md:justify-self-center
+    lg:col-start-7 lg:w-full
+
+    flex justify-center items-end    // centre horizontalement, place le h2 en bas
+  "
+>
+  <h2 className="hero-title pb-2 md:pb-5 md:mb-10 text-white">
+    {slide.headline}
+  </h2>
+</div>
+
 
           {/* Logo */}
           {slide.logo && (
