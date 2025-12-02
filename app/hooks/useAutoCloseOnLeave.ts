@@ -10,12 +10,12 @@ type UseInViewOptions = Parameters<typeof useInView>[1];
  * Returns the current in-view state for optional UI uses.
  */
 export function useAutoCloseOnLeave<T extends Element>(
-  ref: RefObject<T>,
+  ref: RefObject<T> | null,
   isOpen: boolean,
   onClose: () => void,
   options?: UseInViewOptions
 ) {
-  const isInView = useInView(ref, { amount: 0, ...options });
+  const isInView = useInView(ref as RefObject<T>, { amount: 0, ...options });
   const hasEnteredView = useRef(false);
 
   useEffect(() => {
