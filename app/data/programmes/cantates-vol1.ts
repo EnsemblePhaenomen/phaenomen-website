@@ -24,7 +24,7 @@ export const programmeCantatesVolI: Programme = {
         {
           title: "Ich danke dir Herr",
           liturgicalPeriod: "Reminiscere",
-          imageSrc: "/programmePhotos/deco3.png",
+          imageSrc: "/programmePhotos/deco4.png",
           imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""
@@ -33,15 +33,16 @@ export const programmeCantatesVolI: Programme = {
           title: "Wir sind voller Angst et Plag",
           catalogue: "H. 388",
           liturgicalPeriod: "Exaudi",
-          imageSrc: "/programmePhotos/deco4.png",
+          imageSrc: "/programmePhotos/deco5.png",
           imageAlt: "image d'illustration",
           imageCredits: "",
-          audioSrc: ""
+          audioSrc: "",
+          youtubeId: "dYQ0tq9cNM8"
         },
         {
           title: "Siehe, dein König kommt zu dir",
           liturgicalPeriod: "Estomihi",
-          imageSrc: "/programmePhotos/deco5.png",
+          imageSrc: "/programmePhotos/deco3.png",
           imageAlt: "image d'illustration",
           imageCredits: "",
           audioSrc: ""

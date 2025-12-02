@@ -7,6 +7,7 @@ export interface Work {
   imageAlt: string;
   imageCredits: string;
   audioSrc: string;           
+  youtubeId?: string;          // Id YouTube optionnel pour lecture vidéo
 }
 
 export interface ProgrammeSection {
