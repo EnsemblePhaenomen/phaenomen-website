@@ -108,10 +108,10 @@ function ProgrammeBlock({
   onSelectVideo: (video: { id: string; title: string } | null) => void;
 }) {
   return (
-    <div className="mb-10">
-      <h1 className="text-xl md:text-2xl font-light mb-6">
+    <div className="mb-15">
+      <h2 className="text-xl md:text-2xl font-light mb-6">
         {programme.title}
-      </h1>
+      </h2>
 
       {programme.sections.map((section, sIndex) => (
         <div key={sIndex} className="mb-8">
