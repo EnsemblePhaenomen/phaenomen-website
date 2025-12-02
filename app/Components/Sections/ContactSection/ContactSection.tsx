@@ -46,7 +46,7 @@ export default function ContactSection() {
               flex items-center justify-center
               mt-12 md:mt-0
               md:pl-[4vw]
-              relative              /* 👈 pour le positionnement absolu du lien */
+              relative              
             "
             >
               <div

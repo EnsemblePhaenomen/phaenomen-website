@@ -45,8 +45,8 @@ export default function AgendaSection() {
     selectedEvent.date === event.date &&
     selectedEvent.title === event.title;
 
-  // 💡 Helpers UI en fonction de l'event sélectionné
-  const hasReservationUrl = Boolean(selectedEvent?.url);
+  // Helpers UI en fonction de l'event sélectionné
+  const hasReservationUrl = Boolean(selectedEvent?.url?.trim());
   const hasVenue =
     Boolean(selectedEvent?.city?.trim()) || Boolean(selectedEvent?.place?.trim());
 
@@ -91,7 +91,7 @@ export default function AgendaSection() {
               <ContactButton
                 dateLabel={selectedEvent?.date ?? null}
                 titleLabel={selectedEvent?.title ?? null}
-                ctaLabel={hasReservationUrl ? "réserver" : "coming soon!"}
+                ctaLabel={hasReservationUrl ? "réserver" : "bientôt disponible"}
                 // On ne passe un href que si on a vraiment une URL
                 href={hasReservationUrl ? selectedEvent!.url : undefined}
               />
