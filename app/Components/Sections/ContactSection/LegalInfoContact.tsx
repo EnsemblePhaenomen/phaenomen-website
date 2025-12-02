@@ -3,7 +3,7 @@ export default function LegalInfoContact() {
     <div className="w-full mt-16 md:mt-24 px-8">
       <div className="max-w-4xl mx-auto text-center space-y-2 text-neutral-600 text-sm md:text-base leading-relaxed">
         <p>
-          <span className="font-semibold">Directrice de la publication :</span>{" "}
+          <span className="font-semibold">Coordination de la recherche :</span>{" "}
           Claire Laplace
         </p>
 

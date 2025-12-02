@@ -1,13 +1,14 @@
 "use client";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import ArrowIcon from "../../(ui)/Arrows/ArrowIcon";
 import ProgrammePage from "./ProgrammePage";
 import { programmeCantatesVolI } from "@/app/data/programmes/cantates-vol1";
 import { programmeInstrumentalVolI } from "@/app/data/programmes/instrumental-vol1";
 import ContacterButton from "../../(ui)/Animations/ContacterButton";
+import { useAutoCloseOnLeave } from "@/app/hooks/useAutoCloseOnLeave";
 
 export default function ProjetStolzel() {
   const [openSections, setOpenSections] = useState({
@@ -21,18 +22,19 @@ export default function ProjetStolzel() {
   const hibouRef = useRef(null);
   const isInView = useInView(hibouRef, { once: true, amount: 0.3 });
   const programmeSectionRef = useRef<HTMLElement | null>(null);
-  // const isProgrammeInView = useInView(programmeSectionRef, {
-  //   amount: 0.2,
-  //   margin: "0px 0px -10% 0px",
-  // });
 
-  // Ferme automatiquement le bloc programme dès qu&apos;il sort du viewport
-  // useEffect(() => {
-  //   if (isProgrammeInView) return;
-  //   setOpenSections((prev) =>
-  //     prev.programme ? { ...prev, programme: false } : prev
-  //   );
-  // }, [isProgrammeInView]);
+  const closeProgrammeSection = useCallback(() => {
+    setOpenSections((prev) =>
+      prev.programme ? { ...prev, programme: false } : prev
+    );
+  }, []);
+
+  useAutoCloseOnLeave(
+    programmeSectionRef,
+    openSections.programme,
+    closeProgrammeSection,
+    { amount: 0 }
+  );
 
   const toggleSection = (section: keyof typeof openSections) => {
     setOpenSections((prev) => ({
@@ -393,12 +395,14 @@ export default function ProjetStolzel() {
                       : "max-h-0 opacity-0"
                   }`}
                 >
-                  <ProgrammePage
-                    programmes={[
-                      programmeCantatesVolI,
-                      programmeInstrumentalVolI,
-                    ]}
-                  />
+                  {openSections.programme ? (
+                    <ProgrammePage
+                      programmes={[
+                        programmeCantatesVolI,
+                        programmeInstrumentalVolI,
+                      ]}
+                    />
+                  ) : null}
                 </div>
               </section>
             </AnimatedBorderCard>
