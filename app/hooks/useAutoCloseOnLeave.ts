@@ -10,7 +10,7 @@ type UseInViewOptions = Parameters<typeof useInView>[1];
  * Returns the current in-view state for optional UI uses.
  */
 export function useAutoCloseOnLeave<T extends Element>(
-  ref: RefObject<T> | null,
+  ref: RefObject<T | null>,
   isOpen: boolean,
   onClose: () => void,
   options?: UseInViewOptions
