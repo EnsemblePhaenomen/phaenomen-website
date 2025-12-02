@@ -3,27 +3,7 @@
 import { useState } from "react";
 import AnimatedBorderCard from "../(ui)/AnimatedBorderCard";
 import ContactButton from "../(ui)/Animations/ContactButton";
-
-type EventItem = {
-  date: string;
-  title: string;
-  city: string;
-  place: string;
-  info: string;
-  url: string;
-};
-
-const events: EventItem[] = [
-  {
-    date: "16 AVR.",
-    title:
-      "Cantates Sacrées - Volume I : cantates pour choeur, cordes, et continuo",
-    city: "",
-    place: "",
-    info: "",
-    url: "",
-  },
-];
+import { events, type EventItem } from "@/app/data/events/events";
 
 export default function AgendaSection() {
   const [isScrolling, setIsScrolling] = useState(false);

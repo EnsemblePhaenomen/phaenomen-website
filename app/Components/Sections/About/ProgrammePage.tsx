@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Programme, Work } from "@/app/types/programmeConfig";
 import Image from "next/image";
 import Link from "next/link";
+import { events } from "@/app/data/events/events";
 
 interface ProgrammePageProps {
   programmes: Programme[];
@@ -12,6 +13,15 @@ interface ProgrammePageProps {
 export default function ProgrammePage({ programmes }: ProgrammePageProps) {
   const [hoveredWork, setHoveredWork] = useState<Work | null>(null);
   const [videoToPlay, setVideoToPlay] = useState<{ id: string; title: string } | null>(null);
+  const eventTitles = useMemo(
+    () =>
+      new Set(
+        events
+          .map((evt) => evt.title?.trim().toLowerCase())
+          .filter(Boolean) as string[]
+      ),
+    []
+  );
 
   useEffect(() => {
     if (!videoToPlay) return;
@@ -73,6 +83,7 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
             key={index}
             programme={programme}
             setHoveredWork={setHoveredWork}
+            isLinkedToAgenda={eventTitles.has(programme.title.trim().toLowerCase())}
             onSelectVideo={setVideoToPlay}
           />
         ))}
@@ -101,17 +112,29 @@ export default function ProgrammePage({ programmes }: ProgrammePageProps) {
 function ProgrammeBlock({
   programme,
   setHoveredWork,
+  isLinkedToAgenda,
   onSelectVideo,
 }: {
   programme: Programme;
   setHoveredWork: (w: Work | null) => void;
+  isLinkedToAgenda: boolean;
   onSelectVideo: (video: { id: string; title: string } | null) => void;
 }) {
   return (
     <div className="mb-15">
-      <h2 className="text-xl md:text-2xl font-light mb-6">
-        {programme.title}
-      </h2>
+      {isLinkedToAgenda ? (
+        <Link
+          href="/agenda"
+          className="inline-flex items-center gap-2 text-xl md:text-2xl font-light mb-6  decoration-[#E42B54]/60 hover:decoration-[#E42B54]"
+        >
+          {programme.title}
+          <span className="text-[0.7rem] underline underline-offset-4 uppercase tracking-[0.18em] text-[#E42B54]">
+            Voir dates
+          </span>
+        </Link>
+      ) : (
+        <h2 className="text-xl md:text-2xl font-light mb-6">{programme.title}</h2>
+      )}
 
       {programme.sections.map((section, sIndex) => (
         <div key={sIndex} className="mb-8">
