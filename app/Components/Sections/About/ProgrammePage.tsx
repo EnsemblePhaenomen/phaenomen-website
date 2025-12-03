@@ -129,7 +129,7 @@ function ProgrammeBlock({
         >
           {programme.title}
           <span className="text-[0.7rem] underline underline-offset-4 uppercase tracking-[0.18em] text-[#E42B54]">
-            Voir dates
+            Nos dates
           </span>
         </Link>
       ) : (
