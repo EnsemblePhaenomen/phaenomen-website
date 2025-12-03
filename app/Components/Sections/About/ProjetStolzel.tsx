@@ -126,8 +126,7 @@ export default function ProjetStolzel() {
                     Telemann à la Neukirche et au Collegium Musicum), époque à
                     laquelle on retrouve les traces de ses premières
                     compositions. Sa carrière commence par une percée dans
-                    l&apos;écriture d&apos;œuvres lyriques (<em>Narcissus</em>
-                    Narcissus, <em>Valeria</em>,{" "}
+                    l&apos;écriture d&apos;œuvres lyriques (<em>Narcissus</em>, <em>Valeria</em>,{" "}
                     <em>Rosen und Dornen der Liebe</em>, <em>Artemisia</em>,{" "}
                     <em>Orion</em>), toutes considérées comme perdues à ce jour.{" "}
                     <br /> De 1713 à 1715, Stölzel voyage d&apos;abord en Italie
@@ -296,7 +295,7 @@ export default function ProjetStolzel() {
                   }`}
                 >
                   <p className="max-w-full md:max-w-[80%] text-md md:text-2xl">
-                    Le Project Stölzel porte une ambition unique : rassembler,
+                    Le <em>Projet Stölzel</em> porte une seule ambition : rassembler,
                     numériser et rendre accessible l&apos;intégralité de
                     l&apos;œuvre de Gottfried Heinrich Stölzel. <br /> Phænomen
                     développe une base de données trilingue ouverte à tous,
