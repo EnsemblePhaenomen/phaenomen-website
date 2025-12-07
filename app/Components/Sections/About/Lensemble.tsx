@@ -148,7 +148,7 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                   <div className="max-w-full md:max-w-[80%]">
                     <p className="text-md md:text-2xl ">
                       À ce jour le cœur de l&apos;ensemble Phænomen est
-                      constitué dun quatuor à cordes, d&apos;un trio de
+                      constitué d&apos;un quatuor à cordes, d&apos;un trio de
                       continuo, et d&apos;un quatuor vocal. <br /> <br /> Issus
                       des grandes écoles et conservatoires européens de musique
                       ancienne (Schola Cantorum de Bâle, ESMUC (Barcelone), CMBV
