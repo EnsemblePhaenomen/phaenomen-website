@@ -126,7 +126,7 @@ export default function ProjetStolzel() {
                     Telemann à la Neukirche et au Collegium Musicum), époque à
                     laquelle on retrouve les traces de ses premières
                     compositions. Sa carrière commence par une percée dans
-                    l&apos;écriture d&apos;œuvres lyriques (<em>Narcissus</em>,{" "}
+                    l&apos;écriture d&apos;œuvres lyriques (<em>Narcissus</em>,
                     <em>Valeria</em>, <em>Rosen und Dornen der Liebe</em>,{" "}
                     <em>Artemisia</em>, <em>Orion</em>), toutes considérées
                     comme perdues à ce jour. <br /> De 1713 à 1715, Stölzel
@@ -336,7 +336,7 @@ export default function ProjetStolzel() {
                     <ArrowIcon className="w-10 h-auto md:w-12" />
                   </div>
                   <h3 className="text-2xl md:text-4xl font-semibold tracking-tight">
-                    <em>Phænomen</em> : l&apos;intégrale des Cantates de Stölzel
+                    L&apos;intégrale des Cantates de Stölzel par l&apos;ensemble <em>Phænomen</em>
                   </h3>
                 </div>
                 <div
@@ -349,7 +349,7 @@ export default function ProjetStolzel() {
                   <p className="max-w-full text-md md:text-2xl md:max-w-[80%]">
                     La clef de voûte de l&apos;activité de l&apos;ensemble est
                     la redécouverte des œuvres de Stölzel dans le monde du
-                    sonore : jouer, travailler, donner en concerts et
+                    sonore : jouer, travailler, donner en concert et
                     enregistrer les œuvres de Stölzel. L&apos;Ensemble Phænomen
                     se lance donc dans l&apos;intégrale des cantates de
                     Gottfried Heinrich Stölzel, par volumes correspondant à des

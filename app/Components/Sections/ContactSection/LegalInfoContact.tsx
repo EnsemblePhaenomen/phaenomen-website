@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function LegalInfoContact() {
   return (
-    <div className="w-full mt-16 md:mt-20 px-8">
+    <div className="w-full mt-16 md:mt-20 mb-16 md:mb-24 px-8">
       <div className="max-w-4xl mx-auto text-center space-y-2 text-neutral-600  leading-relaxed">
         <div className="text-sm md:text-xl">
 

@@ -1,6 +1,8 @@
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
 import ContacterButton from "../../(ui)/Animations/ContacterButton";
 import LegalInfoContact from "./LegalInfoContact";
+import SocialMediaButtons from "./SocialMediaButtons";
+
 export default function ContactSection() {
   return (
     <>
@@ -63,18 +65,21 @@ export default function ContactSection() {
                   allemande, vous pouvez nous aider - contactez-nous !
                 </p>
 
-                <a
-                  href="mailto:contact@ensemble-phaenomen.eu"
-                  className="
-                  text-2xl font-semibold hover:text-[#E42B54]
-                  block
-                  mt-6
-                  xl:mt-0
-                  xl:absolute xl:bottom-0 xl:left-21
-                "
-                >
-                  contact@ensemble-phaenomen.eu
-                </a>
+                <div className="xl:absolute xl:bottom-0 xl:left-21 space-y-4">
+                  <a
+                    href="mailto:contact@ensemble-phaenomen.eu"
+                    className="
+                    text-2xl font-semibold hover:text-[#E42B54]
+                    block
+                    transition-colors duration-300
+                  "
+                  >
+                    contact@ensemble-phaenomen.eu
+                  </a>
+
+                  {/* Social Media Links */}
+                  <SocialMediaButtons />
+                </div>
               </div>
             </div>
           </div>
