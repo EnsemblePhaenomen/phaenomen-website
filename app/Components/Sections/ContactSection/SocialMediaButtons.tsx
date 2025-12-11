@@ -49,7 +49,7 @@ export default function SocialMediaButtons() {
   return (
     <div className="flex items-center gap-4 justify-center md:justify-start">
       <motion.a
-        href="https://www.youtube.com/@ensemblephaenomen"
+        href="https://www.youtube.com/@PhænomenEnsemble"
         target="_blank"
         rel="noopener noreferrer"
         className="
@@ -65,7 +65,7 @@ export default function SocialMediaButtons() {
       </motion.a>
 
       <motion.a
-        href="https://www.instagram.com/ensemble_phaenomen"
+        href="https://www.instagram.com/ensemblephaenomen"
         target="_blank"
         rel="noopener noreferrer"
         className="
@@ -81,7 +81,7 @@ export default function SocialMediaButtons() {
       </motion.a>
 
       <motion.a
-        href="https://www.facebook.com/ensemblephaenomen"
+        href="https://www.facebook.com/profile.php?id=61582846720150"
         target="_blank"
         rel="noopener noreferrer"
         className="
