@@ -69,10 +69,10 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                   </h3>
                 </div>
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  className={`transition-all duration-500 ease-in-out ${
                     openSections.presentation
-                      ? "max-h-[1000px] opacity-100 pt-4 px-4 pb-8"
-                      : "max-h-0 opacity-0"
+                      ? "max-h-[calc(100vh-200px)] overflow-y-auto opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 overflow-hidden opacity-0"
                   }`}
                 >
                   <p className="max-w-full text-md md:text-2xl md:max-w-[80%]">
@@ -139,10 +139,10 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                   </h3>
                 </div>
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  className={`transition-all duration-500 ease-in-out ${
                     openSections.ensemble
-                      ? "max-h-[1000px] opacity-100 pt-4 px-4 pb-8"
-                      : "max-h-0 opacity-0"
+                      ? "max-h-[calc(100vh-200px)] overflow-y-auto opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 overflow-hidden opacity-0"
                   }`}
                 >
                   <div className="max-w-full md:max-w-[80%]">
@@ -194,10 +194,10 @@ export default function Lensemble({ data: musiciens }: EnfantProps) {
                 </div>
 
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  className={`transition-all duration-500 ease-in-out ${
                     openSections.interpretes
-                      ? "max-h-[1000px] opacity-100 pt-4 px-4 pb-8"
-                      : "max-h-0 opacity-0"
+                      ? "max-h-[calc(100vh-200px)] overflow-y-auto opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 overflow-hidden opacity-0"
                   }`}
                 >
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-4 text-xs sm:text-sm">

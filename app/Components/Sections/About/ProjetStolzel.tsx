@@ -113,10 +113,10 @@ export default function ProjetStolzel() {
                   </h3>
                 </div>
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  className={`transition-all duration-500 ease-in-out ${
                     openSections.stolzel
-                      ? "max-h-[2000px] opacity-100 pt-4 px-4 pb-8"
-                      : "max-h-0 opacity-0"
+                      ? "max-h-[calc(100vh-200px)] overflow-y-auto opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 overflow-hidden opacity-0"
                   }`}
                 >
                   <p className="max-w-full text-md md:text-2xl md:max-w-[80%]">
@@ -126,17 +126,18 @@ export default function ProjetStolzel() {
                     Telemann à la Neukirche et au Collegium Musicum), époque à
                     laquelle on retrouve les traces de ses premières
                     compositions. Sa carrière commence par une percée dans
-                    l&apos;écriture d&apos;œuvres lyriques (<em>Narcissus</em>, <em>Valeria</em>,{" "}
-                    <em>Rosen und Dornen der Liebe</em>, <em>Artemisia</em>,{" "}
-                    <em>Orion</em>), toutes considérées comme perdues à ce jour.{" "}
-                    <br /> De 1713 à 1715, Stölzel voyage d&apos;abord en Italie
-                    où il se forme notamment auprès de Vivaldi, Heinichen et
-                    Antonio Scarlatti, avant de s&apos;établir à Prague (où il
-                    compose encore principalement des opéras), et reste
-                    jusqu&apos;à sa nomination au poste de Kapellmeister à
-                    Bayreuth puis à Gera. En 1719, il est nommé Kapellmeister à
-                    la cour de Saxe-Gotha-Altenburg, où il travaille
-                    jusqu&apos;à la fin de sa vie en 1749. <br /> <br />
+                    l&apos;écriture d&apos;œuvres lyriques (<em>Narcissus</em>,{" "}
+                    <em>Valeria</em>, <em>Rosen und Dornen der Liebe</em>,{" "}
+                    <em>Artemisia</em>, <em>Orion</em>), toutes considérées
+                    comme perdues à ce jour. <br /> De 1713 à 1715, Stölzel
+                    voyage d&apos;abord en Italie où il se forme notamment
+                    auprès de Vivaldi, Heinichen et Antonio Scarlatti, avant de
+                    s&apos;établir à Prague (où il compose encore principalement
+                    des opéras), et reste jusqu&apos;à sa nomination au poste de
+                    Kapellmeister à Bayreuth puis à Gera. En 1719, il est nommé
+                    Kapellmeister à la cour de Saxe-Gotha-Altenburg, où il
+                    travaille jusqu&apos;à la fin de sa vie en 1749. <br />{" "}
+                    <br />
                     En parallèle de son poste à Gotha, Stölzel était chargé de
                     fournir la musique pour le culte de 1730 à 1740 à la cour de
                     Sondershausen, dont quatre cycles de cantates. Il écrit par
@@ -203,10 +204,10 @@ export default function ProjetStolzel() {
                   </h3>
                 </div>
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  className={`transition-all duration-500 ease-in-out ${
                     openSections.pourquoi
-                      ? "max-h-[2000px] opacity-100 pt-4 px-4 pb-8"
-                      : "max-h-0 opacity-0"
+                      ? "max-h-[calc(100vh-200px)] overflow-y-auto opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 overflow-hidden opacity-0"
                   }`}
                 >
                   <p className="max-w-full text-md md:text-2xl md:max-w-[80%]">
@@ -288,28 +289,28 @@ export default function ProjetStolzel() {
                   </h3>
                 </div>
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  className={`transition-all duration-500 ease-in-out ${
                     openSections.musicologique
-                      ? "max-h-[2000px] opacity-100 pt-4 px-4 pb-8"
-                      : "max-h-0 opacity-0"
+                      ? "max-h-[calc(100vh-200px)] overflow-y-auto opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 overflow-hidden opacity-0"
                   }`}
                 >
                   <p className="max-w-full md:max-w-[80%] text-md md:text-2xl">
-                    Le <em>Projet Stölzel</em> porte une seule ambition : rassembler,
-                    numériser et rendre accessible l&apos;intégralité de
-                    l&apos;œuvre de Gottfried Heinrich Stölzel. <br /> Phænomen
-                    développe une base de données trilingue ouverte à tous,
-                    collabore avec bibliothèques et institutions pour encourager
-                    la numérisation des sources, et produit des éditions
-                    scientifiques destinées chercheurs, interprètes et
-                    passionnés. Ce travail remet en lumière un compositeur
-                    essentiel de l&apos;histoire baroque.
+                    Le <em>Projet Stölzel</em> porte une seule ambition :
+                    rassembler, numériser et rendre accessible
+                    l&apos;intégralité de l&apos;œuvre de Gottfried Heinrich
+                    Stölzel. <br /> Phænomen développe une base de données
+                    trilingue ouverte à tous, collabore avec bibliothèques et
+                    institutions pour encourager la numérisation des sources, et
+                    produit des éditions scientifiques destinées chercheurs,
+                    interprètes et passionnés. Ce travail remet en lumière un
+                    compositeur essentiel de l&apos;histoire baroque.
                     <br /> <br />
                     La plupart des partitions est dans des bibliothèques, et
                     pour certaines numérisées, mais pas toutes. Nous accueillons
-                    donc volontiers l&apos;aide des musicologues ou de spécialistes
-                    des manuscrits allemands du XVIIIème siècle pour nous épauler dans ce
-                    travail.
+                    donc volontiers l&apos;aide des musicologues ou de
+                    spécialistes des manuscrits allemands du XVIIIème siècle
+                    pour nous épauler dans ce travail.
                   </p>
                 </div>
               </section>
@@ -339,10 +340,10 @@ export default function ProjetStolzel() {
                   </h3>
                 </div>
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  className={`transition-all duration-500 ease-in-out ${
                     openSections.sonore
-                      ? "max-h-[2000px] opacity-100 pt-4 px-4 pb-8"
-                      : "max-h-0 opacity-0"
+                      ? "max-h-[calc(100vh-200px)] overflow-y-auto opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 overflow-hidden opacity-0"
                   }`}
                 >
                   <p className="max-w-full text-md md:text-2xl md:max-w-[80%]">
@@ -390,8 +391,8 @@ export default function ProjetStolzel() {
                 <div
                   className={`transition-all duration-500 ease-in-out ${
                     openSections.programme
-                      ? "max-h-[2000px] opacity-100 pt-4 px-4 pb-8"
-                      : "max-h-0 opacity-0"
+                      ? "max-h-[calc(100vh-200px)] overflow-y-auto opacity-100 pt-4 px-4 pb-8"
+                      : "max-h-0 overflow-hidden opacity-0"
                   }`}
                 >
                   {openSections.programme ? (
