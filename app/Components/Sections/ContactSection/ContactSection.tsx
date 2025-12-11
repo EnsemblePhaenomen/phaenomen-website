@@ -35,7 +35,7 @@ export default function ContactSection() {
                 px-8
               "
               >
-                <ContacterButton href="mailto:ensemblephaenomen@gmail.com" />
+                <ContacterButton href="mailto:contact@ensemble-phaenomen.eu" />
               </div>
             </AnimatedBorderCard>
 
@@ -64,7 +64,7 @@ export default function ContactSection() {
                 </p>
 
                 <a
-                  href="mailto:ensemblephaenomen@gmail.com"
+                  href="mailto:contact@ensemble-phaenomen.eu"
                   className="
                   text-2xl font-semibold hover:text-[#E42B54]
                   block
@@ -73,7 +73,7 @@ export default function ContactSection() {
                   xl:absolute xl:bottom-0 xl:left-21
                 "
                 >
-                  ensemblephaenomen@gmail.com
+                  contact@ensemble-phaenomen.eu
                 </a>
               </div>
             </div>
