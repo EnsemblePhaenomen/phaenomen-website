@@ -116,7 +116,7 @@ export default function AgendaSection() {
                       className={`
                         border-b border-neutral-300 pb-6 last:border-none last:pb-0
                         cursor-pointer transition-colors
-                        ${isSelected(event) ? "bg-black p-5 text-white" : "hover:bg-black/30"}
+                        ${isSelected(event) ? "bg-black p-5 text-white" : "p-5 hover:bg-black/30"}
                       `}
                       onClick={() => handleSelect(event)}
                       onKeyDown={(e) => {
