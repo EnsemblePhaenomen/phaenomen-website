@@ -9,10 +9,26 @@ export type EventItem = {
 
 export const events: EventItem[] = [
   {
-    date: "16 AVR.",
+    date: "16 AVR. 18h",
     title:
       "L’Intégrale des Cantates Vol. I : cantates pour choeur, cordes et continuo",
-    city: "",
+    city: "Lyon",
+    place: "Basilique de Fourvière",
+    info: "En partenarariat avec la fondation Fourvière, la Stölzel-Gesellschaft et soutenu par le Fonds Citoyen Franco-Allemand.",
+    url: "",
+  },
+  {
+    date: "18 JUIL.",
+    title: "Concert, programme en ligne en mai",
+    city: "Brosse",
+    place: "",
+    info: "",
+    url: "",
+  },
+    {
+    date: "30 AOÛT",
+    title: "Concert dans le cadre de Stölzel-Fest",
+    city: "Brosse",
     place: "",
     info: "",
     url: "",

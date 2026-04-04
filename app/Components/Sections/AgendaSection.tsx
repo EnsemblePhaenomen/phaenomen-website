@@ -28,7 +28,8 @@ export default function AgendaSection() {
   // Helpers UI en fonction de l'event sélectionné
   const hasReservationUrl = Boolean(selectedEvent?.url?.trim());
   const hasVenue =
-    Boolean(selectedEvent?.city?.trim()) || Boolean(selectedEvent?.place?.trim());
+    Boolean(selectedEvent?.city?.trim()) ||
+    Boolean(selectedEvent?.place?.trim());
 
   return (
     <section className="min-h-screen pt-20 flex items-center">
@@ -106,8 +107,7 @@ export default function AgendaSection() {
               <div className="space-y-8">
                 {events.map((event, index) => {
                   const eventHasVenue =
-                    Boolean(event.city?.trim()) ||
-                    Boolean(event.place?.trim());
+                    Boolean(event.city?.trim()) || Boolean(event.place?.trim());
                   const eventHasUrl = Boolean(event.url?.trim());
 
                   return (
@@ -116,7 +116,7 @@ export default function AgendaSection() {
                       className={`
                         border-b border-neutral-300 pb-6 last:border-none last:pb-0
                         cursor-pointer transition-colors
-                        ${isSelected(event) ? "bg-black p-5 text-white" : "hover:bg-black/5"}
+                        ${isSelected(event) ? "bg-black p-5 text-white" : "hover:bg-black/30"}
                       `}
                       onClick={() => handleSelect(event)}
                       onKeyDown={(e) => {
@@ -153,7 +153,7 @@ export default function AgendaSection() {
                           </p>
 
                           {/* Infos / réservation */}
-                          <p className="text-sm text-neutral-700">
+                          <p className="text-sm text-white">
                             {event.info ? (
                               event.info
                             ) : eventHasUrl ? (
@@ -172,8 +172,8 @@ export default function AgendaSection() {
               </div>
 
               <p className="text-xs md:text-sm text-neutral-500 leading-relaxed pb-4">
-                Certains horaires peuvent être modifiés – consultez régulièrement
-                cette page.
+                Certains horaires peuvent être modifiés – consultez
+                régulièrement cette page.
               </p>
             </div>
           </div>
