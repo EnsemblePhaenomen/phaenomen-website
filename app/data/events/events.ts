@@ -25,10 +25,10 @@ export const events: EventItem[] = [
     info: "",
     url: "",
   },
-    {
+  {
     date: "30 AOÛT",
     title: "Concert dans le cadre de Stölzel-Fest",
-    city: "Brosse",
+    city: "Gotha",
     place: "",
     info: "",
     url: "",
