@@ -63,8 +63,19 @@ export default function ContactSection() {
                   toute aide est la bienvenue : musiciens, programmateurs,
                   acteurs du secteur musical, mélomanes ou passionnés de culture
                   allemande, vous pouvez nous aider - contactez-nous !
+                </p>{" "}
+                <br />
+                <p className="text-lg md:text-xl leading-relaxed">
+                  Soutenez-nous :{" "}
+                  <a
+                    className="hover:text-[#E42B54] transition-colors duration-300"
+                    href="https://www.helloasso.com/associations/ensemble-phaenomen/formulaires/1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Faites un don
+                  </a>{" "}
                 </p>
-
                 <div className="xl:absolute xl:bottom-0 xl:left-21 space-y-4">
                   <a
                     href="mailto:contact@ensemble-phaenomen.eu"
