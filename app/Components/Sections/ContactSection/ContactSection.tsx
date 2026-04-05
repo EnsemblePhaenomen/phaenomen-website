@@ -75,7 +75,17 @@ export default function ContactSection() {
                   >
                     Faites un don
                   </a>{" "}
+                  ou suivez-nous grâce à{" "}
+                  <a
+                    className="hover:text-[#E42B54] transition-colors duration-300"
+                    href="https://linktr.ee/ensemblephaenomen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Linktree
+                  </a>
                 </p>
+                <br />
                 <div className="xl:absolute xl:bottom-0 xl:left-21 space-y-4">
                   <a
                     href="mailto:contact@ensemble-phaenomen.eu"
