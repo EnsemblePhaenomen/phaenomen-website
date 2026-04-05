@@ -25,6 +25,12 @@ export const heroSlides: HeroSlide[] = [
       targetId: "#about",
       ariaLabel: "Plus d'informations - Naviguer vers la section À propos",
     },
+    secondaryCta: {
+      label: "Soutenez-nous !",
+      href: "https://www.helloasso.com/associations/ensemble-phaenomen/formulaires/1",
+      external: true,
+      ariaLabel: "Faire un don sur HelloAsso",
+    },
     priority: true,
   },
   {
@@ -54,8 +60,7 @@ heroSlides.push({
     alt: "Masterclass de musique baroque",
   },
   headline: "Project Stölzel",
-  subheadline:
-    "L'intégrale des cantates de Gottfried Heinrich Stölzel",
+  subheadline: "L'intégrale des cantates de Gottfried Heinrich Stölzel",
   cta: {
     label: "Découvrez le projet",
     href: "/#about",

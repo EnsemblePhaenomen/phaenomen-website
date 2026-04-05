@@ -1,4 +1,11 @@
 export type HeroSlide = {
+  cta?: {
+    label: string;
+    href: string;
+    external?: boolean;
+    targetId?: string;
+    ariaLabel?: string;
+  };
   id: string;
   image: {
     src: string;
@@ -7,7 +14,7 @@ export type HeroSlide = {
   };
   headline: string;
   subheadline?: string;
-  cta?: {
+  secondaryCta?: {
     label: string;
     href: string;
     external?: boolean;

@@ -7,6 +7,7 @@ import { scrollToSection } from "@/app/utils/scrollToSection";
 interface HeroCTAProps {
   href: string;
   label: string;
+  external?: boolean;
   targetId?: string;
   ariaLabel?: string;
 }
@@ -14,6 +15,7 @@ interface HeroCTAProps {
 export default function HeroCTA({
   href,
   label,
+  external,
   targetId,
   ariaLabel,
 }: HeroCTAProps) {
@@ -26,11 +28,13 @@ export default function HeroCTA({
   };
 
   return (
-    <div className="relative z-50 mt-10 2xl:mt-30 flex justify-start pointer-events-auto">
+    <div className="relative z-50 mt-5 2xl:mt-10 flex justify-start pointer-events-auto">
       <Link
         href={href}
         onClick={handleClick}
         aria-label={ariaLabel || label}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
         className="group flex items-center justify-start text-white w-fit cursor-pointer select-none pointer-events-auto"
         style={{ pointerEvents: "auto" }}
       >
@@ -40,7 +44,7 @@ export default function HeroCTA({
         </div>
 
         {/* Label */}
-        <p className="hero-info leading-none text-4xltransition-opacity duration-300 group-hover:opacity-90">
+        <p className="hero-info leading-none text-4xl transition-opacity duration-300 group-hover:opacity-90 ">
           {label}
         </p>
       </Link>

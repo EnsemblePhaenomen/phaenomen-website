@@ -32,8 +32,8 @@ export default function Overlay({ slide }: OverlayProps) {
           )}
 
           {/* Sous-titre + CTA / directeur */}
-          {(slide.director || slide.cta) && (
-            <div className="flex flex-col items-center gap-3">
+          {(slide.director || slide.cta || slide.secondaryCta) && (
+            <div className="flex flex-col items-start gap-3">
               {slide.director && (
                 <DirectorInfo
                   name={slide.director.name}
@@ -44,8 +44,18 @@ export default function Overlay({ slide }: OverlayProps) {
                 <HeroCTA
                   href={slide.cta.href}
                   label={slide.cta.label}
+                  external={slide.cta.external}
                   targetId={slide.cta.targetId}
                   ariaLabel={slide.cta.ariaLabel}
+                />
+              )}
+              {slide.secondaryCta && (
+                <HeroCTA
+                  href={slide.secondaryCta.href}
+                  label={slide.secondaryCta.label}
+                  external={slide.secondaryCta.external}
+                  targetId={slide.secondaryCta.targetId}
+                  ariaLabel={slide.secondaryCta.ariaLabel}
                 />
               )}
             </div>
@@ -102,7 +112,7 @@ export default function Overlay({ slide }: OverlayProps) {
           )}
 
           {/* Container Sous-titre + CTA / directeur */}
-{(slide.director || slide.cta) && (
+{(slide.director || slide.cta || slide.secondaryCta) && (
   <div
     className="
       sm:col-span-3 sm:col-start-3 sm:row-start-5 sm:row-span-2
@@ -113,9 +123,9 @@ export default function Overlay({ slide }: OverlayProps) {
       lg:pt-5
 
       /* Flex par défaut (mobile/tablette) */
-      flex flex-col gap-3
+      flex flex-col items-start gap-3
       lg:grid lg:grid-rows-[auto_auto] lg:gap-1
-      lg:items-center lg:justify-center lg:justify-items-center
+      lg:items-start lg:justify-center lg:justify-items-start
       lg:row-start-5
       xl:col-start-6 xl:col-span-4 xl:row-start-6 xl:row-span-3
       xl:justify-start 
@@ -134,11 +144,24 @@ export default function Overlay({ slide }: OverlayProps) {
         <HeroCTA
           href={slide.cta.href}
           label={slide.cta.label}
+          external={slide.cta.external}
           targetId={slide.cta.targetId}
           ariaLabel={slide.cta.ariaLabel}
         />
       </div>
-              )}
+    )}
+
+    {slide.secondaryCta && (
+      <div className="pointer-events-auto">
+        <HeroCTA
+          href={slide.secondaryCta.href}
+          label={slide.secondaryCta.label}
+          external={slide.secondaryCta.external}
+          targetId={slide.secondaryCta.targetId}
+          ariaLabel={slide.secondaryCta.ariaLabel}
+        />
+      </div>
+    )}
             </div>
           )}
         </div>
@@ -171,6 +194,7 @@ export default function Overlay({ slide }: OverlayProps) {
           <HeroCTA
             href={slide.cta.href}
             label={slide.cta.label}
+            external={slide.cta.external}
             targetId={slide.cta.targetId}
             ariaLabel={slide.cta.ariaLabel}
           />
@@ -249,6 +273,7 @@ export default function Overlay({ slide }: OverlayProps) {
             <HeroCTA
               href={slide.cta.href}
               label={slide.cta.label}
+              external={slide.cta.external}
               targetId={slide.cta.targetId}
               ariaLabel={slide.cta.ariaLabel}
             />
