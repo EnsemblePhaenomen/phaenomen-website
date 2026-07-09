@@ -18,11 +18,19 @@ export const events: EventItem[] = [
     url: "",
   },
   {
+    date: "Du 13 au 19 JUIL.",
+    title: "Résidence à la Cité de la Voix",
+    city: "Vézelay",
+    place: "16h Basilique - 17h Cité de la Voix",
+    info: "Gratuit, sans réservation.",
+    url: "",
+  },
+  {
     date: "18 JUIL.",
-    title: "Concert, programme en ligne en mai",
+    title: "Concert : L’Intégrale des Cantates Vol. I et II",
     city: "Brosse",
-    place: "",
-    info: "",
+    place: "Église Saint-Andoche",
+    info: "Gratuit, sans réservation.",
     url: "",
   },
   {
