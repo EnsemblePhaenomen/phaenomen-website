@@ -105,70 +105,73 @@ export default function AgendaSection() {
               </p>
 
               <div className="space-y-8">
-                {events.map((event, index) => {
-                  const eventHasVenue =
-                    Boolean(event.city?.trim()) || Boolean(event.place?.trim());
-                  const eventHasUrl = Boolean(event.url?.trim());
+                {events
+                  .filter((e) => e.isPast === false)
+                  .map((event, index) => {
+                    const eventHasVenue =
+                      Boolean(event.city?.trim()) ||
+                      Boolean(event.place?.trim());
+                    const eventHasUrl = Boolean(event.url?.trim());
 
-                  return (
-                    <article
-                      key={index}
-                      className={`
+                    return (
+                      <article
+                        key={index}
+                        className={`
                         border-b border-neutral-300 pb-6 last:border-none last:pb-0
                         cursor-pointer transition-colors
                         ${isSelected(event) ? "bg-black p-5 text-white" : "p-5 hover:bg-black/30"}
                       `}
-                      onClick={() => handleSelect(event)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          handleSelect(event);
-                        }
-                      }}
-                      tabIndex={0}
-                    >
-                      <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:gap-6">
-                        <p className="font-serif text-xl md:text-2xl tracking-tight">
-                          {event.date}
-                        </p>
-
-                        <div className="space-y-1">
-                          <h2 className="font-serif text-lg md:text-xl leading-snug">
-                            {event.title}
-                          </h2>
-
-                          {/* Lieu */}
-                          <p className="text-[0.7rem] md:text-xs uppercase tracking-[0.2em] text-white">
-                            {eventHasVenue ? (
-                              <>
-                                {event.city}
-                                {event.city && event.place && " — "}
-                                {event.place}
-                              </>
-                            ) : (
-                              <span className="italic">
-                                Lieu et horaires à venir
-                              </span>
-                            )}
+                        onClick={() => handleSelect(event)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            handleSelect(event);
+                          }
+                        }}
+                        tabIndex={0}
+                      >
+                        <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:gap-6">
+                          <p className="font-serif text-xl md:text-2xl tracking-tight">
+                            {event.date}
                           </p>
 
-                          {/* Infos / réservation */}
-                          <p className="text-sm text-white">
-                            {event.info ? (
-                              event.info
-                            ) : eventHasUrl ? (
-                              "Plus d'informations et réservation via le bouton ci-contre."
-                            ) : (
-                              <span className="italic text-white">
-                                Détails pratiques et réservation à venir.
-                              </span>
-                            )}
-                          </p>
+                          <div className="space-y-1">
+                            <h2 className="font-serif text-lg md:text-xl leading-snug">
+                              {event.title}
+                            </h2>
+
+                            {/* Lieu */}
+                            <p className="text-[0.7rem] md:text-xs uppercase tracking-[0.2em] text-white">
+                              {eventHasVenue ? (
+                                <>
+                                  {event.city}
+                                  {event.city && event.place && " — "}
+                                  {event.place}
+                                </>
+                              ) : (
+                                <span className="italic">
+                                  Lieu et horaires à venir
+                                </span>
+                              )}
+                            </p>
+
+                            {/* Infos / réservation */}
+                            <p className="text-sm text-white">
+                              {event.info ? (
+                                event.info
+                              ) : eventHasUrl ? (
+                                "Plus d'informations et réservation via le bouton ci-contre."
+                              ) : (
+                                <span className="italic text-white">
+                                  Détails pratiques et réservation à venir.
+                                </span>
+                              )}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    </article>
-                  );
-                })}
+                      </article>
+                    );
+                  })}
               </div>
 
               <p className="text-xs md:text-sm text-neutral-500 leading-relaxed pb-4">

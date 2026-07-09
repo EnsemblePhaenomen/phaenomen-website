@@ -5,6 +5,7 @@ export type EventItem = {
   place: string;
   info: string;
   url: string;
+  isPast?: boolean;
 };
 
 export const events: EventItem[] = [
@@ -16,14 +17,16 @@ export const events: EventItem[] = [
     place: "Basilique de Fourvière",
     info: "En partenarariat avec la fondation Fourvière, la Stölzel-Gesellschaft et soutenu par le Fonds Citoyen Franco-Allemand.",
     url: "",
+    isPast: true,
   },
   {
     date: "Du 13 au 19 JUIL.",
     title: "Résidence à la Cité de la Voix",
     city: "Vézelay",
     place: "16h Basilique - 17h Cité de la Voix",
-    info: "Gratuit, sans réservation.",
+    info: "Concerts du 14 au 19 (sauf 18). Gratuit, sans réservation.",
     url: "",
+    isPast: false,
   },
   {
     date: "18 JUIL.",
@@ -32,6 +35,7 @@ export const events: EventItem[] = [
     place: "Église Saint-Andoche",
     info: "Gratuit, sans réservation.",
     url: "",
+    isPast: false,
   },
   {
     date: "30 AOÛT",
@@ -40,6 +44,7 @@ export const events: EventItem[] = [
     place: "",
     info: "",
     url: "",
+    isPast: false,
   },
   {
     date: "À venir",
@@ -49,5 +54,6 @@ export const events: EventItem[] = [
     place: "",
     info: "",
     url: "",
+    isPast: false,
   },
 ];
