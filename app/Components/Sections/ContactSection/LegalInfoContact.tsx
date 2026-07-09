@@ -33,7 +33,7 @@ export default function LegalInfoContact() {
           <p className="mt-2">
             <span className="font-semibold font-sm">Développement du site : </span>
             <Link
-              href="https://www.louissanson.dev"
+              href="https://www.linkedin.com/in/louis-sanson"
               target="_blank"
               rel="noreferrer"
               className="underline underline-offset-4 hover:text-black transition-colors"
