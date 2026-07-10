@@ -8,7 +8,7 @@ import { events, type EventItem } from "@/app/data/events/events";
 export default function AgendaSection() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(
-    events[0] ?? null
+    events.find((e) => e.isPast === false) ?? null
   );
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {

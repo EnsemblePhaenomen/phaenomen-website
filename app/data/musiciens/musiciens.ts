@@ -161,24 +161,55 @@ Riho a participé à des concerts dans le cadre du festival «Toulouse les Orgue
       alt: "Portrait background Christophe Mourault",
     },
   },
+  {
+    nom: "Yoshida",
+    prénom: "Soko",
+    instrument: "Violon",
+    bio: `Née et ayant grandi à Morioka, au Japon, Soko Yoshida est une violoniste et altiste spécialisée dans l’interprétation historiquement informée. C’est pendant ses études à l’Université des Arts de Tokyo, où elle a obtenu son diplôme avec mention, qu’elle a découvert le violon baroque grâce à Natsumi Wakamatsu. Cette rencontre a éveillé en elle un profond intérêt pour la musique ancienne et l’a amenée à se consacrer à l’interprétation historique. Après ses études, elle s’est impliquée activement dans la scène de la musique ancienne à Tokyo, collaborant avec des ensembles tels que le Bach Collegium Japan, l’Orchestra Libera Classica et Les Boréades. En 2018, elle s’est installée en Suisse pour étudier le violon baroque auprès de Leila Schayegh à la Schola Cantorum Basiliensis, où elle a obtenu deux autres masters. Elle a également étudié le violon médiéval avec Baptiste Romain et l’improvisation historique avec Nicola Cumer et Dirk Börner. De 2019 à 2021, elle a bénéficié d’une bourse de l’Agence japonaise des affaires culturelles.
 
-{    nom: "Chapolard",
-  prénom: "Noé",
-  instrument: "Direction musicale",
-  bio: `À l'origine du projet et à la tête de l'ensemble Phænomen, Noé Chapolard a étudié la direction au CNSMD de Lyon et la polyphonie vocale à la Schola Cantorum de Bâle, après des études de politique publique à l'Université de Princeton. 
+En 2022, elle a remporté le Concours international de violon baroque « José Herrando » (Espagne). Elle est cofondatrice de l’ensemble de musique ancienne El Gabinete de Música, basé à Bâle, qui présente la série de concerts « Das Musikzimmer » à Bâle et se produit dans toute l’Europe. Elle a également collaboré avec des formations telles que Il Pomo d'Oro, l'Ensemble Locatelli, le Barokkbandið Brák, le Cardinal Complex, La Cetra Barockorchester, le Capriccio Barockorchester et La Centifolia. Ses prestations ont été présentées dans le cadre de cycles de concerts et de festivals prestigieux, notamment Abendmusiken Basel, Freunde Alter Musik Basel, Festtage Alte Musik (CH), Clásicos en Verano, Festival Música Barroca (ES), Schleswig-Holstein Festival, Kulturfreunde Bayreuth (DE), le Festival de Saintes (FR), Palazzo Marino in Musica, le Festival Monteverdi de Crémone (IT) et le Festival international de musique de la Renaissance et du baroque américain « Misiones de Chiquitos » (BO).`,
+    portrait: {
+      src: "/ensembleGallery/photos des musiciens/Soko_Yoshida.jpg",
+      alt: "Portrait de la violoniste Soko Yoshida",
+    },
+    modal: {
+      src:"/ensembleGallery/photos des musiciens/Soko_Yoshida.jpg",
+      alt:"Portrait de la violiniste Soko Yoshida",
+    },
+  },
+  {
+    nom: "Bachleitner",
+    prénom: "Anna",
+    instrument: "Mezzo-soprano",
+    bio: "La mezzo-soprano d’origine bavaroise Anna Bachleitner a été décrite par le Südbadische Zeitung comme « une artiste vocale extrêmement polyvalente, dotée d’une palette de couleurs sonores riches en nuances et d’une présence scénique expressive ». Elle se passionne tout particuli\u00E8rement pour la pratique musicale historiquement informée.  \n    \n Parmi les temps forts de la saison en cours, citons des prestations en solo avec le Capricornus Ensemble Basel et les Basler Vokalsolisten dans l’Oratorio de Noël de Bach, des concerts avec son partenaire de duo Niels Pfeffer en Allemagne, aux Pays-Bas et en Suisse, ainsi que plusieurs apparitions en tant qu’invitée avec son ensemble Tempera Mente lors de festivals de musique ancienne renommés à Göttingen, Sarrebruck et Riga. \n \n Anna a fait partie du programme “Young Fellowship” de la Dutch Bach Society et est restée depuis lors étroitement liée à cet ensemble. En 2023, elle a interprété le solo de soprano II de la cantate BWV 191 de Bach avec l’Orchestre baroque de Fribourg sous la direction de Kristian Bezuidenhout, aux côtés de solistes de renom au Konzerthaus de Dortmund, au Konzerthaus de Fribourg, à la Liederhalle de Stuttgart et à la Philharmonie de Berlin.\n \n Dans le cadre du programme « Early Opera Young Artist » du Festival de musique ancienne de Brighton (Royaume-Uni), Anna a interprété le rôle de Melissa dans l’opéra de Francesca Caccini, La liberazione di Ruggiero. En 2021, elle a également participé à l’Académie du Festival d’opéra et de musique de Confidencen (Suède), où elle s’est produite dans Les Arts Florissants de Charpentier et dans la production Hail! Bright Cecilia.\n \n Le chant d'ensemble constitue un aspect tout aussi important de son parcours artistique. Elle est membre de La Cetra Barockorchester & Vokalensemble Basel et se produit régulièrement avec des formations telles que La Capella Reial de Catalunya, Vox Luminis et la Züricher Sing-Akademie. Anna a étudié auprès d'Evelyn Tubb et de Gerd Türk à la célèbre Schola Cantorum Basiliensis, ainsi qu'au Conservatorium van Amsterdam dans la classe de Xenia Meijer.",
+    portrait: {
+      src: "/ensembleGallery/photos des musiciens/Anna_Bachleitner_Copyright_Magdalena_Reiter.jpg",
+      alt: "Portrait de la mezzo-soprano Anna Bachleitner",
+    },
+    modal: {
+      src: "/ensembleGallery/photos des musiciens/Anna_Bachleitner_Copyright_Magdalena_Reiter.jpg",
+      alt: "Portrait de la mezzo-soprano Anna Bachleitner",
+    },
+  },
+  
+  {
+    nom: "Chapolard",
+    prénom: "Noé",
+    instrument: "Direction musicale",
+    bio: `À l'origine du projet et à la tête de l'ensemble Phænomen, Noé Chapolard a étudié la direction au CNSMD de Lyon et la polyphonie vocale à la Schola Cantorum de Bâle, après des études de politique publique à l'Université de Princeton. 
   
   Il dirige actuellement le Jeune Chœur d'Auvergne, le Jeune Chœur Symphonique de Lyon et l'Orchestre Symphonique des Grandes Ecoles de Lyon, est chef assistant au chœur Spirito et au Choeur Régional d'Auvergne, et a été invité par le Choeur de l'Opéra Royal de Versailles, le Consort Musica Vera, l'Ensemble La Sportelle, ou le NFM de Wroclaw pour la préparation de disques ou de concerts de musique ancienne. 
   
   Il chante réguli\u00E8rement avec des ensembles comme l'Ensemble La Sportelle, Graindelavoix, La Capella Reial de Catalunya.`,
-  portrait: {
-    src: "/ensembleGallery/photos des musiciens/noe_portrait.png",
-    alt: "Photo portrait de Noé Chapolard",
+    portrait: {
+      src: "/ensembleGallery/photos des musiciens/noe_portrait.png",
+      alt: "Photo portrait de Noé Chapolard",
+    },
+    modal: {
+      src: "/ensembleGallery/photosFullModal/noe_background.png",
+      alt: "Noé Chapolard et l'ensemble Phaenomen",
+    },
   },
-  modal: {
-    src: "/ensembleGallery/photosFullModal/noe_background.png",
-    alt: "Noé Chapolard et l'ensemble Phaenomen",
-  },}
-
 ];
 
 const chef: Chef = {
