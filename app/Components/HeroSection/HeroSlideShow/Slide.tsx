@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { HeroSlide } from "@/app/types/heroConfig";
 import Overlay from "./Overlay";
+import { Soutiens } from "../../Sections/About/Soutiens";
 
 type SlideProps = {
   slide: HeroSlide;
@@ -60,6 +61,9 @@ export default function Slide({
 
       {/* Contenu textuel */}
       <Overlay slide={slide} />
+      <div className="absolute bottom-20 right-5 z-10">
+        <Soutiens variant="compact" />
+      </div>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { HeroSlide, HeroConfig } from "@/app/types/heroConfig";
 import Slide from "./Slide";
 import CarouselControls from "../../(ui)/CarouselControls";
+import { Soutiens } from "../../Sections/About/Soutiens";
 
 type HeroCarouselIslandProps = {
   slides: HeroSlide[];
@@ -192,6 +193,7 @@ export default function HeroCarouselIsland({
           transitionMs={hasReducedMotion ? 0 : config.transitionMs || 600}
         />
       ))}
+
 
       {/* Controls */}
       {config.showControls && (
