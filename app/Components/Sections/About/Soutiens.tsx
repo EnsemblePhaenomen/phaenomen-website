@@ -34,7 +34,7 @@ export function Soutiens({ variant = "full" }: SoutiensProps) {
         </p>
 
         <p className="text-sm md:text-lg max-w-2xl mx-auto">
-          L'Ensemble Phaenomen a bénéficié du soutien de la Cité de la Voix
+          L&apos;Ensemble Phaenomen a bénéficié du soutien de la Cité de la Voix
           (Vézelay) dans le cadre de son programme Jeunes ensembles en 2026.
         </p>
 

@@ -11,7 +11,7 @@ type EnfantProps = {
 
 export default function Lechef({ data: _data }: EnfantProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [showName, setShowName] = useState(false);
+  const [, setShowName] = useState(false);
 
   // Utiliser modal si disponible, sinon portrait
   const imageSrc = _data.portrait?.src || _data.modal?.src;
