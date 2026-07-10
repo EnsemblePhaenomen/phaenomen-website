@@ -107,7 +107,7 @@ const musiciens: Musicien[] = [
 
 En 2022, elle a obtenu le diplôme de Master clavecin spécialisé la basse continue et chef de chant au Conservatoire National Supérieur de Musique et de Danse de Lyon dans les classe de Jean-Marc Aymes (clavecin), Yves Rechsteiner (basse continue), Dirk Böerner (improvisation) et Anne-Catherine Vinay (chef de chant).
 
-Elle a été finaliste au XIXème concours de clavecin de Bologne en 2021. Elle enseigne le clavecin au CRR de Dijon et la basse continue et l’improvisation au CNRR de Marseille. Elle est également accompagnatrice au CNRR de Marseille et ESM Bourgogne-Franche-Comté.
+Elle a été finaliste au XIX\u00E8me concours de clavecin de Bologne en 2021. Elle enseigne le clavecin au CRR de Dijon et la basse continue et l’improvisation au CNRR de Marseille. Elle est également accompagnatrice au CNRR de Marseille et ESM Bourgogne-Franche-Comté.
 
 Riho a participé à des concerts dans le cadre du festival «Toulouse les Orgues», «Mars en Baroque», «Torroella de Montgrí», «Quincena Musical de San Sebastián» et Festival international de Santander. Elle fait partie de l’ensemble « La Nébuleuse » dirigé par Gabriel Rignol. Elle a participé au spectacle « Trauernacht» , l’opéra de Lyon dirigé par Simon-Pierre Bestion de Camboulas.`,
     portrait: {
@@ -161,6 +161,7 @@ Riho a participé à des concerts dans le cadre du festival «Toulouse les Orgue
       alt: "Portrait background Christophe Mourault",
     },
   },
+
 {    nom: "Chapolard",
   prénom: "Noé",
   instrument: "Direction musicale",
@@ -168,7 +169,7 @@ Riho a participé à des concerts dans le cadre du festival «Toulouse les Orgue
   
   Il dirige actuellement le Jeune Chœur d'Auvergne, le Jeune Chœur Symphonique de Lyon et l'Orchestre Symphonique des Grandes Ecoles de Lyon, est chef assistant au chœur Spirito et au Choeur Régional d'Auvergne, et a été invité par le Choeur de l'Opéra Royal de Versailles, le Consort Musica Vera, l'Ensemble La Sportelle, ou le NFM de Wroclaw pour la préparation de disques ou de concerts de musique ancienne. 
   
-  Il chante régulièrement avec des ensembles comme l'Ensemble La Sportelle, Graindelavoix, La Capella Reial de Catalunya.`,
+  Il chante réguli\u00E8rement avec des ensembles comme l'Ensemble La Sportelle, Graindelavoix, La Capella Reial de Catalunya.`,
   portrait: {
     src: "/ensembleGallery/photos des musiciens/noe_portrait.png",
     alt: "Photo portrait de Noé Chapolard",
@@ -188,7 +189,7 @@ const chef: Chef = {
   
   Il dirige actuellement le Jeune Chœur d'Auvergne, le Jeune Chœur Symphonique de Lyon et l'Orchestre Symphonique des Grandes Ecoles de Lyon, est chef assistant au chœur Spirito et au Choeur Régional d'Auvergne, et a été invité par le Choeur de l'Opéra Royal de Versailles, le Consort Musica Vera, l'Ensemble La Sportelle, ou le NFM de Wroclaw pour la préparation de disques ou de concerts de musique ancienne. 
   
-  Il chante régulièrement avec des ensembles comme l'Ensemble La Sportelle, Graindelavoix, La Capella Reial de Catalunya.`,
+  Il chante réguli\u00E8rement avec des ensembles comme l'Ensemble La Sportelle, Graindelavoix, La Capella Reial de Catalunya.`,
   portrait: {
     src: "/ensembleGallery/photos des musiciens/noe_portrait.png",
     alt: "Photo portrait de Noé Chapolard",

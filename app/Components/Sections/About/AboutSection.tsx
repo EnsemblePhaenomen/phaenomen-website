@@ -3,6 +3,7 @@ import ProjetStolzel from "./ProjetStolzel";
 import musiciensData from "@/app/data/musiciens/musiciens";
 import AnimatedEntete from "./AnimatedEntete";
 import AnimatedBorderCard from "../../(ui)/AnimatedBorderCard";
+import { Soutiens } from "./Soutiens";
 
 export default function AboutSection() {
   return (
@@ -21,6 +22,7 @@ export default function AboutSection() {
         <div className="flex-1 min-w-0">
           <Lensemble data={musiciensData.musiciens} />
           <ProjetStolzel />
+          <Soutiens />
         </div>
       </div>
     </section>
